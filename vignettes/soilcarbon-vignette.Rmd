@@ -13,10 +13,11 @@ Welcome to soilcarbon, an R package containing tools to analyze the soil carbon 
 
 # Intallation
 ```{r}
-devtools::install_github("powellcenter-soilcarbon/soilcarbon")
+devtools::install_github("powellcenter-soilcarbon/soilcarbon", force=T)
 ```
 
 ```{r}
+library(soilcarbon)
 testdata_directory<-system.file("extdata", "UNALTERED_TEMPLATE_v120616.xlsx", package = "soilcarbon")
 testdata<-importdata(file=testdata_directory)
 ```
