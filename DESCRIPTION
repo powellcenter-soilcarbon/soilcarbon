@@ -1,11 +1,15 @@
 Package: soilcarbon
-Title: What the Package Does (one line, title case)
-Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Title: Tools to analyze soil carbon database created by Powell Center working group
+Version: 0.0.0.9001
+Authors@R: person("J Grey", "Monroe", email = "greymonroe@gmail.com", role = c("aut", "cre"))
+Description: Users of 'soilcarbon' will find useful tool for importing, visualizing, and analyzing the soil carbon database created by the Powell Center working group.
 Depends:
     R (>= 3.3.2)
-License: What license is it under?
+License: GPL-2 
+Imports: XLConnect
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 5.0.1
+Suggests: knitr,
+    rmarkdown
+VignetteBuilder: knitr

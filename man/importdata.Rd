@@ -13,7 +13,7 @@ importdata(file)
 This function imports data from xlsx format matching the standard soil carbon data template
 }
 \examples{
-
-importdata(file="~/path/to/file/file.xlsx")
+datafile<-system.file("extdata", "UNALTERED_TEMPLATE_v120616.xlsx", package = "soilcarbon")
+importdata(file=datafile)
 }
 
