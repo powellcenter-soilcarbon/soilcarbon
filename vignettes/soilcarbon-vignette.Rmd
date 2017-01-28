@@ -1,0 +1,23 @@
+---
+title: "Introduction to soilcarbon"
+author: "J Grey Monroe"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+Welcome to soilcarbon, an R package containing tools to analyze the soil carbon database created by the USGS Powell Center working group.
+
+# Intallation
+```{r}
+devtools::install_github("powellcenter-soilcarbon/soilcarbon")
+```
+
+```{r}
+testdata_directory<-system.file("extdata", "UNALTERED_TEMPLATE_v120616.xlsx", package = "soilcarbon")
+testdata<-importdata(file=testdata_directory)
+```
+
