@@ -11,7 +11,7 @@
 
 importdata<-function(file){
 
-  data_workbook<-XLConnect::loadWorkbook(testdata_directory)
+  data_workbook<-XLConnect::loadWorkbook(file)
 
   # comprae sheets found in datafile to the necessary sheets in the standard data template
   sheets_found<-getSheets(data_workbook)
