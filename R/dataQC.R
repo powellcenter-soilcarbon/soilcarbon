@@ -1,4 +1,4 @@
-#' checkdata
+#' dataQC
 #'
 #' Check the imported soil carbon dataset for formatting and entry errors
 #'
@@ -7,7 +7,7 @@
 #'
 #'
 
-checkdata <- function(data){
+dataQC <- function(data){
   message("Checking...")
 
   message("Data structure")
