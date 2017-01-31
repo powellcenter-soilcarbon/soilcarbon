@@ -10,12 +10,15 @@
 #' importdata(file=datafile)
 
 importdata<-function(file){
-  data_workbook<-loadWorkbook(testdata_directory)
+
+  data_workbook<-XLConnect::loadWorkbook(testdata_directory)
+
+  # comprae sheets found in datafile to the necessary sheets in the standard data template
   sheets_found<-getSheets(data_workbook)
   sheets_needed<-c("metadata","site","profile","layer", "fraction")
   if (F %in% (sheets_needed %in% sheets_found)){
     sheets_missing<-setdiff(sheets_needed, sheets_found)
-    stop(paste("Sheet(s) '",sheets_missing,"' missing from data file", sep=""))
+    stop(paste("Sheet(s) '",sheets_missing,"' missing from data file", sep="")) # if sheets are missing, return error message with the missing sheets
   }
 
   metadata<-readWorksheet(object=data_workbook , sheet="metadata", header = TRUE )
@@ -25,6 +28,7 @@ importdata<-function(file){
   fraction<-readWorksheet(object=data_workbook , sheet="fraction", header = TRUE )
 
   data_workbook=list(metadata=metadata, site=site, profile=profile, layer=layer, fraction=fraction)
+
   return(data_workbook)
 }
 
