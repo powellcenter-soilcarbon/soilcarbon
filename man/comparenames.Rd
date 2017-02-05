@@ -4,7 +4,7 @@
 \alias{comparenames}
 \title{comparenames}
 \usage{
-comparenames(data, name)
+comparenames(names)
 }
 \arguments{
 \item{data}{directory to data file}

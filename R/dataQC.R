@@ -15,34 +15,34 @@ dataQC <- function(data){
   template<-importdata(file=template_file)
   cat("    metadata tab\n")
   if (!identical(colnames(data$metadata) , colnames(template$metadata))) {
-    message("WARNING...metadata column names do not match template")} else cat("OK\n")
+    message("WARNING...column names in the 'metadata' tab do not match template")} else cat("OK\n")
   cat("    site tab\n")
   if (!identical(colnames(data$site), colnames(template$site))) {
-    message("WARNING... site column names do not match template")} else cat("OK\n")
+    message("WARNING... column names in the 'site' tab do not match template")} else cat("OK\n")
   cat("    profile tab\n")
   if (!identical(colnames(data$profile) , colnames(template$profile))) {
-    message("WARNING... profile column names do not match template")} else cat("OK\n")
+    message("WARNING... column names in the 'profile' tab do not match template")} else cat("OK\n")
   cat("    layer tab\n")
   if (!identical(colnames(data$layer),colnames(template$layer))) {
-    message("WARNING... layer column names do not match template")} else cat("OK\n")
+    message("WARNING... column names in the 'layer' tab do not match template")} else cat("OK\n")
   cat("    fraction tab\n")
   if (!identical(colnames(data$fraction), colnames(template$fraction))) {
-    message("WARNING... fraction column names do not match template")} else cat("OK\n")
+    message("WARNING... column names in the 'fraction' tab do not match template")} else cat("OK\n")
 
   cat("Dataset Names\n")
-   if (F %in% comparenames(data, "dataset")){
+   if (F %in% comparenames(getnames(data, "dataset"))){
     message("WARNING... Dataset Names do not match")} else cat("OK\n")
 
    cat("Site Names\n")
-  if (F %in% comparenames(data, "site")){
+  if (F %in% comparenames(getnames(data, "site"))){
     message("WARNING... Site Names do not match")} else cat("OK\n")
 
   cat("Profile Names\n")
-  if (F %in% comparenames(data, "profile")){
+  if (F %in% comparenames(getnames(data, "profile"))){
     message("WARNING... Profile Names do not match")} else cat("OK\n")
 
   cat("Layer Names\n")
-  if (F %in% comparenames(data, "layer")){
+  if (F %in% comparenames(getnames(data, "layer"))){
     message("WARNING... Layer Names do not match")} else cat("OK\n")
 
 
