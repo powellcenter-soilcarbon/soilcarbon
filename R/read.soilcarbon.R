@@ -1,4 +1,4 @@
-#' importdata
+#' read.soilcarbon
 #'
 #' This function imports data from xlsx format matching the standard soil carbon data template
 #'
@@ -7,9 +7,10 @@
 #' @export
 #' @examples
 #' datafile<-system.file("extdata", "UNALTERED_TEMPLATE_v120616.xlsx", package = "soilcarbon")
-#' importdata(file=datafile)
+#' read.soilcarbon(file=datafile)
 
-importdata<-function(file){
+read.soilcarbon<-function(file){
+
 
   data_workbook<-XLConnect::loadWorkbook(file)
 
@@ -21,11 +22,11 @@ importdata<-function(file){
     stop(paste("Sheet(s) '",sheets_missing,"' missing from data file", sep="")) # if sheets are missing, return error message with the missing sheets
   }
 
-  metadata<-readWorksheet(object=data_workbook , sheet="metadata", header = TRUE )
-  site<-readWorksheet(object=data_workbook , sheet="site", header = TRUE )
-  profile<-readWorksheet(object=data_workbook , sheet="profile", header = TRUE )
-  layer<-readWorksheet(object=data_workbook , sheet="layer", header = TRUE )
-  fraction<-readWorksheet(object=data_workbook , sheet="fraction", header = TRUE )
+  metadata<-readWorksheet(object=data_workbook , sheet="metadata", header = T)
+  site<-readWorksheet(object=data_workbook , sheet="site", header = TRUE)
+  profile<-readWorksheet(object=data_workbook , sheet="profile", header = TRUE)
+  layer<-readWorksheet(object=data_workbook , sheet="layer", header = T)
+  fraction<-readWorksheet(object=data_workbook , sheet="fraction", header = TRUE)
 
   data_workbook=list(metadata=metadata, site=site, profile=profile, layer=layer, fraction=fraction)
 

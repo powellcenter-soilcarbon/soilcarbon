@@ -3,5 +3,5 @@
 export(comparenames)
 export(dataQC)
 export(getnames)
-export(importdata)
+export(read.soilcarbon)
 import(XLConnect)

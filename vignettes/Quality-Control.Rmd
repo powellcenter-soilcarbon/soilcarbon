@@ -1,0 +1,73 @@
+---
+title: "Soil Carbon Quality Control"
+author: "J Grey Monroe"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+Quality control (QC) of data input is an important step to ensure that the datasets are properly strucutred, contain necessary information, and that values are appropriately entered for each variable. This vignette will provide a guide for users to perform QC checks on datasets to be uploaded to the soilcarbon database. 
+
+This QC procedure is perfomed directly in R, using functions in the `soilcarbon` package. This package is currently under development and can be found at https://github.com/powellcenter-soilcarbon/soilcarbon.
+
+
+## Installing the soilcarbon package
+
+To install `soilcarbon` we will use the package `devtools`. To install `devtools` we first run the following code. 
+
+```{r, eval=F}
+install.packages("devtools")
+```
+
+Now we are ready to install `soilcarbon` from it's home on github. To do this, just run this code. Because the package is in development, it will undergo updates
+
+```{r, eval=F}
+devtools::install_github("powellcenter-soilcarbon/soilcarbon")
+```
+
+Now that you have the `soilcarbon` package installed, everytime you want to use it in a new R session, run this code
+
+```{r, eval=T}
+library(soilcarbon)
+```
+
+To load your dataset into R, we use the `read.soilcarbon()` function. To use this function, you need direct the `file` parameter to your soilcarbon datset. Here we are using the `file.choose()` command, which opens a window for you to find your file wherever it is saved. The code will look like this:
+
+## Loading dataset into R
+
+```{r, eval=F}
+my_dataset<-read.soilcarbon(file=file.choose())
+```
+
+```{r, eval=T, echo=FALSE}
+data_file<-system.file("extdata", "Sollins_2006.xlsx", package ="soilcarbon")
+my_dataset<-read.soilcarbon(file=data_file)
+```
+
+In this example, we have read in a dataset file called "Sollins_2006.xlsx". Now we will perform a QC check on this dataset.
+
+## Performing QC on dataset
+
+To perform a QC check on our dataset, we will use the `dataQC()` function. This function being developed, but currently perfoms the following checks.
+
+1. Compares column names between the tabs in the input data and the tabs in the standard data template, which is currently "UNALTERED_TEMPLATE_v120616.xlsx". If the column names do not match, a warning message will be issued, and the discrepancies printed.
+1. Checks for consistancy in names at different hierarchical levels in the data. For example, the 'site_names' in the *site* tab, should match those found in the *profile*, *layer*, and *fraction* tabs. `dataQC` checks the names of each level. If they do not match, a warning message is issued, and the names at each level are printed.
+
+Additional QC checks will be added as needed. Please feel free to email Grey Monroe at greymonroe@gmail.com, with suggestions.
+
+To perform the QC, run the following code
+
+```{r, eval=T}
+dataQC(my_dataset)
+```
+
+
+
+
+
+
+
+

@@ -12,7 +12,9 @@ dataQC <- function(data){
 
   cat("Column names\n")
   template_file<-system.file("extdata", "UNALTERED_TEMPLATE_v120616.xlsx", package = "soilcarbon")
-  template<-importdata(file=template_file)
+  template<-read.soilcarbon(file=template_file)
+
+# Compare column names in dataset to template file
   cat("    metadata tab\n")
   if (!identical(colnames(data$metadata) , colnames(template$metadata))) {
     message("WARNING...column names in the 'metadata' tab do not match template")} else cat("OK\n")
@@ -29,21 +31,24 @@ dataQC <- function(data){
   if (!identical(colnames(data$fraction), colnames(template$fraction))) {
     message("WARNING... column names in the 'fraction' tab do not match template")} else cat("OK\n")
 
+
+# Compare names at different hierarchies
   cat("Dataset Names\n")
    if (F %in% comparenames(getnames(data, "dataset"))){
-    message("WARNING... Dataset Names do not match")} else cat("OK\n")
+    message("WARNING... Dataset Names do not match, use getnames(data, 'dataset') to compare dataset names at differet levels")} else cat("OK\n")
 
    cat("Site Names\n")
   if (F %in% comparenames(getnames(data, "site"))){
-    message("WARNING... Site Names do not match")} else cat("OK\n")
+    message("WARNING... Site Names do not match, use getnames(data, 'site') to compare site names at differet levels")} else cat("OK\n")
 
   cat("Profile Names\n")
   if (F %in% comparenames(getnames(data, "profile"))){
-    message("WARNING... Profile Names do not match")} else cat("OK\n")
+    message("WARNING... Profile Names do not match, use getnames(data, 'profile') to compare profile names at differet levels")} else cat("OK\n")
 
   cat("Layer Names\n")
   if (F %in% comparenames(getnames(data, "layer"))){
-    message("WARNING... Layer Names do not match")} else cat("OK\n")
+    message("WARNING... Layer Names do not match, use getnames(data, 'layer') to compare layer names at differet levels")} else cat("OK\n")
+
 
 
 }
