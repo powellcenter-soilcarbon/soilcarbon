@@ -19,7 +19,7 @@ devtools::install_github("powellcenter-soilcarbon/soilcarbon")
 ```{r}
 library(soilcarbon)
 testdata_directory<-system.file("extdata", "UNALTERED_TEMPLATE_v120616.xlsx", package = "soilcarbon")
-testdata<-importdata(file=testdata_directory)
+testdata<-read.soilcarbon(file=testdata_directory)
 names(testdata)
 ```
 

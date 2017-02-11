@@ -2,9 +2,8 @@
 #'
 #' Compares the names at names between hierarchical levels, used in dataQC
 #'
-#' @param data directory to data file
-#' @param name specific heirarchial name, ie. dataset_name
-#'
+#' @param names names oject, outout from getnames()
+#' @import utils
 #' @export
 #'
 #'

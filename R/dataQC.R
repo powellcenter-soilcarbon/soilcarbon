@@ -3,53 +3,52 @@
 #' Check the imported soil carbon dataset for formatting and entry errors
 #'
 #' @param data directory to data file
+#' @param writeQCreport if TRUE, a text report of the QC output will be written to the outfile. Default is FALSE
+#' @param outfile filename of the output file if writeQCreport=TRUE. Default is NULL, and the outfile will be written to the directory where the dataset is stored, and named by the dataset being checked.
 #' @export
 #'
 #'
 
-dataQC <- function(data){
-  cat("Checking...\n")
+dataQC <- function(data, writeQCreport=F, outfile=NULL){
 
-  cat("Column names\n")
+  if (writeQCreport==T){
+    if (is.null(outfile)){
+      outfile<-gsub("\\.xlsx", "_QCreport.txt", attributes(data)$file_name)
+    }
+    reportfile<-file(outfile)
+    sink(reportfile)
+    sink(reportfile, type = c("message"))
+  }
+
   template_file<-system.file("extdata", "UNALTERED_TEMPLATE_v120616.xlsx", package = "soilcarbon")
   template<-read.soilcarbon(file=template_file)
 
-# Compare column names in dataset to template file
-  cat("    metadata tab\n")
-  if (!identical(colnames(data$metadata) , colnames(template$metadata))) {
-    message("WARNING...column names in the 'metadata' tab do not match template")} else cat("OK\n")
-  cat("    site tab\n")
-  if (!identical(colnames(data$site), colnames(template$site))) {
-    message("WARNING... column names in the 'site' tab do not match template")} else cat("OK\n")
-  cat("    profile tab\n")
-  if (!identical(colnames(data$profile) , colnames(template$profile))) {
-    message("WARNING... column names in the 'profile' tab do not match template")} else cat("OK\n")
-  cat("    layer tab\n")
-  if (!identical(colnames(data$layer),colnames(template$layer))) {
-    message("WARNING... column names in the 'layer' tab do not match template")} else cat("OK\n")
-  cat("    fraction tab\n")
-  if (!identical(colnames(data$fraction), colnames(template$fraction))) {
-    message("WARNING... column names in the 'fraction' tab do not match template")} else cat("OK\n")
+  cat("CHECKING", attributes(data)$file_name, "\n")
+  cat("timestamp:", as.character(Sys.time()),"\n")
+  cat(rep("-", 20),"\n")
+  cat("COLUMN NAMES\n")
 
+# Compare column names in dataset to template file
+  checkcols(data, "metadata", template)
+  checkcols(data, "site", template)
+  checkcols(data, "profile", template)
+  checkcols(data, "layer", template)
+  checkcols(data, "fraction", template)
 
 # Compare names at different hierarchies
-  cat("Dataset Names\n")
-   if (F %in% comparenames(getnames(data, "dataset"))){
-    message("WARNING... Dataset Names do not match, use getnames(data, 'dataset') to compare dataset names at differet levels")} else cat("OK\n")
+cat(rep("-", 20),"\n")
+cat("LEVEL NAMES\n")
+  checknames(data, "dataset")
+  checknames(data, "site")
+  checknames(data, "profile")
+  checknames(data, "layer")
 
-   cat("Site Names\n")
-  if (F %in% comparenames(getnames(data, "site"))){
-    message("WARNING... Site Names do not match, use getnames(data, 'site') to compare site names at differet levels")} else cat("OK\n")
-
-  cat("Profile Names\n")
-  if (F %in% comparenames(getnames(data, "profile"))){
-    message("WARNING... Profile Names do not match, use getnames(data, 'profile') to compare profile names at differet levels")} else cat("OK\n")
-
-  cat("Layer Names\n")
-  if (F %in% comparenames(getnames(data, "layer"))){
-    message("WARNING... Layer Names do not match, use getnames(data, 'layer') to compare layer names at differet levels")} else cat("OK\n")
-
+  if (writeQCreport==T){
+    cat("QC report saved to", outfile)
+    closeAllConnections()
+  }
 
 
 }
-?warning
+sink.number()
+

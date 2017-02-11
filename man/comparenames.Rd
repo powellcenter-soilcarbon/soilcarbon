@@ -7,9 +7,7 @@
 comparenames(names)
 }
 \arguments{
-\item{data}{directory to data file}
-
-\item{name}{specific heirarchial name, ie. dataset_name}
+\item{names}{names oject, outout from getnames()}
 }
 \description{
 Compares the names at names between hierarchical levels, used in dataQC
