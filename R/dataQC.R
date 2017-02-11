@@ -44,6 +44,7 @@ cat("LEVEL NAMES\n")
   checknames(data, "layer")
 
   if (writeQCreport==T){
+    sink()
     cat("QC report saved to", outfile)
     closeAllConnections()
   }
