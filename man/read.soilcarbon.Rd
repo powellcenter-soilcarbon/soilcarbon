@@ -4,16 +4,14 @@
 \alias{read.soilcarbon}
 \title{read.soilcarbon}
 \usage{
-read.soilcarbon(file)
+read.soilcarbon(file, template = F)
 }
 \arguments{
 \item{file}{directory to data file}
+
+\item{template}{set to TRUE if reading in a template file}
 }
 \description{
 This function imports data from xlsx format matching the standard soil carbon data template
-}
-\examples{
-datafile<-system.file("extdata", "UNALTERED_TEMPLATE_v120616.xlsx", package = "soilcarbon")
-read.soilcarbon(file=datafile)
 }
 

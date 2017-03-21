@@ -20,8 +20,8 @@ dataQC <- function(data, writeQCreport=F, outfile=NULL){
     sink(reportfile, type = c("message"))
   }
 
-  template_file<-system.file("extdata", "UNALTERED_TEMPLATE_v120616.xlsx", package = "soilcarbon")
-  template<-read.soilcarbon(file=template_file)
+  template_file<-system.file("extdata", "Master_template.xlsx", package = "soilcarbon")
+  template<-read.soilcarbon(file=template_file, template=T)
 
   cat("CHECKING", attributes(data)$file_name, "\n")
   cat("timestamp:", as.character(Sys.time()),"\n")
@@ -29,11 +29,20 @@ dataQC <- function(data, writeQCreport=F, outfile=NULL){
   cat("COLUMN NAMES\n")
 
 # Compare column names in dataset to template file
-  checkcols(data, "metadata", template)
-  checkcols(data, "site", template)
-  checkcols(data, "profile", template)
-  checkcols(data, "layer", template)
-  checkcols(data, "fraction", template)
+  checkcolnames(data, "metadata", template)
+  checkcolnames(data, "site", template)
+  checkcolnames(data, "profile", template)
+  checkcolnames(data, "layer", template)
+  checkcolnames(data, "fraction", template)
+
+  cat(rep("-", 20),"\n")
+  cat("REQUIRED COLUMNS\n")
+# Check required columns
+  checkreqcols(data, "site", template)
+  checkreqcols(data, "profile", template)
+  checkreqcols(data, "layer", template)
+  checkreqcols(data, "fraction", template)
+
 
 # Compare names at different hierarchies
 cat(rep("-", 20),"\n")

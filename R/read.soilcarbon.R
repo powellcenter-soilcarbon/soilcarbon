@@ -3,16 +3,16 @@
 #' This function imports data from xlsx format matching the standard soil carbon data template
 #'
 #' @param file directory to data file
+#' @param template set to TRUE if reading in a template file
 #' @import XLConnect
 #' @import utils
 #' @export
-#' @examples
-#' datafile<-system.file("extdata", "UNALTERED_TEMPLATE_v120616.xlsx", package = "soilcarbon")
-#' read.soilcarbon(file=datafile)
 
-read.soilcarbon<-function(file){
+read.soilcarbon<-function(file, template=F){
 
-  XLSX_workbook<-XLConnect::loadWorkbook(file)
+  requireNamespace("XLConnect")
+
+  XLSX_workbook<-loadWorkbook(file)
 
   # comprae sheets found in datafile to the necessary sheets in the standard data template
   sheets_found<-getSheets(XLSX_workbook)
@@ -37,6 +37,18 @@ read.soilcarbon<-function(file){
   data_workbook$fraction <- data_workbook$fraction[-1:-2,]
 
   data_workbook<-lapply(data_workbook, function(x) { as.data.frame(lapply(x, type.convert))})
+
+  #remove empty rows
+  if (template==F){
+  for (i in 1:length(data_workbook)){
+    data<-data_workbook[[i]]
+    data[data == c(" ")]<-NA
+    data[data == c("")]<-NA
+    data_workbook[[i]]<-data
+    data_workbook[[i]]<-data_workbook[[i]][rowSums(is.na(data_workbook[[i]])) != ncol(data_workbook[[i]]),]
+
+  }
+  }
 
   attributes(data_workbook)$file_name<-file
 
