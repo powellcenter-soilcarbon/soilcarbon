@@ -22,6 +22,8 @@ dataQC <- function(data, writeQCreport=F, outfile=NULL){
 
   template_file<-system.file("extdata", "Master_template.xlsx", package = "soilcarbon")
   template<-read.soilcarbon(file=template_file, template=T)
+  vocab_file<-system.file("extdata", "controlled_vocabulary.xlsx", package = "soilcarbon")
+  vocab<-read.soilcarbon(file=vocab_file, template=T)
 
   cat("CHECKING", attributes(data)$file_name, "\n")
   cat("timestamp:", as.character(Sys.time()),"\n")
@@ -51,6 +53,15 @@ cat("LEVEL NAMES\n")
   checknames(data, "site")
   checknames(data, "profile")
   checknames(data, "layer")
+
+# Check values for different variables
+  cat(rep("-", 20),"\n")
+  cat("VARIABLE VALUES\n")
+  checkvalues(data, "site", vocab)
+  checkvalues(data, "profile", vocab)
+  checkvalues(data, "layer", vocab)
+  checkvalues(data, "fraction", vocab)
+
 
   if (writeQCreport==T){
     sink()

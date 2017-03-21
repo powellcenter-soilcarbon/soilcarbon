@@ -3,6 +3,7 @@
 export(checkcolnames)
 export(checknames)
 export(checkreqcols)
+export(checkvalues)
 export(comparenames)
 export(dataQC)
 export(getnames)
