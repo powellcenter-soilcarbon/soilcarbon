@@ -22,8 +22,29 @@ dataQC <- function(data, writeQCreport=F, outfile=NULL){
 
   template_file<-system.file("extdata", "Master_template.xlsx", package = "soilcarbon")
   template<-read.soilcarbon(file=template_file, template=T)
-  vocab_file<-system.file("extdata", "controlled_vocabulary.xlsx", package = "soilcarbon")
-  vocab<-read.soilcarbon(file=vocab_file, template=T)
+
+cat("                 CH3\n")
+cat("                  |\n")
+cat("                  N\n")
+cat("                 / \\\n")
+cat("            N---C   C==O\n")
+cat("           ||  ||   |\n")
+cat("           ||  ||   |\n")
+cat("           CH   C   N--CH3\n")
+cat("             \\ / \\ /\n")
+cat("              N   C\n")
+cat("              |  ||\n")
+cat("             CH3  O\n")
+
+cat(rep("-", 30),"\n")
+cat("         Thank you for submitting data to the \n")
+cat("          Powell Center soil carbon database!\n")
+cat(rep("-", 30),"\n")
+cat("                Please review the\n")
+
+cat("          Quality Control check below:\n")
+cat(rep("-", 30),"\n\n\n")
+
 
   cat("CHECKING", attributes(data)$file_name, "\n")
   cat("timestamp:", as.character(Sys.time()),"\n")
@@ -57,15 +78,19 @@ cat("LEVEL NAMES\n")
 # Check values for different variables
   cat(rep("-", 20),"\n")
   cat("VARIABLE VALUES\n")
-  checkvalues(data, "site", vocab)
-  checkvalues(data, "profile", vocab)
-  checkvalues(data, "layer", vocab)
-  checkvalues(data, "fraction", vocab)
+  checkvalues(data, "site")
+  checkvalues(data, "profile")
+  checkvalues(data, "layer")
+  checkvalues(data, "fraction")
 
+  cat("\n\n",rep("-", 30),"\n")
+  cat("         this check was produced with the dataQC()\n")
+  cat("         function in the R soilcarbon package\n")
+  cat(rep("-", 30),"\n")
 
   if (writeQCreport==T){
     sink()
-    cat("QC report saved to", outfile)
+    cat("QC report saved to", outfile,"\n")
     closeAllConnections()
   }
 

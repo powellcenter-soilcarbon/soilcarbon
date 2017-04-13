@@ -4,29 +4,28 @@
 #'
 #' @param file directory to data file
 #' @param template set to TRUE if reading in a template file
-#' @import XLConnect
+#' @import openxlsx
 #' @import utils
 #' @export
 
 read.soilcarbon<-function(file, template=F){
 
-  requireNamespace("XLConnect")
+  requireNamespace("openxlsx")
 
-  XLSX_workbook<-loadWorkbook(file)
 
   # comprae sheets found in datafile to the necessary sheets in the standard data template
-  sheets_found<-getSheets(XLSX_workbook)
+  sheets_found<-getSheetNames(file)
   sheets_needed<-c("metadata","site","profile","layer", "fraction")
   if (F %in% (sheets_needed %in% sheets_found)){
     sheets_missing<-setdiff(sheets_needed, sheets_found)
     stop(paste("Sheet(s) '",sheets_missing,"' missing from data file", sep="")) # if sheets are missing, return error message with the missing sheets
   }
 
-  metadata<-readWorksheet(object=XLSX_workbook , sheet="metadata", header = T)
-  site<-readWorksheet(object=XLSX_workbook , sheet="site", header = TRUE)
-  profile<-readWorksheet(object=XLSX_workbook , sheet="profile", header = TRUE)
-  layer<-readWorksheet(object=XLSX_workbook , sheet="layer", header = T)
-  fraction<-readWorksheet(object=XLSX_workbook , sheet="fraction", header = TRUE)
+  metadata<-read.xlsx(file , sheet="metadata")
+  site<-read.xlsx(file , sheet="site")
+  profile<-read.xlsx(file , sheet="profile")
+  layer<-read.xlsx(file , sheet="layer")
+  fraction<-read.xlsx(file , sheet="fraction")
 
   data_workbook=list(metadata=metadata, site=site, profile=profile, layer=layer, fraction=fraction)
 

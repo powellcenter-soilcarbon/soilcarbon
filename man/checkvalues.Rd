@@ -4,14 +4,12 @@
 \alias{checkvalues}
 \title{checkvalues}
 \usage{
-checkvalues(data, tab, vocab)
+checkvalues(data, tab)
 }
 \arguments{
 \item{data}{soilcarbon data}
 
 \item{tab}{specific tab of dataset , ie. dataset_name}
-
-\item{vocab}{soilcarbon controlled vocabulary file to compare with}
 }
 \description{
 Check certain column values to match what is expected, used in dataQC
