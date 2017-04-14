@@ -13,6 +13,8 @@ checkvalues<-function(data, tab){
   data_tab<-data[[tab]]
 
   error<-0
+  if (tab=="metadata"){
+  }
 
   if (tab=="site"){
     datum_vocab<-c("AGD84",

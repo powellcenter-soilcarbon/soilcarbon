@@ -4,10 +4,13 @@
 \alias{dataQC}
 \title{dataQC}
 \usage{
-dataQC(data, writeQCreport = F, outfile = NULL)
+dataQC(data, tabs = c("metadata", "site", "profile", "layer", "fraction"),
+  writeQCreport = F, outfile = NULL)
 }
 \arguments{
 \item{data}{directory to data file}
+
+\item{tabs}{the tabs that will be checked, default is all}
 
 \item{writeQCreport}{if TRUE, a text report of the QC output will be written to the outfile. Default is FALSE}
 

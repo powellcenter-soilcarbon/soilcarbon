@@ -4,17 +4,36 @@
 #'
 #' @param data soilcarbon data
 #' @param tab specific tab of dataset , ie. dataset_name
-#' @param soilcarbon_template template soilcarbon file to compare
 #' @export
 #'
 
-checkreqcols<-function(data, tab, soilcarbon_template){
+checkreqcols<-function(data, tab){
 
 
-  required_columns<-list(site=c("dataset_name",	"site_name",	"lat",	"long"),
-                               profile=c("dataset_name"	,"site_name",	"profile_name"),
-                               layer=c("dataset_name",	"site_name",	"profile_name",	"layer_name",	"layer_top",	"layer_bot"),
-                               fraction=c("dataset_name","site_name","profile_name","layer_name","fraction_name","f_scheme","f_property","f_scheme_units","f_lower","f_upper")
+  required_columns<-list(metadata=c("dataset_name"),
+                              site=c("dataset_name",
+                                     "site_name",
+                                     "lat",
+                                     "long"),
+                               profile=c("dataset_name"	,
+                                         "site_name",
+                                         "profile_name"),
+                               layer=c("dataset_name",
+                                       "site_name",
+                                       "profile_name",
+                                       "layer_name",
+                                       "layer_top",
+                                       "layer_bot"),
+                               fraction=c("dataset_name",
+                                          "site_name",
+                                          "profile_name",
+                                          "layer_name",
+                                          "fraction_name",
+                                          "f_scheme",
+                                          "f_property",
+                                          "f_scheme_units",
+                                          "f_lower",
+                                          "f_upper")
                                )
 
   cat("\t",tab,"tab...")

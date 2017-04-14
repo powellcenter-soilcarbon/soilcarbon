@@ -4,14 +4,12 @@
 \alias{checkreqcols}
 \title{checkreqcols}
 \usage{
-checkreqcols(data, tab, soilcarbon_template)
+checkreqcols(data, tab)
 }
 \arguments{
 \item{data}{soilcarbon data}
 
 \item{tab}{specific tab of dataset , ie. dataset_name}
-
-\item{soilcarbon_template}{template soilcarbon file to compare}
 }
 \description{
 Check the required columns of different tabs in the dataset to make sure they exist and have values, used in dataQC

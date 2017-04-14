@@ -11,11 +11,12 @@
 #'
 
 matchvocab<-function(var_data, var_vocab, var_name, tab, error){
+  if(!is.null(var_data)){
   if (!any(var_data %in% var_vocab)){
     wrong_values<-setdiff(var_data,var_vocab)
     message("\nWARNING...inappropriate value detected in '" ,var_name,"' column of the '" ,tab,"' tab:")
     error<-error+1
     for (j in 1:length(wrong_values)) cat("\t\t", j, ". ", wrong_values[j] ,"\n")
-  }
+  }}
 return(error)
 }

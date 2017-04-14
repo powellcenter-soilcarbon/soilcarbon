@@ -9,7 +9,8 @@
 #'
 
 comparenames<-function(names){
-
+  if(length(names)>1){
  return(apply(combn(seq_along(names), 2), 2, function(n) names[[n[1]]] %in% names[[n[2]]]))
+  } else return(c(T))
 
 }

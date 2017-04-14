@@ -4,14 +4,16 @@
 #'
 #' @param data soilcarbon data
 #' @param name specific heirarchial name, ie. dataset_name
+#' @param tabs the tabs that will be checked, default is all
 #' @export
 #'
 
-checknames<-function(data, name){
+checknames<-function(data, name, tabs){
 
   cat("\t", name, "...")
 
   level_names<-getnames(data, name)
+  level_names<-level_names[intersect(names(level_names), tabs)]
   names_compared<-comparenames(level_names)
 
   if(F %in% names_compared){
