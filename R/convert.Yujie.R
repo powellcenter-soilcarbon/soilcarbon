@@ -8,8 +8,6 @@
 
 convert.Yuije<- function(Yujie_file){
 
-  Yujie_file<-"~/Dropbox/Powell Center/Yujie_dataset.csv"
-
   Yujie_dataset<-read.csv(Yujie_file, na.strings = c(""," ", "  "))
   levels(Yujie_dataset$reference)<-c(levels(Yujie_dataset$reference), "no_ref")
   Yujie_dataset$reference[which(is.na(Yujie_dataset$reference))] <- as.factor("no_ref")
@@ -18,7 +16,7 @@ convert.Yuije<- function(Yujie_file){
   Yujie_dataset_clean<-data.frame()
   sites<-unique(Yujie_dataset$Site)
   for (i in 1:length(sites)){
-    site<-subset(Yujie_dataset, Site==sites[i])
+    site<-subset(Yujie_dataset, Yujie_dataset$Site==sites[i])
     if (length(unique(site$Lon))>1 | length(unique(site$Lat))>1){
       site$Site<-as.character(site$Site)
       latlons<-as.list(as.data.frame(t(cbind(site$Lat, site$Lon))))
@@ -32,7 +30,7 @@ convert.Yuije<- function(Yujie_file){
   clean_sites<-unique(Yujie_dataset_clean$Site)
   Yujie_dataset_sites<-data.frame()
   for (i in 1:length(clean_sites)){
-    site<-subset(Yujie_dataset_clean, Site==clean_sites[i])[1,]
+    site<-subset(Yujie_dataset_clean, Yujie_dataset_clean$Site==clean_sites[i])[1,]
     Yujie_dataset_sites<-rbind(Yujie_dataset_sites, site)
   }
 
@@ -41,7 +39,7 @@ clean_profiles<-unique(Yujie_dataset_clean$profile_name)
 
 Yujie_dataset_profiles<-data.frame()
 for (i in 1:length(clean_profiles)){
-  profile<-subset(Yujie_dataset_clean, profile_name==clean_profiles[i])[1,]
+  profile<-subset(Yujie_dataset_clean, Yujie_dataset_clean$profile_name==clean_profiles[i])[1,]
   Yujie_dataset_profiles<-rbind(Yujie_dataset_profiles, profile)
 }
 
@@ -98,6 +96,5 @@ Yujie_soilcarbon<-list(metadata=data.frame(dataset_name=c("Yujie_non_peat_synthe
                        fraction=data.frame())
 attributes(Yujie_soilcarbon)$file_name<-Yujie_file
 
-dataQC(data=Yujie_soilcarbon, tabs = c("metadata", "site", "profile", "layer"), writeQCreport = T, outfile = "~/Dropbox/Powell Center/Yujie_dataset_QC_report.txt")
-
+return(Yujie_soilcarbon)
 }
