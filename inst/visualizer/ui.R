@@ -75,8 +75,9 @@ shinyUI(fluidPage(
   mainPanel(tabsetPanel(
     tabPanel("Plot", plotOutput("plot"), value=1),
     tabPanel("soilcarbon dataset", dataTableOutput("table"), value=2),
-    tabPanel("Add data to the dataset", value=3 , dataTableOutput("uploaded_table"))
-    , id = "conditionedPanels"
+    tabPanel("Add data to the dataset", value=3 , dataTableOutput("uploaded_table")),
+    tabPanel("data template", value=4),
+    id = "conditionedPanels"
       )
     )
 ))

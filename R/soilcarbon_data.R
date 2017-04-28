@@ -2,11 +2,53 @@
 #'
 #' A dataset containing soil carbon parameters collected by the powell center soil carbon working group
 #'
-#'
+#' @import shiny
+#' @import ggplot2
+#' @importFrom colourpicker colourInput
 #' @format A data frame with 4115 rows and 42 variables:
 #' \describe{
-#'   \item{dataset_name}{name of the dataset that observations were collected from}
-#'   \item{site_name}{name of the site where data was gathered}
+#'   \item{X13c}{}
+#'   \item{X14c}{}
+#'   \item{X14c_sigma}{}
+#'   \item{al_dith}{}
+#'   \item{al_ox}{}
+#'   \item{al_py}{}
+#'   \item{aspect}{}
+#'   \item{bd_tot}{}
+#'   \item{bet_surface_area}{}
+#'   \item{c_to_n}{}
+#'   \item{c_tot}{}
+#'   \item{cat_exch}{}
+#'   \item{clay_tot_psa}{}
+#'   \item{country}{}
+#'   \item{dataset_name}{}
+#'   \item{elevation}{}
+#'   \item{fe_dith}{}
+#'   \item{fe_ox}{}
+#'   \item{fe_py}{}
+#'   \item{hzn}{}
+#'   \item{lat}{}
+#'   \item{layer_bot}{}
+#'   \item{layer_name}{}
+#'   \item{layer_top}{}
+#'   \item{long}{}
+#'   \item{map}{}
+#'   \item{mat}{}
+#'   \item{n_tot}{}
+#'   \item{observation_date}{}
+#'   \item{parent_material}{}
+#'   \item{ph_h2o}{}
+#'   \item{profile_name}{}
+#'   \item{rc_year}{}
+#'   \item{sand_tot_psa}{}
+#'   \item{silt_tot_psa}{}
+#'   \item{site_name}{}
+#'   \item{slope}{}
+#'   \item{slope_shape}{}
+#'   \item{smect_vermic}{}
+#'   \item{soil_taxon}{}
+#'   \item{state_province}{}
+#'   \item{veg_note}{}
 #'   ...
 #' }
 #' @source \url{https://powellcenter.usgs.gov/view-project/55d4bffce4b0518e354695aa}
