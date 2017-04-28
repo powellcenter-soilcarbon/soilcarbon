@@ -47,7 +47,6 @@ cat("          Quality Control check below:\n")
 cat(rep("-", 30),"\n\n\n")
 
 
-  cat("CHECKING", attributes(data)$file_name, "\n")
   cat("timestamp:", as.character(Sys.time()),"\n")
   cat(rep("-", 20),"\n")
   # Compare column names in dataset to template file

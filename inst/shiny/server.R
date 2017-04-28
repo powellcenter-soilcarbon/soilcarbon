@@ -14,7 +14,7 @@ library(ggplot2)
 shinyServer(function(input, output, session) {
   library(ggplot2)
 
-  data(data="soilcarbon_data", package="soilcarbon")
+  data(data="soilcarbon_database", package="soilcarbon")
   output$plot <- renderPlot({
 
     variables<-list(
@@ -25,7 +25,7 @@ shinyServer(function(input, output, session) {
     )
     variables[which(variables=="NULL")]<-NULL
 
-    plot_data<-na.omit(soilcarbon_data[,unlist(variables)])
+    plot_data<-na.omit(soilcarbon_database[,unlist(variables)])
 
     if(is.null(variables$size)){
       p<-ggplot(plot_data, aes_string(x=variables$x_var, y=variables$y_var, col=variables$col_var))+

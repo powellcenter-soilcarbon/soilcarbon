@@ -52,4 +52,4 @@
 #'   ...
 #' }
 #' @source \url{https://powellcenter.usgs.gov/view-project/55d4bffce4b0518e354695aa}
-"soilcarbon_data"
+"soilcarbon_database"

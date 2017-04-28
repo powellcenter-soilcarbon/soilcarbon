@@ -151,6 +151,15 @@ checkvalues<-function(data, tab){
                       "Particle_Size",
                       "Incubation")
     error<-matchvocab(data_tab$f_scheme,  f_scheme_vocab, var_name="f_scheme", tab="fraction", error=error )
+    f_property_vocab<-c("sonicated",
+                        "soluble",
+                        "insoluble",
+                        "wet sieve",
+                        "dry sieve",
+                        "HMP",
+                        "respired",
+                        "not respired")
+    error<-matchvocab(data_tab$f_property,  f_property_vocab, var_name="f_property", tab="fraction", error=error )
 
 
 
