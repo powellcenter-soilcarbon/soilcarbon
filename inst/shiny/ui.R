@@ -30,27 +30,45 @@ shinyUI(fluidPage(
     selectInput("x_var", "X Variable:",
                 list("C14" = "X14c",
                      "Total Carbon" = "c_tot",
-                     "Total Nitrogen" = "n_tot"
+                     "Total Nitrogen" = "n_tot",
+                     "Bulk Density" = "bd_tot"
                 )),
 
      selectInput("size_var", "Size Variable:",
                 list("None" = "NULL",
                     "C14" = "X14c",
                      "Total Carbon" = "c_tot",
-                     "Total Nitrogen" = "n_tot"
+                     "Total Nitrogen" = "n_tot",
+                    "Bulk Density" = "bd_tot",
+                    "MAP" = "map",
+                    "MAT" = "mat"
                 )),
 
+
+    selectInput("facet_var", "Panel Variable:",
+                list("None" = "NULL",
+                     "C14" = "X14c",
+                     "Total Carbon" = "c_tot",
+                     "Total Nitrogen" = "n_tot",
+                     "Bulk Density" = "bd_tot",
+                     "MAP" = "map",
+                     "MAT" = "mat"
+                )),
+    textInput("facet_cut", "threshold", value = ""),
 
     div(style="display:inline-block; width: 50%",
         selectInput("col_var", "Color Variable:",
                 list("None" = "NULL",
                     "C14" = "X14c",
                      "Total Carbon" = "c_tot",
-                     "Total Nitrogen" = "n_tot"
+                     "Total Nitrogen" = "n_tot",
+                    "Bulk Density" = "bd_tot",
+                    "MAP" = "map",
+                    "MAT" = "mat"
                 ))),
     div(style="display:inline-block; width: 15%", colourInput("color1","", "dodgerblue", showColour = "background")),
     div(style="display:inline-block; width: 15%", colourInput("color2", "", "darkorange", showColour = "background")),
-    div(style="width: 150px;",    sliderInput("alpha", "Alpha", min = 0,
+    div(style="width: 150px;",    sliderInput("alpha", "Transparency", min = 0,
         max = 1, value = 0.4)),
     width=3
   ),
