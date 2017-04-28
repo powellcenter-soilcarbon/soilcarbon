@@ -11,7 +11,7 @@ library(shiny)
 library(ggplot2)
 
 # Define server logic required to draw a histogram
-shinyServer(function(input, output) {
+shinyServer(function(input, output, session) {
   library(ggplot2)
 
   data(data="soilcarbon_data", package="soilcarbon")
@@ -27,13 +27,52 @@ shinyServer(function(input, output) {
 
     plot_data<-na.omit(soilcarbon_data[,unlist(variables)])
 
-    p<-ggplot(plot_data, aes_string(x=variables$x_var, y=variables$y_var,size=variables$size_var, col=variables$col_var))+
-      geom_point(alpha=0.5)+
-      scale_colour_gradient(low="blue", high="red")+
-      scale_y_reverse()+
-      theme_classic()
-    print(p)
+    if(is.null(variables$size)){
+      p<-ggplot(plot_data, aes_string(x=variables$x_var, y=variables$y_var, col=variables$col_var))+
+        geom_point(alpha=input$alpha, size=3)+
+        scale_colour_gradient(low=input$color1, high=input$color2)+
+        scale_y_reverse()+
+        theme_classic(base_size = 18)
+      print(p)
+    }else {
 
+    p<-ggplot(plot_data, aes_string(x=variables$x_var, y=variables$y_var,size=variables$size_var, col=variables$col_var))+
+      geom_point(alpha=input$alpha)+
+      scale_colour_gradient(low=input$color1, high=input$color2)+
+      scale_y_reverse()+
+      theme_classic(base_size = 18)+
+      scale_size_continuous(range = c(1, 7))
+    print(p)
+}
   })
+  output$table <- renderDataTable(soilcarbon_data)
+
+  dummy <- reactiveValues(dataset=NULL)
+
+  observeEvent(input$upload, {
+  dummy$dataset=read.soilcarbon(input$upload$datapath)
+})
+
+
+  output$uploaded_table <- renderDataTable(dummy$dataset[[input$tab]])
+
+
+
+
+    output$download_dataqc<-downloadHandler(
+      filename = "soilcarbon_data_report.html",
+      content = function(file) {
+
+        tempReport <- file.path(tempdir(), "report.Rmd")
+        file.copy("report.Rmd", tempReport, overwrite = TRUE)
+        params <- list(data = input$upload$datapath)
+        rmarkdown::render(tempReport, output_file = file,
+                          params = params,
+                          envir = new.env(parent = globalenv())
+
+        )
+        }
+      )
 
 })
+

@@ -1,0 +1,11 @@
+---
+title: "Dynamic report"
+output: html_document
+params:
+  data: NA
+---
+
+```{r}
+data<-read.soilcarbon(params$data)
+dataQC(data)
+```
