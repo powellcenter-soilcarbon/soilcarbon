@@ -22,18 +22,18 @@ shinyUI(fluidPage(
   sidebarPanel(
 
     conditionalPanel(condition="input.conditionedPanels==1",
-                     helpText("Make plots with the soilcarbon database"),
-    selectInput("y_var", "Depth Variable:",
+                     h3("Visualize database"),
+      fluidRow(column(6, selectInput("y_var", "Depth Variable:",
                 list("Top of layer" = "layer_top",
                      "Bottom of layer" = "layer_bot"
-                     )),
-    selectInput("x_var", "X Variable:",
+                     ))),
+               column(6, selectInput("x_var", "X Variable:",
                 list("C14" = "X14c",
                      "Total Carbon" = "c_tot",
                      "Total Nitrogen" = "n_tot",
                      "Bulk Density" = "bd_tot"
                 ),
-                selected = "bd_tot"),
+                selected = "bd_tot"))),
 
     fluidRow(column(7,   selectInput("col_facet_var", "Panel Variable:",
                 list("None" = "NULL",
@@ -70,7 +70,7 @@ shinyUI(fluidPage(
                 ),
                 selected = "mat")),
              column(5, sliderInput("alpha", "transparency", min = 0,
-        max = 1, value = 0.7))),
+        max = 1, value = 0.4))),
 
     selectInput("size_var", "Size Variable:",
                 list("None" = "NULL",
@@ -81,6 +81,7 @@ shinyUI(fluidPage(
                      "MAP" = "map",
                      "MAT" = "mat"
                 )),
+    h3("Download database"),
     downloadButton("download_database", "Download Database (flattened)")),
 
   conditionalPanel(condition="input.conditionedPanels==2",

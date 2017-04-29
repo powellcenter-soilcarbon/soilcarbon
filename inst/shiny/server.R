@@ -50,7 +50,7 @@ shinyServer(function(input, output, session) {
 
     if(is.null(variables$size)){
       p<-ggplot(plot_data, aes_string(x=variables$x_var, y=variables$y_var, col=variables$col_var))+
-        geom_point(alpha=input$alpha, size=3)+
+        geom_point(alpha=input$alpha, size=2)+
         facet_grid(facet_cut2~facet_cut)+
         scale_colour_gradient(low="dodgerblue", high="orange")+
         scale_y_reverse()+
