@@ -17,13 +17,13 @@ shinyUI(fluidPage(
   theme = "bootstrap_simplex.css",
 
   # Application title
-  headerPanel("Powell Center soilcarbon data visualizer"),
+  headerPanel("Powell Center soilcarbon workbench"),
 
   sidebarPanel(
 
     conditionalPanel(condition="input.conditionedPanels==1",
-                     helpText("Make plots with all of the soil carbon data"),
-    selectInput("y_var", "Y Variable:",
+                     helpText("Make plots with the soilcarbon database"),
+    selectInput("y_var", "Depth Variable:",
                 list("Top of layer" = "layer_top",
                      "Bottom of layer" = "layer_bot"
                      )),
@@ -32,9 +32,34 @@ shinyUI(fluidPage(
                      "Total Carbon" = "c_tot",
                      "Total Nitrogen" = "n_tot",
                      "Bulk Density" = "bd_tot"
-                )),
+                ),
+                selected = "bd_tot"),
 
-     selectInput("size_var", "Size Variable:",
+    fluidRow(column(7,   selectInput("col_facet_var", "Panel Variable:",
+                list("None" = "NULL",
+                     "C14" = "X14c",
+                     "Total Carbon" = "c_tot",
+                     "Total Nitrogen" = "n_tot",
+                     "Bulk Density" = "bd_tot",
+                     "MAP" = "map",
+                     "MAT" = "mat"
+                ),
+                selected = "map")),
+                column(5, textInput("col_facet_thresh", "threshold", value = "1000"))),
+
+    fluidRow(column(7,   selectInput("row_facet_var", "Panel Variable 2:",
+                                     list("None" = "NULL",
+                                          "C14" = "X14c",
+                                          "Total Carbon" = "c_tot",
+                                          "Total Nitrogen" = "n_tot",
+                                          "Bulk Density" = "bd_tot",
+                                          "MAP" = "map",
+                                          "MAT" = "mat"
+                                     ),
+                                     selected = "mat")),
+             column(5, textInput("row_facet_thresh", "threshold", value = "5"))),
+
+    fluidRow(column(7,  selectInput("col_var", "Color Variable:",
                 list("None" = "NULL",
                     "C14" = "X14c",
                      "Total Carbon" = "c_tot",
@@ -42,10 +67,12 @@ shinyUI(fluidPage(
                     "Bulk Density" = "bd_tot",
                     "MAP" = "map",
                     "MAT" = "mat"
-                )),
+                ),
+                selected = "mat")),
+             column(5, sliderInput("alpha", "transparency", min = 0,
+        max = 1, value = 0.7))),
 
-
-    selectInput("facet_var", "Panel Variable:",
+    selectInput("size_var", "Size Variable:",
                 list("None" = "NULL",
                      "C14" = "X14c",
                      "Total Carbon" = "c_tot",
@@ -54,47 +81,26 @@ shinyUI(fluidPage(
                      "MAP" = "map",
                      "MAT" = "mat"
                 )),
-    textInput("facet_cut", "threshold", value = ""),
-
-    div(style="display:inline-block; width: 50%",
-        selectInput("col_var", "Color Variable:",
-                list("None" = "NULL",
-                    "C14" = "X14c",
-                     "Total Carbon" = "c_tot",
-                     "Total Nitrogen" = "n_tot",
-                    "Bulk Density" = "bd_tot",
-                    "MAP" = "map",
-                    "MAT" = "mat"
-                ))),
-    div(style="display:inline-block; width: 15%", colourInput("color1","", "dodgerblue", showColour = "background")),
-    div(style="display:inline-block; width: 15%", colourInput("color2", "", "darkorange", showColour = "background")),
-    div(style="width: 150px;",    sliderInput("alpha", "Transparency", min = 0,
-        max = 1, value = 0.4)),
-    width=3
-  ),
+    downloadButton("download_database", "Download Database (flattened)")),
 
   conditionalPanel(condition="input.conditionedPanels==2",
-                   helpText("View the complete soilcarbon dataset"),
-                   fileInput("download", label = "download data")),
-
-
-  conditionalPanel(condition="input.conditionedPanels==3",
-                   helpText("Add your own data to the soilcarbon dataset!"),
-                   fileInput("upload", label = "Upload data", accept = "xslx"),
-                   helpText("View the data"),
-                   radioButtons("tab",label="tab:",
-                                choices = list("metadata" = "metadata", "site" = "site", "profile" = "profile", "layer" = "layer", "fraction" = "fraction"),
-                                selected = "metadata"),
-                   helpText("Check your own data for compatability with soilcarbon"),
-                   downloadButton("download_dataqc", "download quality control report"))
-
+                   h3("Template file"),
+                   downloadButton("download_template", "Download soilcarbon Template file"),
+                   h4("Tips for filling out template file:"),
+                   HTML("<ul><li>The 'metadata', 'site', 'profile', 'layer', and 'fraction' tabs are required in order to upload file to database</li><li>Variables with red column names are required and cannot have missing values.</li><li>Values in the variables called 'dataset_name', 'site_name', 'profile_name', and 'layer_name' must match across tabs in which they are found.</li><li>Check the 'controlled vocabulary' tab for acceptable values for certain variables</li></ul>")
+              )
   ),
 
   mainPanel(tabsetPanel(
-    tabPanel("Plot", plotOutput("plot"), value=1),
-    tabPanel("soilcarbon dataset", dataTableOutput("table"), value=2),
-    tabPanel("Add data to the dataset", value=3 , dataTableOutput("uploaded_table")),
-    tabPanel("data template", value=4),
+    tabPanel("Database", plotOutput("plot"), value=1),
+    tabPanel("Add data to database", value=2 , helpText("To add a dataset to the soilcarbon database, the data must pass a quality control check without any warning messages, for questions email Grey (greymonroe@gmail.com)"),
+             fileInput("upload", label = "Upload data"),
+             conditionalPanel(
+               condition = "output.fileUploaded",
+               downloadButton("download_dataqc", "download quality control report"),
+               helpText("If the quality control report does not have any warning messages, you may submit the data by emailing it to Grey (greymonroee@gmail.com). Thanks!")
+             )
+             ),
     id = "conditionedPanels"
       )
     )
