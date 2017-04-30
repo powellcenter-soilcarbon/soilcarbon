@@ -4,7 +4,7 @@
 \name{soilcarbon_database}
 \alias{soilcarbon_database}
 \title{Data compiled for the soilcarbon dataset}
-\format{A data frame with 4115 rows and 42 variables:
+\format{A data frame with 4155 rows and 42 variables:
 \describe{
   \item{X13c}{}
   \item{X14c}{}

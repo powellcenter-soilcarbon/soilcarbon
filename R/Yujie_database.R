@@ -2,9 +2,6 @@
 #'
 #' A dataset containing soil carbon parameters collected by the powell center soil carbon working group
 #'
-#' @import shiny
-#' @import ggplot2
-#' @importFrom colourpicker colourInput
 #' @format A data frame with 4115 rows and 42 variables:
 #' \describe{
 #'   \item{X13c}{}

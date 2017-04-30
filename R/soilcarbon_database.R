@@ -4,8 +4,7 @@
 #'
 #' @import shiny
 #' @import ggplot2
-#' @importFrom colourpicker colourInput
-#' @format A data frame with 4115 rows and 42 variables:
+#' @format A data frame with 4155 rows and 42 variables:
 #' \describe{
 #'   \item{X13c}{}
 #'   \item{X14c}{}
