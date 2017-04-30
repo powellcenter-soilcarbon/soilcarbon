@@ -12,19 +12,10 @@ The fastest and easiest way to interact with the soilcarbon database is through 
 ```{r}
 shiny::runApp(system.file('shiny', package='soilcarbon'))
 ```
- # Template file
+In this shiny app, you can plot or download data in the database, and run a quality control check on a datafile you want to submit to the database.
 
+ # Template file
+The template file for adding new data to the database can be accessed through the soilcarbon shiny app, or can be downloaded at the link below.
  [download template](https://github.com/powellcenter-soilcarbon/soilcarbon/raw/master/inst/extdata/Master_template.xlsx)
 
 
----
-
-
-### Notes
-1. "mineral" and "silicate_class" found in controlled vocab but not fraction tab
-1. changed "lat.long.datum" to "datum" in controlled vocab sheet
-
-### addtional dataQC checks
-1. make sure values that are supposed to be numeric are 
-1. limit ranges of numeric values (see fraction controlled vocab tab)
-1. make sure that each site has only one lat lon (more than 1 would indicate multiple sites)
