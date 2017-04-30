@@ -29,8 +29,6 @@ read.soilcarbon<-function(file, template=F){
 
   data_workbook=list(metadata=metadata, site=site, profile=profile, layer=layer, fraction=fraction)
 
-  data_workbook<-lapply(data_workbook, function(x) { as.data.frame(lapply(x, type.convert))})
-
   #remove empty rows
   if (template==F){
   for (i in 1:length(data_workbook)){
