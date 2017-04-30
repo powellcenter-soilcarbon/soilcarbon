@@ -8,8 +8,10 @@
 #
 
 # Define server logic required to draw a histogram
+library(soilcarbon)
+library(ggplot2)
+
 shinyServer(function(input, output, session) {
-  library(ggplot2)
 
 
   output$plot <- renderPlot({
