@@ -3,7 +3,6 @@
 To install the soilcarbon package, just run this code in R (you can ignore `install.packages("devtools")` if you already have it).
 ```{r}
 install.packages("devtools")
-require(devtools)
 devtools::install_github("powellcenter-soilcarbon/soilcarbon")
 ```
 ## soilcarbon shiny workbench
