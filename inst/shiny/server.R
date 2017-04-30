@@ -94,7 +94,7 @@ shinyServer(function(input, output, session) {
       outputOptions(output, 'fileUploaded', suspendWhenHidden=FALSE)
 
       output$download_dataqc<-downloadHandler(
-        filename = "soilcarbon_dataQC_report.txt",
+        filename = paste0(gsub(".xlsx","",input$upload$name), "_QC_report.txt"),
         content = function(file) {
           dataset=read.soilcarbon(input$upload$datapath)
           dataQC(dataset, writeQCreport=T, outfile = file)

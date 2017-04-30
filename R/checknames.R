@@ -22,7 +22,7 @@ checknames<-function(data, name, tabs){
       cat("\t","\t", name, "names in", names(level_names)[i], " tab... \n")
       if (length(level_names[[i]])>0){
       for (j in 1:length(level_names[[i]])){
-        cat("\t","\t", as.character(level_names[[i]][j]), "\n")
+        cat("\t\t\t", as.character(level_names[[i]][j]), "\n")
       }
       } else cat("\t\t NONE \n")
     }
