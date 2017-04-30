@@ -34,11 +34,11 @@ After you have downloaded the template file and filled it in with data, you must
 
 If you are having trouble understanding the formatting requirements for passing the quality control check. See this list of tips for filling:
 
-*The 'metadata', 'site', 'profile', 'layer', and 'fraction' tabs are required in order to upload file to database.
-*Variables with red column names are required and cannot have missing values.
-*Values in the variables called 'dataset_name', 'site_name', 'profile_name', and 'layer_name' must match across tabs in which they are found.
-*Check the 'controlled vocabulary' tab for acceptable values for certain variables.
-*Remove the first two description rows before submitting dataset.
+* The 'metadata', 'site', 'profile', 'layer', and 'fraction' tabs are required in order to upload file to database.
+* Variables with red column names are required and cannot have missing values.
+* Values in the variables called 'dataset_name', 'site_name', 'profile_name', and 'layer_name' must match across tabs in which they are found.
+* Check the 'controlled vocabulary' tab for acceptable values for certain variables.
+* Remove the first two description rows before submitting dataset.
 
 If you are still having trouble passing the quality control test, send an email to Grey Monroe (greymonroe @ gmail.com) with a description of your problem, along with the data file and quality control report.
 
