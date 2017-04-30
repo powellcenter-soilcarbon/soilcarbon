@@ -7,9 +7,6 @@
 #    http://shiny.rstudio.com/
 #
 
-library(shiny)
-library(colourpicker)
-library(soilcarbon)
 
 # Define UI for application that draws a histogram
 shinyUI(fluidPage(
@@ -103,7 +100,7 @@ shinyUI(fluidPage(
              conditionalPanel(
                condition = "output.fileUploaded",
                downloadButton("download_dataqc", "download quality control report"),
-               helpText("If the quality control report does not have any warning messages, you may submit the data by emailing it to Grey (greymonroee@gmail.com). Thanks!")
+               helpText("If the quality control report does not have any warning messages, you may submit the data by emailing it to Grey (greymonroe@gmail.com). Thanks!")
              )
              ),
     id = "conditionedPanels"
