@@ -1,12 +1,15 @@
 # getting started
 ## Installing soilcarbon
-To install the soilcarbon package, just run this code in R (you can ignore `install.packages("devtools")` if you already have it).
+To install the soilcarbon package, just run this code in R. 
+
+(You only need to run `install.packages("devtools")` once, but as the soilcarbon is developed you can run `devtools::install_github("powellcenter-soilcarbon/soilcarbon")` to get the latest version.)
+
 ```{r}
 install.packages("devtools")
 devtools::install_github("powellcenter-soilcarbon/soilcarbon")
 ```
 ## soilcarbon shiny workbench
-The fastest and easiest way to interact with the soilcarbon database is through an R shiny app that comes with the soilcarbon pacakge. Just run this code in R:
+The fastest and easiest way to interact with the soilcarbon database is through an R shiny app that comes with the soilcarbon pacakge. After you have installed the package, just run this code in R:
 ```{r}
 shiny::runApp(system.file('shiny', package='soilcarbon'))
 ```
