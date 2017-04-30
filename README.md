@@ -1,7 +1,7 @@
 # getting started
 ## Install R (and RStudio)
 
-If you don't already have R and RStudio, download them here https://www.rstudio.com/products/rstudio/download/.
+If you don't already have R and RStudio, download them here [https://www.rstudio.com/products/rstudio/download/](https://www.rstudio.com/products/rstudio/download/).
 
 ## Installing soilcarbon
 To install the soilcarbon package, just run this code in R. 
