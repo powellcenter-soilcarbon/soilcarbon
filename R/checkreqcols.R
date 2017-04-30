@@ -50,7 +50,7 @@ checkreqcols<-function(data, tab){
     message("\nWARNING...required column(s) missing from the '",tab,"' tab:")
     error<-error+1
     for (i in 1:length(missing)){
-      cat("\t\t", i, ". ", missing[i] ,"\n")
+      cat("\t\t", , missing[i] ,"\n")
     }
   }
 

@@ -16,7 +16,7 @@ matchvocab<-function(var_data, var_vocab, var_name, tab, error){
     wrong_values<-setdiff(var_data,var_vocab)
     message("\nWARNING...inappropriate value detected in '" ,var_name,"' column of the '" ,tab,"' tab:")
     error<-error+1
-    for (j in 1:length(wrong_values)) cat("\t\t", j, ". ", wrong_values[j] ,"\n")
+    for (j in 1:length(wrong_values)) cat("\t\t", wrong_values[j] ,"\n")
   }}
 return(error)
 }
