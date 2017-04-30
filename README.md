@@ -13,11 +13,8 @@ The fastest and easiest way to interact with the soilcarbon database is through 
 shiny::runApp(system.file('shiny', package='soilcarbon'))
 ```
  # Template file
- {% raw %}
-<button onclick="window.open('soilcarbon/inst/extdata/Master_template.xlsx')">Download</button>
-{% endraw %}
 
- [download template](https://github.com/powellcenter-soilcarbon/soilcarbon/blob/master/inst/extdata/Master_template.xlsx)
+ [download template](soilcarbon/inst/extdata/Master_template.xlsx)
 
 
 ---
