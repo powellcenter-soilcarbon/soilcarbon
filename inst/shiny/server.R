@@ -1,15 +1,7 @@
-#
-# This is the server logic of a Shiny web application. You can run the
-# application by clicking 'Run App' above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
-#
 
-# Define server logic required to draw a histogram
-library(soilcarbon)
 library(ggplot2)
+
+
 
 shinyServer(function(input, output, session) {
 
@@ -92,21 +84,28 @@ shinyServer(function(input, output, session) {
 
 
 
-  output$fileUploaded <- reactive({
-    return(!is.null(input$upload))
-  })
+    observe({
+      input$upload
 
- outputOptions(output, 'fileUploaded', suspendWhenHidden=FALSE)
+      output$fileUploaded <- reactive({
+        return(!is.null(input$upload))
+      })
 
-    output$download_dataqc<-downloadHandler(
-      filename = "soilcarbon_dataQC_report.txt",
-      content = function(file) {
-        dataset=read.soilcarbon(input$upload$datapath)
-        dataQC(dataset, writeQCreport=T, outfile = file)
-        }
+      outputOptions(output, 'fileUploaded', suspendWhenHidden=FALSE)
+
+      output$download_dataqc<-downloadHandler(
+        filename = "soilcarbon_dataQC_report.txt",
+        content = function(file) {
+          dataset=read.soilcarbon(input$upload$datapath)
+          dataQC(dataset, writeQCreport=T, outfile = file)
+        },
+        outputArgs = reset('upload')
       )
 
 
+      #Sys.sleep(1)
+      session$sendCustomMessage(type = "resetFileInputHandler", 'upload')
+    })
 
 
 })

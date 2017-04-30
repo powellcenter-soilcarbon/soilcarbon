@@ -1,16 +1,8 @@
-#
-# This is the user-interface definition of a Shiny web application. You can
-# run the application by clicking 'Run App' above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
-#
 
 library(soilcarbon)
 library(ggplot2)
 
-# Define UI for application that draws a histogram
+
 shinyUI(fluidPage(
 
   theme = "bootstrap_simplex.css",
@@ -107,6 +99,14 @@ shinyUI(fluidPage(
              ),
     id = "conditionedPanels"
       )
-    )
+    ),
+  tags$script('
+        Shiny.addCustomMessageHandler("resetFileInputHandler", function(x) {
+              var el = $("#" + x);
+              el.replaceWith(el = el.clone(true));
+              var id = "#" + x + "_progress";
+              $(id).css("visibility", "hidden");
+              });
+              ')
 ))
 
