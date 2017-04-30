@@ -14,7 +14,7 @@ shiny::runApp(system.file('shiny', package='soilcarbon'))
 ```
  # Template file
 
- [download template](/inst/extdata/Master_template.xlsx)
+ [download template](https://github.com/powellcenter-soilcarbon/soilcarbon/raw/master/inst/extdata/Master_template.xlsx)
 
 
 ---
