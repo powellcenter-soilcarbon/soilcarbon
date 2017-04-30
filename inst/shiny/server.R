@@ -98,9 +98,7 @@ shinyServer(function(input, output, session) {
         content = function(file) {
           dataset=read.soilcarbon(input$upload$datapath)
           dataQC(dataset, writeQCreport=T, outfile = file)
-        },
-        outputArgs = reset('upload')
-      )
+        } )
 
 
       #Sys.sleep(1)
