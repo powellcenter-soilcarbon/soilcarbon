@@ -1,6 +1,3 @@
-# soilcarbon
-R package to analyze soil carbon database created by Powell Center working group
-
 # getting started
 To install the soilcarbon package, just run this code in R (you can ignore `install.packages("devtools")` if you already have it).
 ```{r}
