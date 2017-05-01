@@ -6,7 +6,7 @@ Description: Users of 'soilcarbon' will find useful tool for importing, visualiz
 Depends:
     R (>= 3.3.2)
 License: GPL-2 
-Imports:  openxlsx, devtools, ggplot2, colourpicker, shiny
+Imports:  openxlsx, devtools, ggplot2, colourpicker, shiny, httpuv
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 5.0.1
