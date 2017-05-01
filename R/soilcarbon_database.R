@@ -4,6 +4,7 @@
 #'
 #' @import shiny
 #' @import ggplot2
+#' @import httpuv
 #' @format A data frame with 4155 rows and 42 variables:
 #' \describe{
 #'   \item{X13c}{}
