@@ -12,6 +12,7 @@ compileDatabase <- function(dataset_directory ){
   data_files<-list.files( dataset_directory, full.names = T	)
 
   #special dataset (Yujie)
+  data("Yujie_database", package="soilcarbon")
 
   working_database<-Yujie_database
   working_database[] <- lapply(working_database, as.character)
