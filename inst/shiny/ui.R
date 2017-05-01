@@ -89,7 +89,8 @@ shinyUI(fluidPage(
 
   mainPanel(tabsetPanel(
     tabPanel("Database", plotOutput("plot"), value=1),
-    tabPanel("Add data to database", value=2 , helpText("To add a dataset to the soilcarbon database, the data must pass a quality control check without any warning messages, for questions email Grey (greymonroe@gmail.com)"),
+    tabPanel("Add data to database", value=2 , h3("Quality Control Check"),
+             helpText("To add a dataset to the soilcarbon database, the data must pass a quality control check without any warning messages, for questions email Grey (greymonroe@gmail.com)"),
              fileInput("upload", label = "Upload data"),
              conditionalPanel(
                condition = "output.fileUploaded",
