@@ -8,7 +8,7 @@ To install the soilcarbon package, just run this code in R.
 
  If you are on Windows OS, you need this line:
 ```{r]
-install.package(c("htmltools", "httpuv", "xtable"))
+install.packages(c("htmltools", "httpuv", "xtable"))
 ```
 All systems run:
 ```{r}
