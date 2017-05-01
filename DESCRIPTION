@@ -4,9 +4,9 @@ Version: 0.0.0.9001
 Authors@R: person("J Grey", "Monroe", email = "greymonroe@gmail.com", role = c("aut", "cre"))
 Description: Users of 'soilcarbon' will find useful tool for importing, visualizing, and analyzing the soil carbon database created by the Powell Center working group.
 Depends:
-    R (>= 3.3.2)
+    R (>= 3.3.2), httpuv, xtable, htmltools, Rcpp
 License: GPL-2 
-Imports:  openxlsx, devtools, ggplot2, shiny, httpuv, xtable, htmltools, Rcpp
+Imports:  openxlsx, devtools, ggplot2, shiny
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 5.0.1
