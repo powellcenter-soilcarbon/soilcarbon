@@ -186,4 +186,3 @@ Yujie_database
 A dataset containing soil carbon parameters collected by the powell center soil carbon working group
 }
 \keyword{datasets}
-

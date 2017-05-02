@@ -20,4 +20,3 @@ matchvocab(var_data, var_vocab, var_name, tab, error)
 \description{
 Match values in variable to controlled vocab
 }
-

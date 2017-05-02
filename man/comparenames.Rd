@@ -12,4 +12,3 @@ comparenames(names)
 \description{
 Compares the names at names between hierarchical levels, used in dataQC
 }
-

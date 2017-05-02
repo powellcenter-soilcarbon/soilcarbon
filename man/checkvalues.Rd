@@ -14,4 +14,3 @@ checkvalues(data, tab)
 \description{
 Check certain column values to match what is expected, used in dataQC
 }
-

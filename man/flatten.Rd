@@ -12,4 +12,3 @@ flatten(soilcarbon_data)
 \description{
 converts heierachically strucutred soilcarbon data into flat data.frame
 }
-

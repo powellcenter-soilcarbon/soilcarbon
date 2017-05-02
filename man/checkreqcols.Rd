@@ -14,4 +14,3 @@ checkreqcols(data, tab)
 \description{
 Check the required columns of different tabs in the dataset to make sure they exist and have values, used in dataQC
 }
-

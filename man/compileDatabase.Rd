@@ -12,4 +12,3 @@ compileDatabase(dataset_directory)
 \description{
 adds dataset to soilcarbon database
 }
-

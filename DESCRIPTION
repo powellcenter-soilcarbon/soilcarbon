@@ -1,15 +1,14 @@
 Package: soilcarbon
-Title: Tools to analyze soil carbon database created by Powell Center working group
-Version: 1.0.0.000
+Title: Tools to Analyze Soil Carbon Database Created by Powell Center Working Group
 Authors@R: person("J Grey", "Monroe", email = "greymonroe@gmail.com", role = c("aut", "cre"))
 Description: Users of 'soilcarbon' will find useful tool for importing, visualizing, and analyzing the soil carbon database created by the Powell Center working group.
 Depends:
     R (>= 3.3.2)
 License: GPL-2 
-Imports:  openxlsx, devtools, ggplot2, shiny
+Imports: openxlsx, devtools, ggplot2, shiny
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1
 Suggests: knitr,
     rmarkdown
 VignetteBuilder: knitr

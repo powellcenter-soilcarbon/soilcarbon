@@ -14,4 +14,3 @@ read.soilcarbon(file, template = F)
 \description{
 This function imports data from xlsx format matching the standard soil carbon data template
 }
-

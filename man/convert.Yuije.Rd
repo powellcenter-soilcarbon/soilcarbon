@@ -12,4 +12,3 @@ convert.Yuije(Yujie_file)
 \description{
 This function converts data compiled by Yuije into format compatable with the soilcarbon template
 }
-

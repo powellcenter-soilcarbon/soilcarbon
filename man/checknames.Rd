@@ -16,4 +16,3 @@ checknames(data, name, tabs)
 \description{
 Check the names of different levels in the dataset to make sure they match, used in dataQC
 }
-

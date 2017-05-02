@@ -19,4 +19,3 @@ dataQC(data, tabs = c("metadata", "site", "profile", "layer", "fraction"),
 \description{
 Check the imported soil carbon dataset for formatting and entry errors
 }
-

@@ -16,4 +16,3 @@ checkcolnames(data, tab, soilcarbon_template)
 \description{
 Check the column names of different tabs in the dataset to make sure they match, used in dataQC
 }
-

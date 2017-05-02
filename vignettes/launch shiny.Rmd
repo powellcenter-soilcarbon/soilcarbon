@@ -1,0 +1,16 @@
+---
+title: "Launch shiny app"
+author: "J Grey Monroe"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+Launch the shiny app with this code:
+```{r, eval=F}
+shiny::runApp(system.file('shiny', package='soilcarbon'))
+
+```

@@ -14,4 +14,3 @@ getnames(data, name)
 \description{
 Extracts the names at names between hierarchical levels, used to compare names between levels
 }
-
