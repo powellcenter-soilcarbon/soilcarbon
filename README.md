@@ -18,7 +18,7 @@ devtools::install_github("powellcenter-soilcarbon/soilcarbon")
 (You only need to run `install.package(c("htmltools", "httpuv", "xtable")` and `install.packages("devtools")` once, but as the soilcarbon is developed you can run `devtools::install_github("powellcenter-soilcarbon/soilcarbon")` to get the latest version.)
 
 ## Run soilcarbon shiny workbench
-![](site_files/assets/images/plots.png?raw=true)
+![](site_files/assets/images/plots.png?raw=true "Screenshot")
 The fastest and easiest way to interact with the soilcarbon database is through an R shiny app that comes with the soilcarbon pacakge. After you have installed the package, just run this code in R:
 ```{r}
 shiny::runApp(system.file('shiny', package='soilcarbon'))
@@ -26,7 +26,7 @@ shiny::runApp(system.file('shiny', package='soilcarbon'))
 In this shiny app, you can plot or download data in the database, and run a quality control check on a datafile you want to submit to the database.
 
 # Adding data
-![](site_files/assets/images/add.png?raw=true)
+![](site_files/assets/images/add.png?raw=true "Screenshot")
 
 ## Download Template file
 The template file for adding new data to the database can be accessed through the soilcarbon shiny app, or can be downloaded at this link.
