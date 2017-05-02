@@ -26,6 +26,11 @@ shiny::runApp(system.file('shiny', package='soilcarbon'))
 In this shiny app, you can plot or download data in the database, and run a quality control check on a datafile you want to submit to the database.
 
 # Adding data
+
+<kbd>
+  <img src="site_files/assets/images/add.png?raw=true">
+</kbd>
+
 ![](site_files/assets/images/add.png?raw=true "Screenshot")
 
 ## Download Template file
