@@ -1,10 +1,7 @@
 
 library(ggplot2)
 
-
-
 shinyServer(function(input, output, session) {
-
 
   output$plot <- renderPlot({
 
@@ -38,30 +35,32 @@ shinyServer(function(input, output, session) {
       plot_data$facet_cut2[which(plot_data$facet_cut2==F)]<-paste(variables$row_facet_var, " > ", row_facet_thresh)
     }
 
-
-    if(is.null(variables$size)){
-      p<-ggplot(plot_data, aes_string(x=variables$x_var, y=variables$y_var, col=variables$col_var))+
-        geom_point(alpha=input$alpha, size=2)+
+    if(is.null(variables$y_var)){
+      p<-ggplot(plot_data, aes_string(x=variables$x_var,  col=variables$col_var))+
+        geom_histogram(bins = 30)+
         facet_grid(facet_cut2~facet_cut)+
         scale_colour_gradient(low="dodgerblue", high="orange")+
-        scale_y_reverse()+
         theme_light(base_size = 16)+
         theme(strip.background = element_blank())+
         theme(strip.text = element_text(colour = 'black'))
-      print(p)
-    }else {
-
-    p<-ggplot(plot_data, aes_string(x=variables$x_var, y=variables$y_var,size=variables$size_var, col=variables$col_var))+
-      geom_point(alpha=input$alpha)+
-      scale_colour_gradient(low="dodgerblue", high="orange")+
-      facet_grid(facet_cut2~facet_cut)+
-      scale_y_reverse()+
-      theme_light(base_size = 16)+
-      theme(strip.background = element_rect(fill="white"))+
-      theme(strip.text = element_text(colour = 'black'))+
-      scale_size_continuous(range = c(1, 10))
+      p
+    }else{
+      p<-ggplot(plot_data, aes_string(x=variables$x_var, y=variables$y_var, col=variables$col_var))+
+        facet_grid(facet_cut2~facet_cut)+
+        scale_colour_gradient(low="dodgerblue", high="orange")+
+        theme_light(base_size = 16)+
+        theme(strip.background = element_blank())+
+        theme(strip.text = element_text(colour = 'black'))
+      if(variables$y_var=="layer_top" | variables$y_var=="layer_bot"){
+        p<-p+scale_y_reverse()
+      }
+    if(is.null(variables$size)){
+      p<-p+geom_point(alpha=input$alpha, size=2)
+      }else
+    p<-p+geom_point(alpha=input$alpha, aes_string(size=variables$size_var))+ scale_size_continuous(range = c(1, 10))
+    }
     print(p)
-}
+
   })
 
   output$download_database<-downloadHandler(
@@ -100,8 +99,6 @@ shinyServer(function(input, output, session) {
           dataQC(dataset, writeQCreport=T, outfile = file)
         } )
 
-
-      #Sys.sleep(1)
       session$sendCustomMessage(type = "resetFileInputHandler", 'upload')
     })
 

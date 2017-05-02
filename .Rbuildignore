@@ -3,3 +3,5 @@
 ^_config\.yml$
 ^NEWS\.md$
 ^cran-comments\.md$
+^data_files$
+^site_files$
