@@ -1,7 +1,6 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^_config\.yml$
-^NEWS\.md$
 ^cran-comments\.md$
 ^data_files$
 ^site_files$
