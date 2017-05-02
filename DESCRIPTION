@@ -1,5 +1,5 @@
 Package: soilcarbon
-Title: Tools to Analyze Soil Carbon Database Created by Powell Center Working Group
+Title: Tools To Analyze Soil Carbon Database Created By Powell Center Working Group
 Version: 1.0.0
 Authors@R: person("J Grey", "Monroe", email = "greymonroe@gmail.com", role = c("aut", "cre"))
 Description: Users of 'soilcarbon' will find useful tool for importing, visualizing, and analyzing the soil carbon database created by the Powell Center working group.
