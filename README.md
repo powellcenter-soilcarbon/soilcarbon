@@ -18,6 +18,7 @@ devtools::install_github("powellcenter-soilcarbon/soilcarbon")
 (You only need to run `install.package(c("htmltools", "httpuv", "xtable")` and `install.packages("devtools")` once, but as the soilcarbon is developed you can run `devtools::install_github("powellcenter-soilcarbon/soilcarbon")` to get the latest version.)
 
 ## Run soilcarbon shiny workbench
+![](site_files/assets/images/plots.png?raw=true)
 The fastest and easiest way to interact with the soilcarbon database is through an R shiny app that comes with the soilcarbon pacakge. After you have installed the package, just run this code in R:
 ```{r}
 shiny::runApp(system.file('shiny', package='soilcarbon'))
