@@ -17,8 +17,12 @@ If you don't already have them, download and install R [https://www.r-project.or
 
 ## Install soilcarbon package
 
-### For development version
-### Windows install
+```{r}
+install.packages("soilcarbon")
+```
+
+#### For development version
+ Windows install
 1. Use button above to download package as .zip file
 1. Unzip folder
 1. Run this code in R (but replace "path/to/directory" with the correct path on your computer):
@@ -26,8 +30,7 @@ If you don't already have them, download and install R [https://www.r-project.or
 install.packages("devtools")
 devtools::install("path/to/directory/soilcarbon-master", dependencies=T)
 ```
-
-### Mac/Linux
+Mac/Linux
 Just run this in R:
 ```{r}
 install.packages("devtools")
