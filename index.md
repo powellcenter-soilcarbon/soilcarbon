@@ -7,6 +7,9 @@ Soils are a vast reservoir of organic carbon (C), rendering the fate of soil C a
 This database will compile soil carbon data at a global scale, to the resolution of fractionation data. 
 
 # soilcarbon R package
+Now on CRAN! 
+[https://CRAN.R-project.org/package=soilcarbon](https://CRAN.R-project.org/package=soilcarbon)
+
 # getting started
 ## Install R (and RStudio)
 
