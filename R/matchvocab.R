@@ -8,7 +8,8 @@
 #' @param tab name of the tab that the variable is found in
 #' @param error error counter
 #' @export
-#'
+#' @examples
+#' matchvocab(var_data = c("A", "B"), var_vocab=c("A", "B", "C"), tab="site", error=0)
 
 matchvocab<-function(var_data, var_vocab, var_name, tab, error){
   if(!is.null(var_data)){

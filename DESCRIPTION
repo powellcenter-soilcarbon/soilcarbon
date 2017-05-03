@@ -3,6 +3,8 @@ Title: Tools to Analyze Soil Carbon Database Created by Powell Center Working Gr
 Version: 1.0.0
 Authors@R: person("J Grey", "Monroe", email = "greymonroe@gmail.com", role = c("aut", "cre"))
 Description: Users of 'soilcarbon' will find a tool for importing, visualizing, and analyzing the soil carbon database created by the Powell Center working group.
+URL: https://powellcenter-soilcarbon.github.io/soilcarbon/
+BugReports: https://github.com/powellcenter-soilcarbon/soilcarbon/issues
 Depends:
     R (>= 3.3.2)
 License: GPL-2 
