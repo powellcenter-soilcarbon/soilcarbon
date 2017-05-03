@@ -1,5 +1,5 @@
 # Database
-![](site_files/assets/images/map.png?raw=true )
+![](site_files/assets/images/map.png?raw=true =100x)
 
 # getting started
 ## Install R (and RStudio)
