@@ -1,3 +1,11 @@
+# About the working group
+[https://powellcenter.usgs.gov/view-project/55d4bffce4b0518e354695aa](https://powellcenter.usgs.gov/view-project/55d4bffce4b0518e354695aa)
+
+Soils are a vast reservoir of organic carbon (C), rendering the fate of soil C an important control on the global climate system. Widespread changes in soil C storage capacity present a potentially strong feedback to global change. Yet, a comprehensive understanding of how soil C will respond to climate and/or land use disturbance remains illusive, resulting in major uncertainties in global climate models. Our working group will synthesize information on the processes controlling soil C storage across different spatial scales and develop new procedures to translate local measurements to the regional and global scale datasets used by models. 
+
+# Database
+This database will compile soil carbon data at a global scale, to the resolution of fractionation data. 
+
 # getting started
 ## Install R (and RStudio)
 
