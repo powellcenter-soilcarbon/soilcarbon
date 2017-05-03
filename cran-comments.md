@@ -1,12 +1,8 @@
 ## Resubmission
 This is a resubmission. In this version I have:
 
-* Added examples...
-            checking examples ... OK
-* Added URL to DESCRIPTION...
-            URL: https://powellcenter-soilcarbon.github.io/soilcarbon/
-* Added BugReports to DESCRIPTION...
-            BugReports: https://github.com/powellcenter-soilcarbon/soilcarbon/issues
+* changed Description in DESCRIPTION to "Description: A tool for importing, visualizing, and analyzing the soil carbon database created by the Powell Center working group."
+
 
 
 Status: OK
