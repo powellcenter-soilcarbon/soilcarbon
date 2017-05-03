@@ -21,7 +21,6 @@ Just run this in R:
 install.packages("devtools")
 devtools::install_github("powellcenter-soilcarbon/soilcarbon")
 ```
-(You only need to run `install.package(c("htmltools", "httpuv", "xtable")` and `install.packages("devtools")` once, but as the soilcarbon is developed you can run `devtools::install_github("powellcenter-soilcarbon/soilcarbon")` to get the latest version.)
 
 ## Run soilcarbon shiny workbench
 ### Screenshot:
