@@ -7,8 +7,6 @@ Soils are a vast reservoir of organic carbon (C), rendering the fate of soil C a
 This database will compile soil carbon data at a global scale, to the resolution of fractionation data. 
 
 # soilcarbon R package
-Now on CRAN! 
-[https://CRAN.R-project.org/package=soilcarbon](https://CRAN.R-project.org/package=soilcarbon)
 
 # getting started
 ## Install R (and RStudio)
@@ -17,24 +15,9 @@ If you don't already have them, download and install R [https://www.r-project.or
 
 ## Install soilcarbon package
 
+Run this in R:
 ```{r}
 install.packages("soilcarbon")
-```
-
-#### For development version
- Windows install
-1. Use button above to download package as .zip file
-1. Unzip folder
-1. Run this code in R (but replace "path/to/directory" with the correct path on your computer):
-```{r]
-install.packages("devtools")
-devtools::install("path/to/directory/soilcarbon-master", dependencies=T)
-```
-Mac/Linux
-Just run this in R:
-```{r}
-install.packages("devtools")
-devtools::install_github("powellcenter-soilcarbon/soilcarbon")
 ```
 
 ## Run soilcarbon shiny workbench
