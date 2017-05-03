@@ -6,6 +6,7 @@ Soils are a vast reservoir of organic carbon (C), rendering the fate of soil C a
 # Database
 This database will compile soil carbon data at a global scale, to the resolution of fractionation data. 
 
+# soilcarbon R package
 # getting started
 ## Install R (and RStudio)
 
