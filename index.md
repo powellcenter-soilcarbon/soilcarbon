@@ -1,3 +1,6 @@
+# Database
+![](site_files/assets/images/map.png?raw=true )
+
 # getting started
 ## Install R (and RStudio)
 
