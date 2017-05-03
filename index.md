@@ -4,13 +4,19 @@
 If you don't already have them, download and install R [https://www.r-project.org/](https://www.r-project.org/) and RStudio (optional) [https://www.rstudio.com/products/rstudio/download/](https://www.rstudio.com/products/rstudio/download/).
 
 ## Install soilcarbon package
-To install the soilcarbon package, just run this code in R. 
 
- If you are on Windows OS, you need this line:
+### For development version
+### Windows install
+1. Use button above to download package as .zip file
+1. Unzip folder
+1. Run this code in R (but replace "path/to/directory" with the correct path on your computer):
 ```{r]
-install.packages(c("htmltools", "httpuv", "xtable"))
+install.packages("devtools")
+devtools::install("path/to/directory/soilcarbon-master", dependencies=T)
 ```
-All systems run:
+
+### Mac/Linux
+Just run this in R:
 ```{r}
 install.packages("devtools")
 devtools::install_github("powellcenter-soilcarbon/soilcarbon")
