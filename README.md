@@ -51,8 +51,11 @@ If you are still having trouble passing the quality control test, send an email 
 # Features for next update
 Soilcarbon will not require most recent version of R
 add soilcarbonWorkbench() to launch shiny app
-change requirement that users remove description rows from data templates to submit?
+change requirement that users remove description rows from data templates to submit
 add new data to dataset
 add updateSoilcarbonDatabase()
+double check remove empyt rows function
+fix reupload bug
+add regular test (daily)
 
 
