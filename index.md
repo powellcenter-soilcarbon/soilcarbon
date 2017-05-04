@@ -4,8 +4,7 @@ This database includes soil carbon data at a global scale, to the resolution of 
 # Add data
 ## Template
 **Links:**  
-[Template file](https://github.com/powellcenter-soilcarbon/soilcarbon/raw/master/inst/extdata/Master_template.xlsx)  
-Variables with red column names are required and cannot have missing values.
+[Template file](https://github.com/powellcenter-soilcarbon/soilcarbon/raw/master/inst/extdata/Master_template.xlsx)(Variables with red column names are required and cannot have missing values.)  
 [Template instructions](https://github.com/powellcenter-soilcarbon/soilcarbon/raw/master/inst/extdata/Template_info.html)  
 
 ## Check data compatability
