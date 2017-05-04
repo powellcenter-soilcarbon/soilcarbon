@@ -9,8 +9,7 @@ This database includes soil carbon data at a global scale, to the resolution of 
 
 ## Check data compatability
 
-1. Install R 
-If you don't already have them, download and install R [https://www.r-project.org/](https://www.r-project.org/) 
+1. Install latest version of R [https://www.r-project.org/](https://www.r-project.org/)
 2. Install soilcarbon package (run this in R):
 ```{r}
 install.packages("soilcarbon")
