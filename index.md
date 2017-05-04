@@ -12,17 +12,17 @@ Variables with red column names are required and cannot have missing values.
 
 1. Install R 
 If you don't already have them, download and install R [https://www.r-project.org/](https://www.r-project.org/) 
-2. Install soilcarbon package
-Run this in R:
+2. Install soilcarbon package (run this in R):
 ```{r}
 install.packages("soilcarbon")
 ```
-3. Run soilcarbon shiny workbench
+3. Run soilcarbon shiny workbench in R
 ```{r}
-shiny::runApp(system.file('shiny', package='soilcarbon'))
+shiny::runApp(system.file('shiny', package='soilcarbon', launch.browser=T))
 ```
 4. Go to the 'add data to database' tab.
 5. Click 'Browse' and chose the data file (Template file that you have filled with data) 
 6. Click 'download quality control report' 
 7. Look at the text file that is downloaded. Warning messages will describe any problems in the data file.
+8. If your data passes the check, email it to greymonroe@gmail.com.
 
