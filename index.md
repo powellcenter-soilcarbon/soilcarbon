@@ -16,7 +16,7 @@ install.packages("soilcarbon")
 ```
 3. Run soilcarbon shiny workbench in R
 ```{r}
-shiny::runApp(system.file('shiny', package='soilcarbon', launch.browser=T))
+shiny::runApp(system.file('shiny', package='soilcarbon'))
 ```
 4. Go to the 'add data to database' tab.
 5. Click 'Browse' and chose the data file (Template file that you have filled with data) 
