@@ -48,7 +48,10 @@ If you are having trouble understanding the formatting requirements for passing 
 
 If you are still having trouble passing the quality control test, send an email to Grey Monroe (greymonroe @ gmail.com) with a description of your problem, along with the data file and quality control report.
 
-# Features for next update
+# Features available in development version 
+* Soilcarbon will not require most recent version of R
+
+# Features to add for next update
 * Soilcarbon will not require most recent version of R
 * add soilcarbonWorkbench() to launch shiny app
 * change requirement that users remove description rows from data templates to submit
@@ -77,3 +80,5 @@ If you are still having trouble passing the quality control test, send an email 
 		 12 .  f_al_dith 
 		 13 .  f_si_dith 
 * 'humid continental hot summer, wet all year' listed twice in the template (remove) is something else missing?
+* allow for level_names to not exist in fraction tab (they didnt do fractionation) but give note
+* Markdown file of description of each variable
