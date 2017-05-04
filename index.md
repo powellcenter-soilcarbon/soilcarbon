@@ -57,5 +57,5 @@ If you are still having trouble passing the quality control test, send an email 
 
 # For development version of soilcarbon
 ```{r}
-devtools::install_github("powellcenter-soilcarbon/soilcarbon")
+devtools::install_github("powellcenter-soilcarbon/soilcarbon", brach="development")
 ```
