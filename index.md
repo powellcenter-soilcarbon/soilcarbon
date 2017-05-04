@@ -55,4 +55,7 @@ If you are having trouble understanding the formatting requirements for passing 
 
 If you are still having trouble passing the quality control test, send an email to Grey Monroe (greymonroe @ gmail.com) with a description of your problem, along with the data file and quality control report.
 
-
+# For development version of soilcarbon
+```{r}
+devtools::install_github("powellcenter-soilcarbon/soilcarbon")
+```
