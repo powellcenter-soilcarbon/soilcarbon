@@ -49,14 +49,13 @@ If you are having trouble understanding the formatting requirements for passing 
 If you are still having trouble passing the quality control test, send an email to Grey Monroe (greymonroe @ gmail.com) with a description of your problem, along with the data file and quality control report.
 
 # Features for next update
-Soilcarbon will not require most recent version of R
-add soilcarbonWorkbench() to launch shiny app
-change requirement that users remove description rows from data templates to submit
-add new data to dataset
-add updateSoilcarbonDatabase()
-double check remove empyt rows function
-fix reupload bug
-add regular test (daily)
-If shiny launches in R studio downloads dont have correct names (force launch in browser)
-Drop down options (controlled vocab and level names in excel template)
-
+* Soilcarbon will not require most recent version of R
+* add soilcarbonWorkbench() to launch shiny app
+* change requirement that users remove description rows from data templates to submit
+* add new data to dataset
+* add updateSoilcarbonDatabase()
+* double check remove empyt rows function
+* fix reupload bug
+* add regular test (daily)
+* If shiny launches in R studio downloads dont have correct names (force launch in browser)
+* Drop down options (controlled vocab and level names in excel template)
