@@ -1,3 +1,4 @@
+[About the working group](#About the working group)
 # About the working group
 [https://powellcenter.usgs.gov/view-project/55d4bffce4b0518e354695aa](https://powellcenter.usgs.gov/view-project/55d4bffce4b0518e354695aa)
 
