@@ -59,3 +59,21 @@ If you are still having trouble passing the quality control test, send an email 
 * add regular test (daily)
 * If shiny launches in R studio downloads dont have correct names (force launch in browser)
 * Drop down options (controlled vocab and level names in excel template)
+* The upper limit of the last density fraction is "Inf"
+* If the data should be there but its wrong or not reported in the paper, put "missing"
+* Shiny: When it passes, can it say "Yay! It passed!" or "Congratulations!" (several people requested this)
+* Template: Selective dissolution columns need to be added to the fraction template. This warning lists the columns
+ 1 .  f_fe_ox 
+		 2 .  f_al_ox 
+		 3 .  f_si_ox 
+		 4 .  f_c_ox 
+		 5 .  f_ox_notes 
+		 6 .  f_fe_hy 
+		 7 .  f_al_hy 
+		 8 .  f_si_hy 
+		 9 .  f_c_hy 
+		 10 .  f_hy_notes 
+		 11 .  f_fe_dith 
+		 12 .  f_al_dith 
+		 13 .  f_si_dith 
+* 'humid continental hot summer, wet all year' listed twice in the template (remove) is something else missing?
