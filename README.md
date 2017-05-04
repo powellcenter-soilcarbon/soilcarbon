@@ -50,10 +50,10 @@ If you are still having trouble passing the quality control test, send an email 
 
 # Features available in development version 
 * Soilcarbon will not require most recent version of R
+* Drop down options (controlled vocab and level names in excel template)
 
 # Features to add for next update
 ### Template
-* Drop down options (controlled vocab and level names in excel template)
 * Template: Selective dissolution columns need to be added to the fraction template. This warning lists the columns
  1 .  f_fe_ox 
 		 2 .  f_al_ox 
@@ -70,6 +70,7 @@ If you are still having trouble passing the quality control test, send an email 
 		 13 .  f_si_dith 
 * 'humid continental hot summer, wet all year' listed twice in the template (remove) is something else missing?
 * For “soil pH other” column, it needs an accompanying column to specific what the “other” pH method was (e.g. KCl, HF, etc)
+* It occurred to me that “Beyond Clay” identified exchangeable Ca as one of the variables we’re recommending people use to model soil C content, but our own database doesn’t include that as a reported variable. I think we should create columns for the individual exchangeable cations.
 
 ### Template instructions
 * Markdown file of description of each variable (check resources folder in Powell Center)
