@@ -1,6 +1,6 @@
 ## Database template
 [Template file](https://github.com/powellcenter-soilcarbon/soilcarbon/raw/master/inst/extdata/Master_template.xlsx) (Variables with red column names are required)  
-[Template instructions](https://github.com/powellcenter-soilcarbon/soilcarbon/raw/master/site_files/Template_info.html)
+[Template instructions](/site_files/Template_info.html)
 
 ## Check data compatability
 
