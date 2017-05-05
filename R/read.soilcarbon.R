@@ -35,7 +35,9 @@ read.soilcarbon<-function(file, template=F){
   if (template==F){
   for (i in 1:length(data_workbook)){
     data<-data_workbook[[i]]
-    data[grep("^[ ]+$", data)]<-NA
+      for (j in 1:ncol(data)){
+     data[,j][grep("^[ ]+$", data[,j])]<-NA
+      }
     data_workbook[[i]]<-data
     data_workbook[[i]]<-data_workbook[[i]][rowSums(is.na(data_workbook[[i]])) != ncol(data_workbook[[i]]),]
 

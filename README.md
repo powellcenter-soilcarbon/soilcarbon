@@ -51,9 +51,16 @@ If you are still having trouble passing the quality control test, send an email 
 # Features available in development version 
 * Soilcarbon will not require most recent version of R
 * Drop down options (controlled vocab and level names in excel template)
+* change requirement that users remove description rows from data templates to submit
+
+### read.soilcarbon()
+* double check remove empty rows function (gsub("[ ]+")
+* remove top two rows (description rows)
+
 
 # Features to add for next update
 ### Template
+* add f_agent column
 * Template: Selective dissolution columns need to be added to the fraction template. 
  1 .  f_fe_ox 
 		 2 .  f_al_ox 
@@ -78,7 +85,6 @@ If you are still having trouble passing the quality control test, send an email 
 * The upper limit of the last density fraction is "Inf"
 * If the data should be there but not reported in the paper, put "missing"
 * if it is wrong, put 'wrong'
-* change requirement that users remove description rows from data templates to submit
 
 ### Package
 * Soilcarbon will not require most recent version of R
@@ -91,11 +97,12 @@ If you are still having trouble passing the quality control test, send an email 
 * fix reupload bug
 * Shiny: When it passes, can it say "Yay! It passed!" or "Congratulations!" (several people requested this)
 
-### read.soilcarbon()
-* double check remove empty rows function (gsub("[ ]+")
-* remove top two rows (description rows)
 
 ### dataQC()
 * New required columns in metadata tab
 * check that top two 'description rows' are present in the datafile
 * allow for level_names to not exist in fraction tab (they didnt do fractionation) but give note
+
+* ingest NRCS, translation
+* add database.build()
+* add unique profile ID (paste site profile)
