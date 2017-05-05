@@ -28,7 +28,7 @@ read.soilcarbon<-function(file, template=F){
   fraction<-read.xlsx(file , sheet="fraction")
 
   data_workbook=list(metadata=metadata, site=site, profile=profile, layer=layer, fraction=fraction)
-  data_workbook<-lappy(data_workbook, function(x) x<-x[-1:-2,])
+  data_workbook<-lapply(data_workbook, function(x) x<-x[-1:-2,])
 
 
   #remove empty rows
