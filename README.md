@@ -50,22 +50,11 @@ If you are still having trouble passing the quality control test, send an email 
 
 # Features available in development version 
 * Soilcarbon will not require most recent version of R
+* Drop down options (controlled vocab and level names in excel template)
 
 # Features to add for next update
-* Soilcarbon will not require most recent version of R
-* add soilcarbonWorkbench() to launch shiny app
-* change requirement that users remove description rows from data templates to submit
-* add new data to dataset
-* add updateSoilcarbonDatabase()
-* double check remove empyt rows function
-* fix reupload bug
-* add regular test (daily)
-* If shiny launches in R studio downloads dont have correct names (force launch in browser)
-* Drop down options (controlled vocab and level names in excel template)
-* The upper limit of the last density fraction is "Inf"
-* If the data should be there but its wrong or not reported in the paper, put "missing"
-* Shiny: When it passes, can it say "Yay! It passed!" or "Congratulations!" (several people requested this)
-* Template: Selective dissolution columns need to be added to the fraction template. This warning lists the columns
+### Template
+* Template: Selective dissolution columns need to be added to the fraction template. 
  1 .  f_fe_ox 
 		 2 .  f_al_ox 
 		 3 .  f_si_ox 
@@ -80,5 +69,33 @@ If you are still having trouble passing the quality control test, send an email 
 		 12 .  f_al_dith 
 		 13 .  f_si_dith 
 * 'humid continental hot summer, wet all year' listed twice in the template (remove) is something else missing?
+* For “soil pH other” column, it needs an accompanying column to specific what the “other” pH method was (e.g. KCl, HF, etc)
+* It occurred to me that “Beyond Clay” identified exchangeable Ca as one of the variables we’re recommending people use to model soil C content, but our own database doesn’t include that as a reported variable. I think we should create columns for the individual exchangeable cations.
+* I would argue that column S in the layer tab should be ”% inorganic C” instead of “% carbonate”.
+
+### Template instructions
+* Markdown file of description of each variable (check resources folder in Powell Center)
+* The upper limit of the last density fraction is "Inf"
+* If the data should be there but not reported in the paper, put "missing"
+* if it is wrong, put 'wrong'
+* change requirement that users remove description rows from data templates to submit
+
+### Package
+* Soilcarbon will not require most recent version of R
+* add updateSoilcarbonDatabase()
+* add regular test (daily)
+* add new data to dataset
+* add soilcarbonWorkbench() to launch shiny app  (If shiny launches in R studio downloads dont have correct names (force launch in browser))
+
+### Shiny App
+* fix reupload bug
+* Shiny: When it passes, can it say "Yay! It passed!" or "Congratulations!" (several people requested this)
+
+### read.soilcarbon()
+* double check remove empty rows function (gsub("[ ]+")
+* remove top two rows (description rows)
+
+### dataQC()
+* New required columns in metadata tab
+* check that top two 'description rows' are present in the datafile
 * allow for level_names to not exist in fraction tab (they didnt do fractionation) but give note
-* Markdown file of description of each variable
