@@ -5,6 +5,12 @@ date: "5/4/2017"
 output: html_document
 ---
 
+### Jump to:
+1. [metadata tab](#metadata) 
+1. [site tab](#site)
+1. [profile tab](#profile) 
+1. [layer tab](#layer)
+1. [fraction tab](#fraction)
 
 ```{r, echo=F}
 
@@ -17,7 +23,37 @@ metadata<-read.xlsx(Template_info_file , sheet="metadata")
   profile<-read.xlsx(Template_info_file , sheet="profile")
   layer<-read.xlsx(Template_info_file , sheet="layer")
   fraction<-read.xlsx(Template_info_file , sheet="fraction")
-  
+```
+
+# metadata
+```{r, echo=F}
+library(knitr)
+kable(metadata)
+```
+
+# site
+```{r, echo=F}
+library(knitr)
+kable(site)
+```
+
+# profile
+```{r, echo=F}
+library(knitr)
+kable(profile)
+```
+
+# layer
+```{r, echo=F}
+library(knitr)
+kable(layer)
+```
+
+# fraction
+```{r, echo=F}
 library(knitr)
 kable(fraction)
 ```
+
+
+
