@@ -18,11 +18,17 @@ library(openxlsx)
 Template_info_file=system.file("extdata", "Template_info.xlsx", package = "soilcarbon")
 sheets<-getSheetNames(Template_info_file)
 
-metadata<-read.xlsx(Template_info_file , sheet="metadata")
+  metadata<-read.xlsx(Template_info_file , sheet="metadata")
+    metadata[is.na(metadata)]<-""
   site<-read.xlsx(Template_info_file , sheet="site")
+    site[is.na(site)]<-""
   profile<-read.xlsx(Template_info_file , sheet="profile")
+    profile[is.na(profile)]<-""
   layer<-read.xlsx(Template_info_file , sheet="layer")
+    layer[is.na(layer)]<-""
   fraction<-read.xlsx(Template_info_file , sheet="fraction")
+    fraction[is.na(fraction)]<-""
+  
 ```
 
 # metadata

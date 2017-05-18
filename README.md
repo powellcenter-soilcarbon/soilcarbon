@@ -50,18 +50,13 @@ If you are still having trouble passing the quality control test, send an email 
 
 # Features available in development version 
 * Soilcarbon will not require most recent version of R
-* Drop down options (controlled vocab and level names in excel template)
 * change requirement that users remove description rows from data templates to submit
 
-### read.soilcarbon()
-* double check remove empty rows function (gsub("[ ]+")
-* remove top two rows (description rows)
-
-
-# Features to add for next update
 ### Template
-* add f_agent column
-* Template: Selective dissolution columns need to be added to the fraction template. 
+* adedd f_agent column
+* Drop down options (controlled vocab and level names in excel template)
+* “% carbonate” in layer tab is now ”% inorganic C”
+Selective dissolution columns need to be added to the fraction template. 
  1 .  f_fe_ox 
 		 2 .  f_al_ox 
 		 3 .  f_si_ox 
@@ -75,10 +70,16 @@ If you are still having trouble passing the quality control test, send an email 
 		 11 .  f_fe_dith 
 		 12 .  f_al_dith 
 		 13 .  f_si_dith 
-* 'humid continental hot summer, wet all year' listed twice in the template (remove) is something else missing?
-* For “soil pH other” column, it needs an accompanying column to specific what the “other” pH method was (e.g. KCl, HF, etc)
+* For “soil pH other” column, there is now an accompanying column to specific what the “other” pH method was (e.g. KCl, HF, etc)
+
+### read.soilcarbon()
+* double check remove empty rows function (gsub("[ ]+")
+* remove top two rows (description rows)
+
+
+# Features to add for next update
+### Template
 * It occurred to me that “Beyond Clay” identified exchangeable Ca as one of the variables we’re recommending people use to model soil C content, but our own database doesn’t include that as a reported variable. I think we should create columns for the individual exchangeable cations.
-* I would argue that column S in the layer tab should be ”% inorganic C” instead of “% carbonate”.
 
 ### Template instructions
 * Markdown file of description of each variable (check resources folder in Powell Center)
