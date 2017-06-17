@@ -57,7 +57,7 @@ If you are still having trouble passing the quality control test, send an email 
 * Drop down options (controlled vocab and level names in excel template)
 * “% carbonate” in layer tab is now ”% inorganic C”
 Selective dissolution columns need to be added to the fraction template. 
- 1 .  f_fe_ox 
+     1 .  f_fe_ox 
 		 2 .  f_al_ox 
 		 3 .  f_si_ox 
 		 4 .  f_c_ox 
@@ -71,22 +71,34 @@ Selective dissolution columns need to be added to the fraction template.
 		 12 .  f_al_dith 
 		 13 .  f_si_dith 
 * For “soil pH other” column, there is now an accompanying column to specific what the “other” pH method was (e.g. KCl, HF, etc)
+* It occurred to me that “Beyond Clay” identified exchangeable Ca as one of the variables we’re recommending people use to model soil C content, but our own database doesn’t include that as a reported variable. I think we should create columns for the individual exchangeable cations....added to Layer tab: ph_other_method, Ca_exch, Na_exch, Mg_exch, K_exch, calcite_dolomite, zeolite
+* Fraction tab: f_zeolite
+* add metadata_note column
+* add tc, oc and ic columns to layer and fraction ("f_")
+
 
 ### read.soilcarbon()
 * double check remove empty rows function (gsub("[ ]+")
 * remove top two rows (description rows)
 
+### dataQC()
+* New required columns in metadata tab
+* allow for level_names to not exist in fraction tab (they didnt do fractionation) but give note
+* flag f_property
+* When it passes it say "Yay! It passed!" or "Congratulations!" 
+
 
 # Features to add for next update
 ### Template
-* It occurred to me that “Beyond Clay” identified exchangeable Ca as one of the variables we’re recommending people use to model soil C content, but our own database doesn’t include that as a reported variable. I think we should create columns for the individual exchangeable cations.
+* controlled vocab for ph_other_method
+* remove columns in site tab that should be extracted from lat lon
 
 ### Template instructions
 * Markdown file of description of each variable (check resources folder in Powell Center)
 * The upper limit of the last density fraction is "Inf"
 * If the data should be there but not reported in the paper, put "missing"
 * if it is wrong, put 'wrong'
-
+* Tem
 ### Package
 * Soilcarbon will not require most recent version of R
 * add updateSoilcarbonDatabase()
@@ -96,13 +108,10 @@ Selective dissolution columns need to be added to the fraction template.
 
 ### Shiny App
 * fix reupload bug
-* Shiny: When it passes, can it say "Yay! It passed!" or "Congratulations!" (several people requested this)
-
 
 ### dataQC()
-* New required columns in metadata tab
 * check that top two 'description rows' are present in the datafile
-* allow for level_names to not exist in fraction tab (they didnt do fractionation) but give note
+
 
 * ingest NRCS, translation
 * add database.build()

@@ -24,19 +24,6 @@ dataQC <- function(data, tabs= c("metadata", "site", "profile", "layer", "fracti
   template_file<-system.file("extdata", "Master_template.xlsx", package = "soilcarbon")
   template<-read.soilcarbon(file=template_file, template=T)
 
-cat("                 CH3\n")
-cat("                  |\n")
-cat("                  N\n")
-cat("                 / \\\n")
-cat("            N---C   C==O\n")
-cat("           ||  ||   |\n")
-cat("           ||  ||   |\n")
-cat("           CH   C   N--CH3\n")
-cat("             \\ / \\ /\n")
-cat("              N   C\n")
-cat("              |  ||\n")
-cat("             CH3  O\n")
-
 cat(rep("-", 30),"\n")
 cat("         Thank you for submitting data to the \n")
 cat("          Powell Center soil carbon database!\n")
@@ -51,46 +38,40 @@ cat(rep("-", 30),"\n\n\n")
   cat(rep("-", 20),"\n")
   # Compare column names in dataset to template file
   cat("COLUMN NAMES\n")
- sapply(tabs, function(x) checkcolnames(data, x, template))
-  # checkcolnames(data, "metadata", template)
-  # checkcolnames(data, "site", template)
-  # checkcolnames(data, "profile", template)
-  # checkcolnames(data, "layer", template)
-  # checkcolnames(data, "fraction", template)
+ errors<-sum(sapply(tabs, function(x) checkcolnames(data, x, template)))
 
 # Check required columns
   cat(rep("-", 20),"\n")
   cat("REQUIRED COLUMNS\n")
-  sapply(tabs, function(x) checkreqcols(data, x))
-  #
-  # checkreqcols(data, "site", template)
-  # checkreqcols(data, "profile", template)
-  # checkreqcols(data, "layer", template)
-  # checkreqcols(data, "fraction", template)
+  errors<-errors+sum(sapply(tabs, function(x) checkreqcols(data, x)))
 
 
 # Compare names at different hierarchies
 cat(rep("-", 20),"\n")
 cat("LEVEL NAMES\n")
-  checknames(data, "dataset", tabs)
-  checknames(data, "site", tabs)
-  checknames(data, "profile", tabs)
-  checknames(data, "layer", tabs)
+  errors<-errors+checknames(data, "dataset", tabs)
+  errors<-errors+checknames(data, "site", tabs)
+  errors<-errors+checknames(data, "profile", tabs)
+  errors<-errors+checknames(data, "layer", tabs)
 
 # Check values for different variables
   cat(rep("-", 20),"\n")
   cat("VARIABLE VALUES\n")
-  sapply(tabs, function(x) checkvalues(data, x))
+  errors<-errors+sum(sapply(tabs, function(x) checkvalues(data, x)))
 
-  # checkvalues(data, "site")
-  # checkvalues(data, "profile")
-  # checkvalues(data, "layer")
-  # checkvalues(data, "fraction")
+  cat(rep("-", 20),"\n")
+  if(errors==0){
+    cat("PASSED! Congratulations!")
+  } else {
+    cat("\n", errors, "WARNINGS need to be fixed\n")
+  }
+
 
   cat("\n",rep("-", 30),"\n")
   cat("         this check was produced with the dataQC()\n")
   cat("         function in the R soilcarbon package\n")
   cat(rep("-", 30),"\n")
+
 
   if (writeQCreport==T){
     sink()
@@ -98,7 +79,7 @@ cat("LEVEL NAMES\n")
     closeAllConnections()
   }
 
+return(errors)
 
 }
-sink.number()
 

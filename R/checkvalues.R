@@ -158,7 +158,8 @@ checkvalues<-function(data, tab){
                         "dry sieve",
                         "HMP",
                         "respired",
-                        "not respired")
+                        "not respired",
+                        NA)
     error<-matchvocab(data_tab$f_property,  f_property_vocab, var_name="f_property", tab="fraction", error=error )
 
 
@@ -167,5 +168,6 @@ checkvalues<-function(data, tab){
   }
 
   if (error==0) cat("OK\n")
+  return(error)
 
 }

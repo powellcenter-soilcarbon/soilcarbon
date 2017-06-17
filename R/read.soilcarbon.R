@@ -24,7 +24,7 @@ read.soilcarbon<-function(file, template=F){
   metadata<-read.xlsx(file , sheet="metadata")
   site<-read.xlsx(file , sheet="site")
   profile<-read.xlsx(file , sheet="profile")
-  layer<-read.xlsx(file , sheet="layer")
+  layer<-read.xlsx(file , sheet="layer", check.names=T)
   fraction<-read.xlsx(file , sheet="fraction")
 
   data_workbook=list(metadata=metadata, site=site, profile=profile, layer=layer, fraction=fraction)

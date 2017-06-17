@@ -2,7 +2,7 @@
 library(ggplot2)
 
 shinyServer(function(input, output, session) {
-
+  options(shiny.maxRequestSize=30*1024^2)
   output$plot <- renderPlot({
 
     variables<-list(
