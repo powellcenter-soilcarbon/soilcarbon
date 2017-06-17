@@ -2,7 +2,7 @@
 [Template file](https://github.com/powellcenter-soilcarbon/soilcarbon/raw/master/inst/extdata/Master_template.xlsx) (Variables with red column names are required)  
 [Template instructions](/site_files/Template_info.html)
 
-## Check data compatability
+## Add data!
 
 1. Install latest version of R [https://www.r-project.org/](https://www.r-project.org/)
 2. Install soilcarbon package (run this in R):
