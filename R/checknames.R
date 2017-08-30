@@ -17,7 +17,7 @@ checknames<-function(data, name, tabs){
   names_compared<-comparenames(level_names)
   error<-0
 
-  if(F %in% names_compared){
+  if(F %in% unlist(names_compared)){
     if (name == "layer") {
       message("\nNote... '", name, "' names do not match at different levels, see below:")
       } else {

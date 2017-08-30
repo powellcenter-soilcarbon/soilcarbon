@@ -142,6 +142,14 @@ checkvalues<-function(data, tab){
                         NA)
     error<-matchvocab(data_tab$mbc_method,  mbc_method_vocab, var_name="mbc_method", tab="layer", error=error )
 
+    numeric_vars<-c("layer_bot", "layer_top", "bs")
+    for (i in 1:length(numeric_vars)){
+      error<-matchnumeric(data_tab[,numeric_vars[i]], var_name=numeric_vars[i], tab="layer", error=error )
+
+    }
+
+
+
   }
 
   if (tab=="fraction"){
