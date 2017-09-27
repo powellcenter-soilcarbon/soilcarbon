@@ -1,7 +1,7 @@
 ---
 title: "Powell Center soilcarbon Template Information"
 author: "Grey Monroe"
-date: "5/4/2017"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: html_document
 ---
 
