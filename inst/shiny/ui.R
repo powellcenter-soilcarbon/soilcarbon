@@ -98,11 +98,7 @@ shinyUI(fluidPage(
                    h3("Template file"),
                    downloadButton("download_template", "Download soilcarbon Template file"),
                    h4("Tips for filling out template file:"),
-                   HTML("<ul><li>The 'metadata', 'site', 'profile', 'layer', and 'fraction' tabs are required in order to upload file to database</li>
-<li>Variables with red column names are required and cannot have missing values.</li>
-<li>Values in the variables called 'dataset_name', 'site_name', 'profile_name', and 'layer_name' must match across tabs in which they are found.</li>
-<li>Check the 'controlled vocabulary' tab for acceptable values for certain variables</li>
-<li>Remove the first two description rows before submitting dataset</li></ul>")
+                   HTML('Check out the template info <a href="https://powellcenter-soilcarbon.github.io/soilcarbon/site_files/Template_info.html" target="_blank">here</a>.')
               )
   ),
 
