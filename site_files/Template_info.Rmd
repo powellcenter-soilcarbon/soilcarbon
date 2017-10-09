@@ -1,11 +1,13 @@
 ---
-title: "Powell Center soilcarbon Template Information"
+title: "Powell Center soilcarbon Template Instructions"
 author: "Grey Monroe"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: html_document
 ---
 
-### Jump to:
+### Data Tabs:
+The template file that is submitted must contain the tabs below, otherwise the data quality control step will fail. Click on one of the tab names to see what columns you expect to find in that tab. 
+
 1. [metadata tab](#metadata) 
 1. [site tab](#site)
 1. [profile tab](#profile) 
@@ -32,30 +34,35 @@ sheets<-getSheetNames(Template_info_file)
 ```
 
 # metadata
+#### Columns in this tab describe the source of the dataset. 
 ```{r, echo=F}
 library(knitr)
 kable(metadata)
 ```
 
 # site
+#### Columns in the site tab provide information about the georeferenced site where soil carbon data was collected. There can be multiple sites in a single dataset.
 ```{r, echo=F}
 library(knitr)
 kable(site)
 ```
 
 # profile
+#### The profile tab describes the different profiles that were analyzed at different sites. There can be multiple profiles in one site. 
 ```{r, echo=F}
 library(knitr)
 kable(profile)
 ```
 
 # layer
+#### The layer tab describes the layers that were analyzed in a given profile. There can be multiple layers reported for a single profile, but the depths for each layer must be explicitly reported.
 ```{r, echo=F}
 library(knitr)
 kable(layer)
 ```
 
 # fraction
+#### The fraction tab contains columns describing data gathered after fractionation of soil samples. There can be mulitple fractions in a given layer. 
 ```{r, echo=F}
 library(knitr)
 kable(fraction)
