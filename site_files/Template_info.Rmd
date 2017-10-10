@@ -8,7 +8,7 @@ output: html_document
 ### Data Tabs:
 The template file that is submitted must contain the tabs below, otherwise the data quality control step will fail. Click on one of the tab names to see what columns you expect to find in that tab. 
 
-![optional caption text](assets/images/structure.png)
+![](assets/images/structure.png)
 
 1. [metadata tab](#metadata) 
 1. [site tab](#site)
