@@ -44,6 +44,11 @@ read.soilcarbon<-function(file, template=F){
   }
   }
 
+  data_workbook<-lapply(data_workbook, function(x) lapply(x, as.character))
+  data_workbook<-lapply(data_workbook, function(x) lapply(x, type.convert))
+  data_workbook<-lapply(data_workbook, as.data.frame)
+
+
   attributes(data_workbook)$file_name<-file
 
   return(data_workbook)

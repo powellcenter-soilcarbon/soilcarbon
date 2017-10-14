@@ -9,7 +9,7 @@
 #' @export
 
 matchnumeric<-function(var_data, var_name, tab, error){
-  if (!is.numeric(var_data)){
+  if (!is.numeric(var_data) & sum(is.na(var_data))!=length(var_data)){
     message("\nWARNING...non-numeric value detected in '" ,var_name,"' column of the '" ,tab,"' tab:")
     error<-error+1
     natural_nas<-which(is.na(var_data))
