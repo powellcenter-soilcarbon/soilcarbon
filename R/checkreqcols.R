@@ -30,9 +30,7 @@ checkreqcols<-function(data, tab){
                                           "layer_name",
                                           "fraction_name",
                                           "f_scheme",
-                                          "f_scheme_units",
-                                          "f_lower",
-                                          "f_upper")
+                                          "f_scheme_units")
                                )
 
   cat("\t",tab,"tab...")
@@ -68,6 +66,10 @@ checkreqcols<-function(data, tab){
   if (tab=="fraction"){
     if (length(data[[tab]][,"f_property"])==0 | any(c(NA, "", " ") %in% data[[tab]][,"f_property"]))
       message("\nNote... missing values in f_property tab in the '",tab,"' tab")
+    if (length(data[[tab]][,"f_lower"])==0 | any(c(NA, "", " ") %in% data[[tab]][,"f_lower"]))
+      message("\nNote... missing values in f_lower tab in the '",tab,"' tab")
+    if (length(data[[tab]][,"f_upper"])==0 | any(c(NA, "", " ") %in% data[[tab]][,"f_upper"]))
+      message("\nNote... missing values in f_upper tab in the '",tab,"' tab")
   }
 return(error)
 }

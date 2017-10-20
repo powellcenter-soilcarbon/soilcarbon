@@ -159,14 +159,21 @@ checkvalues<-function(data, tab){
                       "Particle_Size",
                       "Incubation")
     error<-matchvocab(data_tab$f_scheme,  f_scheme_vocab, var_name="f_scheme", tab="fraction", error=error )
-    f_property_vocab<-c("sonicated",
-                        "soluble",
-                        "insoluble",
-                        "wet sieve",
-                        "dry sieve",
-                        "HMP",
+    f_property_vocab<-c("free light",
+                        "occluded light",
+                        "heavy",
+                        "acid soluble",
+                        "acid insoluble",
+                        "clay",
+                        "non-clay",
                         "respired",
-                        "not respired",
+                        "incubation residual",
+                        "roots",
+                        "root free",
+                        "carbonate",
+                        "carbonate free",
+                        "base soluble",
+                        "base insoluble",
                         NA)
     error<-matchvocab(data_tab$f_property,  f_property_vocab, var_name="f_property", tab="fraction", error=error )
 
