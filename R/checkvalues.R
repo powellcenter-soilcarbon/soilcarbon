@@ -153,11 +153,15 @@ checkvalues<-function(data, tab){
   }
 
   if (tab=="fraction"){
-    f_scheme_vocab<-c("SPT_Density",
-                      "HF",
+    f_scheme_vocab<-c("Density",
+                      "Acid",
                       "Aggregate_Size",
                       "Particle_Size",
-                      "Incubation")
+                      "Incubation",
+                      "Root_Separation",
+                      "Acid_Evolution",
+                      "Base",
+                      "Chem_Extraction")
     error<-matchvocab(data_tab$f_scheme,  f_scheme_vocab, var_name="f_scheme", tab="fraction", error=error )
     f_property_vocab<-c("free light",
                         "occluded light",
