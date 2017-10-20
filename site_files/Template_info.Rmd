@@ -44,6 +44,8 @@ kable(metadata)
 
 # site
 #### Columns in the site tab provide information about the georeferenced site where soil carbon data was collected. There can be multiple sites in a single dataset.
+
+Link to convert latitude and longitude to decimal degree: https://www.latlong.net/degrees-minutes-seconds-to-decimal-degrees
 ```{r, echo=F}
 library(knitr)
 kable(site)
