@@ -181,6 +181,25 @@ checkvalues<-function(data, tab){
                         NA)
     error<-matchvocab(data_tab$f_property,  f_property_vocab, var_name="f_property", tab="fraction", error=error )
 
+    f_agent_vocab<-c("SPT",
+                     "Sodium Iodide ",
+                     "HF",
+                     "wet sieve",
+                     "dry sieve",
+                     "H2O2",
+                     "HMP",
+                     "respired",
+                     "residual",
+                     "manual",
+                     "HCL",
+                     "NaOH",
+                     "Pyrophosphate",
+                     "Dithionite",
+                     "Hydroxylamine",
+                     "H2O",
+                        NA)
+    error<-matchvocab(data_tab$f_agent,  f_agent_vocab, var_name="f_agent", tab="fraction", error=error )
+
 
 
 
