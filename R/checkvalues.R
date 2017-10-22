@@ -17,6 +17,12 @@ checkvalues<-function(data, tab){
   }
 
   if (tab=="site"){
+
+    numeric_vars<-c("lat", "long")
+    for (i in 1:length(numeric_vars)){
+      error<-matchnumeric(data_tab[,numeric_vars[i]], var_name=numeric_vars[i], tab="site", error=error )
+
+    }
     datum_vocab<-c("AGD84",
                    "ED50",
                    "ETRS89",
@@ -132,7 +138,9 @@ checkvalues<-function(data, tab){
                            "silty clay loam",
                            "sandy clay",
                            "silty clay",
-                           "clay", NA)
+                           "clay",
+                           "gravelly loam",
+                           NA)
     error<-matchvocab(data_tab$texture_class,  texture_class_vocab, var_name="texture_class", tab="layer", error=error )
     mbc_method_vocab<-c("chloroform fumigation extraction",
                         "chloroform fumigation incubation",
@@ -197,6 +205,7 @@ checkvalues<-function(data, tab){
                      "Dithionite",
                      "Hydroxylamine",
                      "H2O",
+                     "sonicated",
                         NA)
     error<-matchvocab(data_tab$f_agent,  f_agent_vocab, var_name="f_agent", tab="fraction", error=error )
 

@@ -20,7 +20,9 @@ shinyUI(fluidPage(
                    HTML('Check out the template info <a href="https://powellcenter-soilcarbon.github.io/soilcarbon/site_files/Template_info.html" target="_blank">here</a>.')
               ),
   conditionalPanel(condition="input.conditionedPanels==2",
-                   h3("Visualize database"),
+                   h3("Load database"),
+                   fileInput("download_database", "Upload Database")),
+                    h3("Visualize database"),
                    fluidRow(column(6, selectInput("y_var", "Y Variable:",
                                                   list("None (histogram)" = "NULL",
                                                        "Top of layer" = "layer_top",
@@ -97,9 +99,8 @@ shinyUI(fluidPage(
                                     "Bulk Density" = "bd_tot",
                                     "MAP" = "map",
                                     "MAT" = "mat"
-                               )),
-                   h3("Download database"),
-                   downloadButton("download_database", "Download Database (flattened)"))
+                               ))
+
 
   ),
 

@@ -3,6 +3,9 @@ library(ggplot2)
 
 shinyServer(function(input, output, session) {
   options(shiny.maxRequestSize=30*1024^2)
+
+
+
   output$plot <- renderPlot({
 
     variables<-list(
@@ -63,12 +66,7 @@ shinyServer(function(input, output, session) {
 
   })
 
-  output$download_database<-downloadHandler(
-    filename = "soilcarbon_Database.csv",
-    content = function(file) {
-      write.csv(soilcarbon_database, file)
-    }
-  )
+
 
 
 #### add data
