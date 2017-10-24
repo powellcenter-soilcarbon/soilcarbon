@@ -21,9 +21,14 @@ soilcarbon.shiny()
 6. Look at the text file that is downloaded. Warning messages will describe any problems in the data file.
 7. If your data passes the check, email it to powellcenter.soilcarbon@gmail.com.
 
-# Current datasets
+### Current data
 
 ![](site_files/assets/images/mat.png)
 ![](site_files/assets/images/map.png)
+
+
+
+![](site_files/assets/images/layerplot.png)
+![](site_files/assets/images/fractionplot.png)
 
 
