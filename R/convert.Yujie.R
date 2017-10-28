@@ -4,9 +4,12 @@
 #'
 #' @param Yujie_file directory to Yuije data file
 #' @import utils
+#' @import stringi
 #' @export
 
 convert.Yuije<- function(Yujie_file){
+
+  requireNamespace("stringi")
 
   Yujie_dataset<-read.csv(Yujie_file, na.strings = c(""," ", "  "))
   levels(Yujie_dataset$reference)<-c(levels(Yujie_dataset$reference), "no_ref")
@@ -90,7 +93,11 @@ Yujie_soilcarbon<-list(metadata=data.frame(dataset_name=c("Yujie_non_peat_synthe
                                         al_ox=Yujie_dataset_clean$Alo,
                                         smect_vermic=Yujie_dataset_clean$Smectite),
                        fraction=data.frame())
-attributes(Yujie_soilcarbon)$file_name<-Yujie_file
 
-return(Yujie_soilcarbon)
+attributes(Yujie_soilcarbon)$file_name<-Yujie_file
+Yujie_data_nofraction<-Yujie_soilcarbon[-5]
+Yujie_flat<-flatten(soilcarbon_data = Yujie_data_nofraction)
+Yujie_database<-Yujie_flat
+Yujie_database[]<-lapply(Yujie_database, function(x) stringi::stri_trans_general(as.character(x), "latin-ascii"))
+return(Yujie_database)
 }

@@ -5,17 +5,18 @@
 #' @param dataset_directory directory where compeleted and QC passed soilcarbon datasets are stored
 #' @export
 #' @import devtools
-#'
+#' @import stringi
 
 compileDatabase <- function(dataset_directory ){
 
-  requireNamespace("raster")
+  requireNamespace("stringi")
 
-  data_files<-list.files(dataset_directory, full.names = T	)
+  data_files<-list.files(dataset_directory, full.names = T)
   data_files<-data_files[grep("xlsx", data_files)]
 
-  # special dataset (Yujie)
-   Yujie_database <- NULL; rm(Yujie_database)
+   # special dataset (Yujie)
+   Yujie_file<-system.file("extdata", "Yujie_dataset.csv", package = "soilcarbon")
+   Yujie_database<-convert.Yuije(Yujie_file)
    working_database<-Yujie_database
    working_database[] <- lapply(working_database, as.character)
 
@@ -36,12 +37,9 @@ compileDatabase <- function(dataset_directory ){
 
   }
 }
-  working_database[]<-lapply(working_database, type.convert)
-  bio<-getData("worldclim", var='bio', res=2.5, path="~/Dropbox/bioclim/")
-  working_database$map<-extract(bio$bio12, cbind(working_database$long, working_database$lat))
-  working_database$mat<-extract(bio$bio1, cbind(working_database$long, working_database$lat))
-
-
-  return(working_database)
-
+   working_database[]<-lapply(working_database, function(x) stri_trans_general(x, "latin-ascii"))
+   working_database[]<-lapply(working_database, type.convert)
+   soilcarbon_database<-working_database
+   use_data(soilcarbon_database, overwrite = T)
+  return(soilcarbon_database)
 }
