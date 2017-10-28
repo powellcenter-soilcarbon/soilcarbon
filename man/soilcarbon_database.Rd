@@ -194,6 +194,8 @@
 \item{f_imog_alloph}{}
 \item{f_ferrihydrite}{}
 \item{f_zeolite}{}
+\item{map}{}
+\item{mat}{}
   ...
 }}
 \source{

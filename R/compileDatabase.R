@@ -40,6 +40,5 @@ compileDatabase <- function(dataset_directory ){
    working_database[]<-lapply(working_database, function(x) stri_trans_general(x, "latin-ascii"))
    working_database[]<-lapply(working_database, type.convert)
    soilcarbon_database<-working_database
-   use_data(soilcarbon_database, overwrite = T)
   return(soilcarbon_database)
 }

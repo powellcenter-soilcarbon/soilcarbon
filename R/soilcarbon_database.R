@@ -192,6 +192,8 @@
 #'	\item{f_imog_alloph}{}
 #'	\item{f_ferrihydrite}{}
 #'	\item{f_zeolite}{}
+#'	\item{map}{}
+#'	\item{mat}{}
 #'   ...
 #' }
 #' @source \url{https://powellcenter.usgs.gov/view-project/55d4bffce4b0518e354695aa}
