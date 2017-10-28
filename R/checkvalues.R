@@ -166,10 +166,12 @@ checkvalues<-function(data, tab){
                       "Aggregate_Size",
                       "Particle_Size",
                       "Incubation",
-                      "Root_Separation",
+                      "Manual_Separation",
                       "Acid_Evolution",
                       "Base",
-                      "Chem_Extraction")
+                      "Chem_Extraction",
+                      "Stepped Combustion",
+                      "Time Series")
     error<-matchvocab(data_tab$f_scheme,  f_scheme_vocab, var_name="f_scheme", tab="fraction", error=error )
     f_property_vocab<-c("free light",
                         "occluded light",
@@ -208,10 +210,6 @@ checkvalues<-function(data, tab){
                      "sonicated",
                         NA)
     error<-matchvocab(data_tab$f_agent,  f_agent_vocab, var_name="f_agent", tab="fraction", error=error )
-
-
-
-
   }
 
   if (error==0) cat("OK\n")
