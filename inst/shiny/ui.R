@@ -12,10 +12,10 @@ shinyUI(fluidPage(
 
   sidebarPanel(
 
-
   conditionalPanel(condition="input.conditionedPanels==1",
                    h3("Template file"),
-                   downloadButton("download_template", "Download soilcarbon Template file"),
+                   h4("This is the template file contained in the version that you are working with now"),
+                   downloadButton("download_template", "Download soilcarbon Template file\n"),
                    h4("Tips for filling out template file:"),
                    HTML('Check out the template info <a href="https://powellcenter-soilcarbon.github.io/soilcarbon/site_files/Template_info.html" target="_blank">here</a>.')
               ),
