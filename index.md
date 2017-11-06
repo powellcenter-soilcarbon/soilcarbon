@@ -7,13 +7,17 @@
 ## Add data!
 
 1. Install latest version of R [https://www.r-project.org/](https://www.r-project.org/)
-2. Install and load soilcarbon package (run this in R):
+2. Install and load soilcarbon package (run this in R). Installing the package this way may not have have the most updated features of the package.
 ```{r}
 install.packages("soilcarbon")
-library(soilcarbon)
+```
+2. (Alternate) To  install the most recent development version of the package run this line instead.
+```{r}
+devtools::install_github("powellcenter-soilcarbon/soilcarbon”)
 ```
 3. Run soilcarbon shiny workbench in R
 ```{r}
+library(soilcarbon)
 soilcarbon.shiny()
 ```
 4. Click 'Browse' and chose the data file (Template file that you have filled with data) 
