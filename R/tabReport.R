@@ -17,10 +17,11 @@
 
 tabReport = function(dataset_directory, tab, cols){
   scdb=compileAsList(dataset_directory)
+  selectcols=paste(tab,".",cols, sep="")
   
   out=NULL
   for(i in 1:length(scdb)){  
-    out=rbind(out,scdb[[i]]$metadata[,cols])
+    out=rbind(out, as.data.frame(scdb[[i]][tab])[,selectcols])
   }
   return(out)
 }
