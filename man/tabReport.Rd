@@ -19,10 +19,6 @@ a data.frame
 \description{
 Compiles all entries (xlsx files) and creates report from a specific tab and a specific set of columns
 }
-\examples{
-# tabReport(dataset_directory = "data_files/", tab="metadata",cols=c("dataset_name","curator_name", "curator_email"))
-
-}
 \author{
 Carlos A. Sierra
 }

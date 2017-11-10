@@ -10,9 +10,6 @@
 #' 
 #' @author Carlos A. Sierra
 #' 
-#' @examples 
-#' # tabReport(dataset_directory = "data_files/", tab="metadata",cols=c("dataset_name","curator_name", "curator_email"))
-#' 
 #' @export
 
 tabReport = function(dataset_directory, tab, cols){
