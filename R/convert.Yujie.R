@@ -57,7 +57,7 @@ Yujie_soilcarbon<-list(metadata=data.frame(dataset_name=c("Yujie_non_peat_synthe
                                        slope=Yujie_dataset_sites$Slope,
                                        slope_shape=Yujie_dataset_sites$SlopePosition,
                                        aspect=Yujie_dataset_sites$Aspect,
-                                       veg_note=Yujie_dataset_sites$VegTypeCodeStr_Local,
+                                       veg_note_profile=Yujie_dataset_sites$VegTypeCodeStr_Local,
                                        elevation=Yujie_dataset_sites$Elevation),
                        profile=data.frame(dataset_name=rep("Yujie_non_peat_synthesis", nrow(Yujie_dataset_profiles)),
                                         site_name=Yujie_dataset_profiles$Site,
