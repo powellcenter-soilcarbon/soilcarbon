@@ -6,196 +6,226 @@
 \title{Data compiled for the soilcarbon dataset}
 \format{A data frame with 4115 rows and 42 variables:
 \describe{
-\item{dataset_name}{}
-\item{site_name}{}
-\item{profile_name}{}
-\item{lat}{}
-\item{long}{}
-\item{parent_material}{}
-\item{slope}{}
-\item{slope_shape}{}
-\item{aspect}{}
-\item{veg_note}{}
-\item{elevation}{}
-\item{observation_date}{}
-\item{soil_taxon}{}
-\item{layer_name}{}
-\item{layer_top}{}
-\item{layer_bot}{}
-\item{hzn}{}
-\item{rc_year}{}
-\item{X13c}{}
-\item{X14c}{}
-\item{X14c_sigma}{}
-\item{bd_tot}{}
-\item{bet_surface_area}{}
-\item{ph_h2o}{}
-\item{c_tot}{}
-\item{n_tot}{}
-\item{c_to_n}{}
-\item{sand_tot_psa}{}
-\item{silt_tot_psa}{}
-\item{clay_tot_psa}{}
-\item{cat_exch}{}
-\item{fe_dith}{}
-\item{fe_ox}{}
-\item{fe_py}{}
-\item{al_py}{}
-\item{al_dith}{}
-\item{al_ox}{}
-\item{smect_vermic}{}
-\item{doi_number}{}
-\item{curator_name}{}
-\item{curator_organization}{}
-\item{curator_email}{}
-\item{modification_date}{}
-\item{contact_name}{}
-\item{contact_email}{}
-\item{contact_orcid_id}{}
-\item{bibliographical.reference}{}
-\item{metadata_note}{}
-\item{datum}{}
-\item{site_note}{}
-\item{aspect_deg}{}
-\item{drainage_class}{}
-\item{depth_water}{}
-\item{parent_material_notes}{}
-\item{parent_chem}{}
-\item{land_cover}{}
-\item{s_soc}{}
-\item{profile_note}{}
-\item{profile_comp}{}
-\item{veg_note_profile}{}
-\item{X2d_position}{}
-\item{soil_series}{}
-\item{bedrock_depth}{}
-\item{thaw_depth_profile}{}
-\item{p_soc}{}
-\item{p_soc_sigma}{}
-\item{p_soc_depth}{}
-\item{layer_comp}{}
-\item{layer_note}{}
-\item{color}{}
-\item{burn_ev}{}
-\item{l_observation_date}{}
-\item{bd_samp}{}
-\item{bd_notes}{}
-\item{coarse_tot}{}
-\item{coarse_size_thresh}{}
-\item{texture_class}{}
-\item{ph_cacl}{}
-\item{ph}{}
-\item{ph_method}{}
-\item{base_sum}{}
-\item{cec_sum}{}
-\item{Ca_exch}{}
-\item{Na_exch}{}
-\item{Mg_exch}{}
-\item{K_exch}{}
-\item{ecec}{}
-\item{bs}{}
-\item{c_inorg}{}
-\item{c_org}{}
-\item{soc}{}
-\item{soc_sigma}{}
-\item{loi}{}
-\item{X15n}{}
-\item{rc_lab}{}
-\item{rc_lab_number}{}
-\item{fraction_modern}{}
-\item{fraction_modern_sigma}{}
-\item{mbc_method}{}
-\item{raw_mbc}{}
-\item{reported_mbc}{}
-\item{p_ext}{}
-\item{p_units}{}
-\item{p_method}{}
-\item{si_py}{}
-\item{c_py}{}
-\item{py_notes}{}
-\item{si_ox}{}
-\item{c_ox}{}
-\item{ox_notes}{}
-\item{fe_hy}{}
-\item{al_hy}{}
-\item{si_hy}{}
-\item{c_hy}{}
-\item{hy_notes}{}
-\item{si_dith}{}
-\item{dith_notes}{}
-\item{quartz}{}
-\item{alkali_feldspar}{}
-\item{plag_feldspar}{}
-\item{mica_chlorite}{}
-\item{amphibole}{}
-\item{pyroxine}{}
-\item{olivine}{}
-\item{volc_glass}{}
-\item{kaol_halloy}{}
-\item{gibbsite}{}
-\item{fe_oxides}{}
-\item{imog_alloph}{}
-\item{ferrihydrite}{}
-\item{calcite_dolomite}{}
-\item{zeolite}{}
-\item{fraction_name}{}
-\item{f_input}{}
-\item{f_property}{}
-\item{f_scheme}{}
-\item{f_scheme_units}{}
-\item{f_lower}{}
-\item{f_upper}{}
-\item{f_agent}{}
-\item{f_scheme_conc}{}
-\item{f_comp}{}
-\item{f_note}{}
-\item{f_mass_perc}{}
-\item{f_observation_date}{}
-\item{f_c_perc}{}
-\item{f_c_tot}{}
-\item{f_c_org}{}
-\item{f_c_inorg}{}
-\item{f_n_tot}{}
-\item{f_c_to_n}{}
-\item{f_15n}{}
-\item{f_13c}{}
-\item{f_rc_lab}{}
-\item{f_rc_lab_number}{}
-\item{f_rc_year}{}
-\item{f_14c}{}
-\item{f_14c_sigma}{}
-\item{f_fraction_modern}{}
-\item{f_fraction_modern_sigma}{}
-\item{f_fe_ox}{}
-\item{f_al_ox}{}
-\item{f_si_ox}{}
-\item{f_c_ox}{}
-\item{f_ox_notes}{}
-\item{f_fe_hy}{}
-\item{f_al_hy}{}
-\item{f_si_hy}{}
-\item{f_c_hy}{}
-\item{f_hy_notes}{}
-\item{f_fe_dith}{}
-\item{f_al_dith}{}
-\item{f_si_dith}{}
-\item{f_quartz}{}
-\item{f_alkali_feldspar}{}
-\item{f_plag_feldspar}{}
-\item{f_mica_chlorite}{}
-\item{f_amphibole}{}
-\item{f_pyroxine}{}
-\item{f_olivine}{}
-\item{f_volc_glass}{}
-\item{f_kaol_halloy}{}
-\item{f_smect_vermic}{}
-\item{f_gibbsite}{}
-\item{f_fe_oxides}{}
-\item{f_imog_alloph}{}
-\item{f_ferrihydrite}{}
-\item{f_zeolite}{}
-\item{map}{}
-\item{mat}{}
+\item{ dataset_name }{}
+\item{ site_name }{}
+\item{ profile_name }{}
+\item{ lat }{}
+\item{ long }{}
+\item{ parent_material }{}
+\item{ slope }{}
+\item{ slope_shape }{}
+\item{ aspect }{}
+\item{ veg_note_profile }{}
+\item{ elevation }{}
+\item{ observation_date }{}
+\item{ soil_taxon }{}
+\item{ layer_name }{}
+\item{ layer_top }{}
+\item{ layer_bot }{}
+\item{ hzn }{}
+\item{ rc_year }{}
+\item{ X13c }{}
+\item{ X14c }{}
+\item{ X14c_sigma }{}
+\item{ bd_tot }{}
+\item{ bet_surface_area }{}
+\item{ ph_h2o }{}
+\item{ c_tot }{}
+\item{ n_tot }{}
+\item{ c_to_n }{}
+\item{ sand_tot_psa }{}
+\item{ silt_tot_psa }{}
+\item{ clay_tot_psa }{}
+\item{ cat_exch }{}
+\item{ fe_dith }{}
+\item{ fe_ox }{}
+\item{ fe_py }{}
+\item{ al_py }{}
+\item{ al_dith }{}
+\item{ al_ox }{}
+\item{ smect_vermic }{}
+\item{ doi_number }{}
+\item{ curator_name }{}
+\item{ curator_organization }{}
+\item{ curator_email }{}
+\item{ modification_date }{}
+\item{ contact_name }{}
+\item{ contact_email }{}
+\item{ contact_orcid_id }{}
+\item{ bibliographical.reference }{}
+\item{ metadata_note }{}
+\item{ datum }{}
+\item{ site_note }{}
+\item{ profile_note }{}
+\item{ profile_comp }{}
+\item{ profile_reps }{}
+\item{ p_treatment }{}
+\item{ p_treatment_note }{}
+\item{ p_MAT }{}
+\item{ p_MAP }{}
+\item{ soil_series }{}
+\item{ p_MAST }{}
+\item{ p_MASWC }{}
+\item{ land_cover }{}
+\item{ bedrock_depth }{}
+\item{ depth_water }{}
+\item{ thaw_depth_profile }{}
+\item{ parent_chem }{}
+\item{ parent_material_notes }{}
+\item{ X2d_position }{}
+\item{ aspect_deg }{}
+\item{ drainage_class }{}
+\item{ p_soc }{}
+\item{ p_soc_sigma }{}
+\item{ p_soc_depth }{}
+\item{ layer_comp }{}
+\item{ layer_note }{}
+\item{ color }{}
+\item{ burn_ev }{}
+\item{ l_observation_date }{}
+\item{ bd_samp }{}
+\item{ bd_notes }{}
+\item{ coarse_tot }{}
+\item{ coarse_size_thresh }{}
+\item{ texture_class }{}
+\item{ ph_cacl }{}
+\item{ ph }{}
+\item{ ph_method }{}
+\item{ base_sum }{}
+\item{ cec_sum }{}
+\item{ Ca_exch }{}
+\item{ Na_exch }{}
+\item{ Mg_exch }{}
+\item{ K_exch }{}
+\item{ ecec }{}
+\item{ bs }{}
+\item{ c_inorg }{}
+\item{ c_org }{}
+\item{ soc }{}
+\item{ soc_sigma }{}
+\item{ loi }{}
+\item{ X15n }{}
+\item{ rc_lab }{}
+\item{ rc_lab_number }{}
+\item{ X14c_sd }{}
+\item{ fraction_modern }{}
+\item{ fraction_modern_sigma }{}
+\item{ fraction_modern_sd }{}
+\item{ mbc_method }{}
+\item{ raw_mbc }{}
+\item{ reported_mbc }{}
+\item{ p_ext }{}
+\item{ p_units }{}
+\item{ p_method }{}
+\item{ si_py }{}
+\item{ c_py }{}
+\item{ py_notes }{}
+\item{ si_ox }{}
+\item{ c_ox }{}
+\item{ ox_notes }{}
+\item{ fe_hy }{}
+\item{ al_hy }{}
+\item{ si_hy }{}
+\item{ c_hy }{}
+\item{ hy_notes }{}
+\item{ si_dith }{}
+\item{ dith_notes }{}
+\item{ quartz }{}
+\item{ alkali_feldspar }{}
+\item{ plag_feldspar }{}
+\item{ mica_chlorite }{}
+\item{ amphibole }{}
+\item{ pyroxine }{}
+\item{ olivine }{}
+\item{ volc_glass }{}
+\item{ kaol_halloy }{}
+\item{ gibbsite }{}
+\item{ fe_oxides }{}
+\item{ imog_alloph }{}
+\item{ ferrihydrite }{}
+\item{ calcite_dolomite }{}
+\item{ zeolite }{}
+\item{ i_observation_date }{}
+\item{ i_15n }{}
+\item{ i_13c }{}
+\item{ i_rc_lab }{}
+\item{ i_rc_lab_number }{}
+\item{ i_rc_year }{}
+\item{ i_14c }{}
+\item{ i_14c_sigma }{}
+\item{ i_14c_sd }{}
+\item{ i_fraction_modern }{}
+\item{ i_fraction_modern_sigma }{}
+\item{ i_fraction_modern_sd }{}
+\item{ i_temp }{}
+\item{ i_moisture_type }{}
+\item{ i_moisture }{}
+\item{ i_moisture_units }{}
+\item{ i_duration }{}
+\item{ i_duration_type }{}
+\item{ i_C_respired }{}
+\item{ i_flux }{}
+\item{ i_flux_units }{}
+\item{ fraction_name }{}
+\item{ f_input }{}
+\item{ f_property }{}
+\item{ f_scheme }{}
+\item{ f_scheme_units }{}
+\item{ f_lower }{}
+\item{ f_upper }{}
+\item{ f_agent }{}
+\item{ f_scheme_conc }{}
+\item{ f_comp }{}
+\item{ f_note }{}
+\item{ f_mass_perc }{}
+\item{ f_observation_date }{}
+\item{ f_c_perc }{}
+\item{ f_c_tot }{}
+\item{ f_c_org }{}
+\item{ f_c_inorg }{}
+\item{ f_n_tot }{}
+\item{ f_c_to_n }{}
+\item{ f_15n }{}
+\item{ f_13c }{}
+\item{ f_rc_lab }{}
+\item{ f_rc_lab_number }{}
+\item{ f_rc_year }{}
+\item{ f_14c }{}
+\item{ f_14c_sigma }{}
+\item{ f_14c_sd }{}
+\item{ f_fraction_modern }{}
+\item{ f_fraction_modern_sigma }{}
+\item{ f_fraction_modern_sd }{}
+\item{ f_fe_ox }{}
+\item{ f_al_ox }{}
+\item{ f_si_ox }{}
+\item{ f_c_ox }{}
+\item{ f_ox_notes }{}
+\item{ f_fe_hy }{}
+\item{ f_al_hy }{}
+\item{ f_si_hy }{}
+\item{ f_c_hy }{}
+\item{ f_hy_notes }{}
+\item{ f_fe_dith }{}
+\item{ f_al_dith }{}
+\item{ f_si_dith }{}
+\item{ f_quartz }{}
+\item{ f_alkali_feldspar }{}
+\item{ f_plag_feldspar }{}
+\item{ f_mica_chlorite }{}
+\item{ f_amphibole }{}
+\item{ f_pyroxine }{}
+\item{ f_olivine }{}
+\item{ f_volc_glass }{}
+\item{ f_kaol_halloy }{}
+\item{ f_smect_vermic }{}
+\item{ f_gibbsite }{}
+\item{ f_fe_oxides }{}
+\item{ f_imog_alloph }{}
+\item{ f_ferrihydrite }{}
+\item{ f_zeolite }{}
+\item{ map }{}
+\item{ mat }{}
   ...
 }}
 \source{
