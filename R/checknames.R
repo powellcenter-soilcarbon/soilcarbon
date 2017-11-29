@@ -17,24 +17,41 @@ checknames<-function(data, name, tabs){
   names_compared<-comparenames(level_names)
   error<-0
 
-  if(F %in% unlist(names_compared)){
-    if (name == "layer") {
-      message("\nNote... '", name, "' names do not match at different levels, see below:")
-      } else {
-    message("\nWARNING... '", name, "' names do not match at different levels, see below:")
-    error<-error+1}
+  if(!(F %in% unlist(names_compared))){
+    cat("OK\n")
+  }
+
+      if(F %in% names_compared$higher){
+        message("\nWARNING... '", name, "' names not found at higher levels, see below:")
+    error<-error+1
     for (i in 1:length(level_names)){
       cat("\t","\t", name, "names in", names(level_names)[i], " tab... \n")
       if (length(level_names[[i]])>0){
       for (j in 1:length(level_names[[i]])){
         level_name<-as.character(level_names[[i]][j])
         if (F %in% lapply(level_names, FUN=function(x) level_name %in% x)){
-        cat("\t\t\t", level_name, "\n")}
-      }
+        cat("\t\t\t", level_name, "\n")
+          }
+        }
       } else cat("\t\t NONE \n")
     }
+      }
 
-    }else cat("OK\n")
+        if(F %in% names_compared$lower){
+          message("\nNote... '", name, "' names not found at lower levels, see below:")
+          for (i in 1:length(level_names)){
+            cat("\t","\t", name, "names in", names(level_names)[i], " tab... \n")
+            if (length(level_names[[i]])>0){
+              for (j in 1:length(level_names[[i]])){
+                level_name<-as.character(level_names[[i]][j])
+                if (F %in% lapply(level_names, FUN=function(x) level_name %in% x)){
+                  cat("\t\t\t", level_name, "\n")
+                  }
+                }
+              } else cat("\t\t NONE \n")
+            }
+          }
+
   return(error)
 
   }
