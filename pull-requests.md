@@ -5,8 +5,11 @@ go to:  https://github.com/powellcenter-soilcarbon/soilcarbon
 
 Follow these steps:
 
+# 1. 
 ![](site_files/assets/images/pull1.png)
+# 2. 
 ![](site_files/assets/images/pull2.png)
+# 3. 
 ![](site_files/assets/images/pull3.png)
 ![](site_files/assets/images/pull4.png)
 ![](site_files/assets/images/pull5.png)
