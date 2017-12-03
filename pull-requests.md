@@ -27,4 +27,4 @@ Follow these steps:
 # 9.
 ![](site_files/assets/images/pull9.png)
 
-# All done! The maintainers may accept your pull request or respond with questsions. 
+# All done! The maintainers may accept your pull request or respond with questions. 
