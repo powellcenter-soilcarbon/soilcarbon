@@ -26,3 +26,5 @@ Follow these steps:
 ![](site_files/assets/images/pull8.png)
 # 9.
 ![](site_files/assets/images/pull9.png)
+
+# All done! The maintainers may accept your pull request or respond with questsions. 
