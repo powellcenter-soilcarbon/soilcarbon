@@ -5,3 +5,4 @@
 ^data_files$
 ^site_files$
 ^index\.md$
+^pull-requests\.md$
