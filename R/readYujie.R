@@ -76,7 +76,7 @@ readYujie<- function(Yujie_file){
                                           observation_date=Yujie_dataset_profiles$SampleYear,
                                           p_MAT=Yujie_dataset_profiles$MAT_original,
                                           p_MAP=Yujie_dataset_profiles$MAP_original,
-                                          #soil_age=Yujie_dataset_profiles$Soil_Age,
+                                          soil_age=Yujie_dataset_profiles$Soil_Age,
                                           soil_taxon=Yujie_dataset_profiles$SoilOrder_LEN_USDA,
                                           parent_material_notes=Yujie_dataset_profiles$ParentMaterial,
                                           slope=Yujie_dataset_profiles$Slope,
