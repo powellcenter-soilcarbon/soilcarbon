@@ -1,4 +1,4 @@
-![](site_files/assets/images/structure.png)
+![](site_files/assets/images/Structure_v2.png)
 
 ## Database template
 [Template file](https://github.com/powellcenter-soilcarbon/soilcarbon/raw/master/inst/extdata/Master_template.xlsx) (Variables with red column names are required)  
