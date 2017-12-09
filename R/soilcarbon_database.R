@@ -15,6 +15,7 @@
 #'	\item{ observation_date }{}
 #'	\item{ p_MAT }{}
 #'	\item{ p_MAP }{}
+#'	\item{ soil_age }{}
 #'	\item{ soil_taxon }{}
 #'	\item{ parent_material_notes }{}
 #'	\item{ slope }{}
@@ -223,8 +224,6 @@
 #'	\item{ f_imog_alloph }{}
 #'	\item{ f_ferrihydrite }{}
 #'	\item{ f_zeolite }{}
-#'	\item{ map }{}
-#'	\item{ mat }{}
 #'   ...
 #' }
 #' @source \url{https://powellcenter.usgs.gov/view-project/55d4bffce4b0518e354695aa}

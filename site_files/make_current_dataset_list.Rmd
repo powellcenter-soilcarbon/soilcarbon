@@ -8,7 +8,7 @@ output: html_document
 ```{r, echo=F}
 library(soilcarbon)
 library(knitr)
-database<-soilcarbon_database
+database<-read.csv("~/Dropbox/data_files/database/compiled_database.csv")
 dataset_names<-unique(database$dataset_name)
 doi_names<-unique(database$doi_number)
 

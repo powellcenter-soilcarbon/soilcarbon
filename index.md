@@ -1,3 +1,7 @@
+## Contact
+For questions about the soilcarbon package email Grey - greymonroe@gmail.com. 
+
+## Database structure
 ![](site_files/assets/images/structure.png)
 
 ## Database template
@@ -27,7 +31,7 @@ soilcarbon.shiny()
 
 ### Current data
 
-[Current datsets and doi numbers](/site_files/make_current_dataset_list.html) 
+[Datasets and doi numbers available and in progress](/site_files/make_current_dataset_list.html) 
 
 
 ![](site_files/assets/images/mat.png)
