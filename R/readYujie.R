@@ -15,8 +15,9 @@ readYujie<- function(Yujie_file){
   requireNamespace("stringi")
   
   Yujie_dataset<-read.csv(Yujie_file, na.strings = c(""," ", "  "))
-  levels(Yujie_dataset$reference)<-c(levels(Yujie_dataset$reference), "no_ref")
-  Yujie_dataset$reference[which(is.na(Yujie_dataset$reference))] <- as.factor("no_ref")
+  
+  levels(Yujie_dataset$pc_dataset_name)<-c(levels(Yujie_dataset$pc_dataset_name), "no_ref")
+  Yujie_dataset$pc_dataset_name[which(is.na(Yujie_dataset$pc_dataset_name))] <- as.factor("no_ref")
   Yujie_dataset<-Yujie_dataset[-which(is.na(Yujie_dataset$Lon)),]
   
   Yujie_dataset_clean<-data.frame()
@@ -33,6 +34,13 @@ readYujie<- function(Yujie_file){
     Yujie_dataset_clean<-rbind(Yujie_dataset_clean, site)
   }
   
+  clean_sources<-unique(Yujie_dataset_clean$pc_dataset_name)
+  Yujie_dataset_sources<-data.frame()
+  for (i in 1:length(clean_sources)){
+    source<-subset(Yujie_dataset_clean, Yujie_dataset_clean$pc_dataset_name==clean_sources[i])[1,]
+    Yujie_dataset_sources<-rbind(Yujie_dataset_sources, source)
+  }
+  
   clean_sites<-unique(Yujie_dataset_clean$Site)
   Yujie_dataset_sites<-data.frame()
   for (i in 1:length(clean_sites)){
@@ -41,43 +49,53 @@ readYujie<- function(Yujie_file){
   }
   
   Yujie_dataset_clean$profile_name<-paste(Yujie_dataset_clean$Site, Yujie_dataset_clean$ProfileID, sep="_")
-  clean_profiles<-unique(Yujie_dataset_clean$profile_name)
   
+  clean_profiles<-unique(Yujie_dataset_clean$profile_name)
   Yujie_dataset_profiles<-data.frame()
   for (i in 1:length(clean_profiles)){
     profile<-subset(Yujie_dataset_clean, Yujie_dataset_clean$profile_name==clean_profiles[i])[1,]
     Yujie_dataset_profiles<-rbind(Yujie_dataset_profiles, profile)
   }
   
-  Yujie_dataset_clean$layer_name<-paste(Yujie_dataset_clean$profile_name, Yujie_dataset_clean$Layer_bottom, Yujie_dataset_clean$Layer_top, sep="_")
+  Yujie_dataset_clean$layer_name<-paste(Yujie_dataset_clean$profile_name, Yujie_dataset_clean$Layer_top, Yujie_dataset_clean$Layer_bottom, sep="_")
   
-  Yujie_soilcarbon<-list(metadata=data.frame(dataset_name=c("Yujie_non_peat_synthesis")),
-                         site=data.frame(dataset_name=Yujie_dataset_sites$Author,
+  Yujie_dataset_clean$Layer_bottom_norm<-abs(Yujie_dataset_clean$Layer_bottom_norm)
+  Yujie_dataset_clean$Layer_top_norm<-abs(Yujie_dataset_clean$Layer_top_norm)
+  
+  Yujie_soilcarbon<-list(metadata=data.frame(dataset_name=Yujie_dataset_sources$pc_dataset_name,
+                                         doi=Yujie_dataset_sources$doi,
+                                         currator_name=rep("Yujie He", nrow(Yujie_dataset_sources))),
+                         site=data.frame(dataset_name=Yujie_dataset_sites$pc_dataset_name,
                                          site_name=Yujie_dataset_sites$Site,
                                          lat=Yujie_dataset_sites$Lat,
                                          long=Yujie_dataset_sites$Lon,
-                                         parent_material=Yujie_dataset_sites$ParentMaterial,
-                                         slope=Yujie_dataset_sites$Slope,
-                                         slope_shape=Yujie_dataset_sites$SlopePosition,
-                                         aspect=Yujie_dataset_sites$Aspect,
-                                         veg_note=Yujie_dataset_sites$VegTypeCodeStr_Local,
                                          elevation=Yujie_dataset_sites$Elevation),
                          profile=data.frame(dataset_name=Yujie_dataset_profiles$Author,
-                                            site_name=Yujie_dataset_profiles$Site,
-                                            profile_name=Yujie_dataset_profiles$profile_name,
-                                            observation_date=Yujie_dataset_profiles$SampleYear,
-                                            soil_taxon=Yujie_dataset_profiles$SoilOrder_LEN_USDA_original),
+                                          site_name=Yujie_dataset_profiles$Site,
+                                          profile_name=Yujie_dataset_profiles$profile_name,
+                                          observation_date=Yujie_dataset_profiles$SampleYear,
+                                          p_MAT=Yujie_dataset_profiles$MAT_original,
+                                          p_MAP=Yujie_dataset_profiles$MAP_original,
+                                          soil_aga=Yujie_dataset_profiles$Soil_Age,
+                                          soil_taxon=Yujie_dataset_profiles$SoilOrder_LEN_USDA,
+                                          parent_material_notes=Yujie_dataset_profiles$ParentMaterial,
+                                          slope=Yujie_dataset_profiles$Slope,
+                                          slope_shape=Yujie_dataset_profiles$SlopePosition,
+                                          aspect=Yujie_dataset_profiles$Aspect,
+                                          veg_note_profile=Yujie_dataset_profiles$VegTypeCodeStr_Local),
                          layer=data.frame(dataset_name=Yujie_dataset_clean$Author,
                                           site_name=Yujie_dataset_clean$Site,
                                           profile_name=Yujie_dataset_clean$profile_name,
                                           layer_name=Yujie_dataset_clean$layer_name,
-                                          layer_top=Yujie_dataset_clean$Layer_top,
-                                          layer_bot=Yujie_dataset_clean$Layer_bottom,
+                                          layer_top=Yujie_dataset_clean$Layer_top_norm,
+                                          layer_bot=Yujie_dataset_clean$Layer_bottom_norm,
                                           hzn=Yujie_dataset_clean$HorizonDesignation,
                                           rc_year=Yujie_dataset_clean$Measurement_Year,
                                           X13c=Yujie_dataset_clean$d13C,
                                           X14c=Yujie_dataset_clean$D14C_BulkLayer,
                                           X14c_sigma=Yujie_dataset_clean$D14C_err,
+                                          fraction_modern=Yujie_dataset_clean$FractionModern,
+                                          fraction_modern_sigma=Yujie_dataset_clean$FractionModern_sigma,
                                           bd_tot=Yujie_dataset_clean$BulkDensity,
                                           bet_surface_area=Yujie_dataset_clean$SpecificSurfaceArea,
                                           ph_h2o=Yujie_dataset_clean$PH_H2O,
@@ -99,3 +117,4 @@ readYujie<- function(Yujie_file){
   
   return(Yujie_soilcarbon)
 }
+yujie<-readYujie("Yujie_dataset.csv")
