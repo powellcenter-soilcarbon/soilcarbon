@@ -20,9 +20,13 @@ devtools::install_github("powellcenter-soilcarbon/soilcarbon")
 ## Run soilcarbon shiny workbench
 The fastest and easiest way to interact with the soilcarbon database is through an R shiny app that comes with the soilcarbon pacakge. After you have installed the package, just run this code in R:
 ```{r}
-shiny::runApp(system.file('shiny', package='soilcarbon'))
+library(soilcarbon)
+soilcarbon.shiny()  
 ```
 In this shiny app, you can plot or download data in the database, and run a quality control check on a datafile you want to submit to the database.
+
+Visit our homepage for information 
+https://powellcenter-soilcarbon.github.io/soilcarbon/
 
 # Adding data
 

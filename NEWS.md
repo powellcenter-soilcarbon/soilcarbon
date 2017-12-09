@@ -1,5 +1,5 @@
 
-soilcarbon 1.3.0.000 (11-05-2017)
+soilcarbon 1.3.0.000 (12-09-2017)
 ===============================================
 
 New functions, shiny application tools, and template format.
