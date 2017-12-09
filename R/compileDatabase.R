@@ -16,7 +16,7 @@ compileDatabase <- function(dataset_directory ){
 
    # special dataset (Yujie)
    Yujie_file<-system.file("extdata", "Yujie_dataset.csv", package = "soilcarbon")
-   Yujie_database<-convert.Yuije(Yujie_file)
+   Yujie_database<-readYujie(Yujie_file)
    working_database<-Yujie_database
    working_database[] <- lapply(working_database, as.character)
 

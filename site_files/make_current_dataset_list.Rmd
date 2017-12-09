@@ -1,0 +1,24 @@
+---
+title: "Current_dataset_list"
+author: "Grey Monroe"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: html_document
+---
+
+```{r, echo=F}
+library(soilcarbon)
+library(knitr)
+database<-soilcarbon_database
+dataset_names<-unique(database$dataset_name)
+doi_names<-unique(database$doi_number)
+
+datasets<-data.frame()
+for (n in 1:length(dataset_names)){
+  sub<-subset(database, dataset_name==dataset_names[n])
+  dois<-unique(sub$doi_number)
+  datasets<-rbind(datasets, cbind(as.character(dataset_names[n]), as.character(dois)))
+}
+colnames(datasets)<-c("dataset_name","doi_number")
+  
+kable(datasets)
+```

@@ -5,21 +5,21 @@
 #' @param Yujie_file directory to Yuije data file
 #' @import utils
 #' @import stringi
-#' 
+#'
 #' @return a list with data organized in 'tabs'
-#' 
+#'
 #' @export
 
 readYujie<- function(Yujie_file){
-  
+
   requireNamespace("stringi")
-  
+
   Yujie_dataset<-read.csv(Yujie_file, na.strings = c(""," ", "  "))
-  
+
   levels(Yujie_dataset$pc_dataset_name)<-c(levels(Yujie_dataset$pc_dataset_name), "no_ref")
   Yujie_dataset$pc_dataset_name[which(is.na(Yujie_dataset$pc_dataset_name))] <- as.factor("no_ref")
   Yujie_dataset<-Yujie_dataset[-which(is.na(Yujie_dataset$Lon)),]
-  
+
   Yujie_dataset_clean<-data.frame()
   sites<-unique(Yujie_dataset$Site)
   for (i in 1:length(sites)){
@@ -33,38 +33,38 @@ readYujie<- function(Yujie_file){
     }
     Yujie_dataset_clean<-rbind(Yujie_dataset_clean, site)
   }
-  
+
   clean_sources<-unique(Yujie_dataset_clean$pc_dataset_name)
   Yujie_dataset_sources<-data.frame()
   for (i in 1:length(clean_sources)){
     source<-subset(Yujie_dataset_clean, Yujie_dataset_clean$pc_dataset_name==clean_sources[i])[1,]
     Yujie_dataset_sources<-rbind(Yujie_dataset_sources, source)
   }
-  
+
   clean_sites<-unique(Yujie_dataset_clean$Site)
   Yujie_dataset_sites<-data.frame()
   for (i in 1:length(clean_sites)){
     site<-subset(Yujie_dataset_clean, Yujie_dataset_clean$Site==clean_sites[i])[1,]
     Yujie_dataset_sites<-rbind(Yujie_dataset_sites, site)
   }
-  
+
   Yujie_dataset_clean$profile_name<-paste(Yujie_dataset_clean$Site, Yujie_dataset_clean$ProfileID, sep="_")
-  
+
   clean_profiles<-unique(Yujie_dataset_clean$profile_name)
   Yujie_dataset_profiles<-data.frame()
   for (i in 1:length(clean_profiles)){
     profile<-subset(Yujie_dataset_clean, Yujie_dataset_clean$profile_name==clean_profiles[i])[1,]
     Yujie_dataset_profiles<-rbind(Yujie_dataset_profiles, profile)
   }
-  
+
   Yujie_dataset_clean$layer_name<-paste(Yujie_dataset_clean$profile_name, Yujie_dataset_clean$Layer_top, Yujie_dataset_clean$Layer_bottom, sep="_")
-  
+
   Yujie_dataset_clean$Layer_bottom_norm<-abs(Yujie_dataset_clean$Layer_bottom_norm)
   Yujie_dataset_clean$Layer_top_norm<-abs(Yujie_dataset_clean$Layer_top_norm)
-  
+
   Yujie_soilcarbon<-list(metadata=data.frame(dataset_name=Yujie_dataset_sources$pc_dataset_name,
-                                         doi=Yujie_dataset_sources$doi,
-                                         currator_name=rep("Yujie He", nrow(Yujie_dataset_sources))),
+                                          doi_number=Yujie_dataset_sources$doi,
+                                         curator_name=rep("Yujie He", nrow(Yujie_dataset_sources))),
                          site=data.frame(dataset_name=Yujie_dataset_sites$pc_dataset_name,
                                          site_name=Yujie_dataset_sites$Site,
                                          lat=Yujie_dataset_sites$Lat,
@@ -76,7 +76,7 @@ readYujie<- function(Yujie_file){
                                           observation_date=Yujie_dataset_profiles$SampleYear,
                                           p_MAT=Yujie_dataset_profiles$MAT_original,
                                           p_MAP=Yujie_dataset_profiles$MAP_original,
-                                          soil_aga=Yujie_dataset_profiles$Soil_Age,
+                                          #soil_age=Yujie_dataset_profiles$Soil_Age,
                                           soil_taxon=Yujie_dataset_profiles$SoilOrder_LEN_USDA,
                                           parent_material_notes=Yujie_dataset_profiles$ParentMaterial,
                                           slope=Yujie_dataset_profiles$Slope,
@@ -114,7 +114,12 @@ readYujie<- function(Yujie_file){
                                           al_ox=Yujie_dataset_clean$Alo,
                                           smect_vermic=Yujie_dataset_clean$Smectite),
                          fraction=data.frame())
-  
-  return(Yujie_soilcarbon)
+
+  attributes(Yujie_soilcarbon)$file_name<-Yujie_file
+  Yujie_data_nofraction<-Yujie_soilcarbon[-5]
+  Yujie_flat<-flatten(soilcarbon_data = Yujie_data_nofraction)
+  Yujie_database<-Yujie_flat
+  Yujie_database[]<-lapply(Yujie_database, function(x) stringi::stri_trans_general(as.character(x), "latin-ascii"))
+
+  return(Yujie_database)
 }
-yujie<-readYujie("Yujie_dataset.csv")

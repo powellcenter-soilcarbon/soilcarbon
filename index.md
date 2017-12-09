@@ -27,6 +27,9 @@ soilcarbon.shiny()
 
 ### Current data
 
+[Current datsets and doi numbers](/site_files/make_current_dataset_list.html) 
+
+
 ![](site_files/assets/images/mat.png)
 ![](site_files/assets/images/map.png)
 
