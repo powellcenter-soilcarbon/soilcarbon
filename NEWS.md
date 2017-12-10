@@ -2,7 +2,7 @@
 soilcarbon 1.3.0.000 (12-09-2017)
 ===============================================
 
-New functions, shiny application tools, and template format.
+New functions, database, shiny application tools, and template format.
 
 soilcarbon 1.2.0.000 Intial release (08-02-2017)
 ===============================================
