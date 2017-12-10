@@ -33,7 +33,6 @@ soilcarbon.shiny()
 
 [Datasets and doi numbers available and in progress](/site_files/make_current_dataset_list.html) 
 
-
 ![](site_files/assets/images/mat.png)
 ![](site_files/assets/images/map.png)
 
