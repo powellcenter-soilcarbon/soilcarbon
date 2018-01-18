@@ -59,8 +59,8 @@ readYujie<- function(Yujie_file){
 
   Yujie_dataset_clean$layer_name<-paste(Yujie_dataset_clean$profile_name, Yujie_dataset_clean$Layer_top, Yujie_dataset_clean$Layer_bottom, sep="_")
 
-  Yujie_dataset_clean$Layer_bottom_norm<-abs(Yujie_dataset_clean$Layer_bottom_norm)
-  Yujie_dataset_clean$Layer_top_norm<-abs(Yujie_dataset_clean$Layer_top_norm)
+  Yujie_dataset_clean$Layer_bottom_norm<-Yujie_dataset_clean$Layer_bottom_norm
+  Yujie_dataset_clean$Layer_top_norm<-Yujie_dataset_clean$Layer_top_norm
 
   Yujie_soilcarbon<-list(metadata=data.frame(dataset_name=Yujie_dataset_sources$pc_dataset_name,
                                           doi_number=Yujie_dataset_sources$doi,
