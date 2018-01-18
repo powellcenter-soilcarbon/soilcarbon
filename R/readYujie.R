@@ -120,6 +120,7 @@ readYujie<- function(Yujie_file){
   Yujie_flat<-flatten(soilcarbon_data = Yujie_data_nofraction)
   Yujie_database<-Yujie_flat
   Yujie_database[]<-lapply(Yujie_database, function(x) stringi::stri_trans_general(as.character(x), "latin-ascii"))
+  Yujie_database[]<-lapply(Yujie_database, type.convert)
 
   return(Yujie_database)
 }
