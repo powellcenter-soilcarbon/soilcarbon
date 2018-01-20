@@ -24,11 +24,16 @@
         $("#submitbutton").attr("disabled", "disabled");
 
         //perform the request
-        var req = ocpu.call("read.soilcarbon", {
+        var req1 = ocpu.call("read.soilcarbon", {
           file : myfile
-        }, function(session){
-          $("#key").text(session.getKey());
-          $("#location").text(session.getLoc());
+        }, function(session1){
+          req2 = ocpu.call("dataQC", {
+          data : session1},
+          function(session2){
+            session2.getConsole(function(outtxt){
+                $("#output").text(outtxt);
+           });
+          });
         });
 
         //if R returns an error, alert the error message
@@ -70,6 +75,8 @@
 
 Session ID: <tt id="key"></tt> <br >
 Session Location: <tt id="location"></tt>
+
+<code id="output"></code>
 
   </body>
 </html>
