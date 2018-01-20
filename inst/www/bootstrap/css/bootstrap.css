@@ -97,7 +97,9 @@ samp {
 }
 
 pre {
-  white-space: pre-wrap;
+    border: solid gray 1px;
+    padding: 5px;
+    margin: 10px;
 }
 
 q {
