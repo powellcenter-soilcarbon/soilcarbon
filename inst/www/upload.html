@@ -24,14 +24,14 @@
         $("#submitbutton").attr("disabled", "disabled");
 
         //perform the request
-
+        var write = true
 
         var req1 = ocpu.call("read.soilcarbon", {
           file : myfile
         }, function(session1){
           req2 = ocpu.call("dataQC", {
           data : session1,
-          writeQCreport: true
+          writeQCreport: write
           },
           function(session2){
             mysession=session2;
