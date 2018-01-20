@@ -27,8 +27,7 @@
 
 
         var req = ocpu.call("read.soilcarbon", {
-          file : myfile,
-          writeQCreport: true
+          file : myfile
         }, function(session1){
           req2 = ocpu.call("dataQC", {
           data : session1
