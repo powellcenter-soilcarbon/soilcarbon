@@ -30,6 +30,8 @@
           req2 = ocpu.call("dataQC", {
           data : session1},
           function(session2){
+            $("#key").text(session2.getKey());
+         $("#location").text(session2.getLoc());
             session2.getConsole(function(outtxt){
                 $("#output").text(outtxt);
            });
