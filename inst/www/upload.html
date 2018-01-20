@@ -31,7 +31,8 @@
         }, function(session1){
           req2 = ocpu.call("dataQC", {
           data : session1,
-          writeQCreport: write
+          writeQCreport: write,
+          outfile: "outfile.txt"
           },
           function(session2){
             mysession=session2;
