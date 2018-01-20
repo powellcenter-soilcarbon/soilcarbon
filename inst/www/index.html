@@ -1,35 +1,88 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Check a file</title>
 
-    <title>OpenCPU App Demo</title>
+    <!-- Include order: first jquery, then opencpu.js, and then your code -->
+    <script src="opencpu/jquery-1.10.2.min.js"></script>
+    <script src="opencpu/opencpu-0.4.js"></script>
+
+    <script>
+    //init this script when the page has loaded
+    $(document).ready(function(){
+      $("#submitbutton").on("click", function(){
+
+        //arguments
+        var myfile = $("#datafile")[0].files[0];
+
+        if(!myfile){
+          alert("No file selected.");
+          return;
+        }
+
+        //disable the button during upload
+        $("#submitbutton").attr("disabled", "disabled");
+
+        //perform the request
+
+
+        var req1 = ocpu.call("read.soilcarbon", {
+          file : myfile
+        }, function(session1){
+          req2 = ocpu.call("dataQC", {
+          data : session1
+          },
+          function(session2){
+            mysession=session2;
+            $("#key").text(mysession.getKey());
+         $("#location").text(mysession.getLoc());
+            session2.getConsole(function(outtxt){
+                $("#output").text(outtxt);
+           });
+          });
+        });
+
+        //if R returns an error, alert the error message
+        req.fail(function(){
+          alert("Server error: " + req.responseText);
+        });
+
+        //after request complete, re-enable the button
+        req.always(function(){
+          $("#submitbutton").removeAttr("disabled")
+        });
+      });
+    });
+    </script>
+
+    <style>
+
+    </style>
 
   </head>
 
   <body>
-    <h1>OpenCPU App test YOU df welcome more stuff!!!!!!!!!aab</h1>
+    <h1>Uploading a File</h1>
+
+    <b>File</b> <input type="file" id="datafile">
+    <br />
+
+    <br />
+    <button id="submitbutton" type="button">Upload data file!</button>
+    <br>
+
+    <a target="_blank" id="rdalink"> Download the data frame</a>
 
     <p>
-      The sole purpose of thiasdfasdfasdfs OpenCPU app is to demonstrate how to use the <a href="http://github.com/jeroenooms/opencpu.js"><tt>opencpu.js</tt></a> library to call R from Javascript using OpenCPU.
+      <b>Note that HTML5 is required to upload files!</b> <br />
+      This means that this won't work in internet explorer version 9 or lower.
+      You need Firefox, Chrome, Safari or Internet Explorer 10+
     </p>
 
-    <h2>Introduction</h2>
+Session ID: <p id="key"></p> <br >
+Session Location: <p id="location"></p> <br >
 
-    <p>The opencpu.js library depends on jQuery and provides some convenient wrappers around $.ajax to call the OpenCPU API.
-    A copy of jquery and opencpu.js must be included with your OpenCPU app.</p>
-
-    <h2>Topics</h2>
-
-    <p>Each topic consists of a minimal HTML page demonstrating basic functionality. Look at the source code of the HTML page to learn what is happening.</p>
-
-    <ol>
-      <li><a href="hello.html">Calling a function</a></li>
-      <li><a href="plot.html">Making a plot</a></li>
-      <li><a href="data.html">Include data in a package</a></li>
-      <li><a href="upload.html">Upload a file</a></li>
-      <li><a href="chain.html">Chaining functions (use session)</a></li>
-    </ol>
-
+<code id="output"></code>
 
   </body>
 </html>
