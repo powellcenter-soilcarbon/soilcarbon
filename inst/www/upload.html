@@ -32,7 +32,7 @@
           function(session2){
             mysession=session2;
             $("#key").text(mysession.getKey());
-         $("#location").text(mysession.getLoc());
+         $("#location").text(myfile.getLoc());
             session2.getConsole(function(outtxt){
                 $("#output").text(outtxt);
            });
@@ -77,7 +77,7 @@
     </p>
 
 Session ID: <p id="key"></p> <br >
-Session Location: <tt id="location"></tt>
+Session Location: <p id="location"></p> <br >
 
 <code id="output"></code>
 
