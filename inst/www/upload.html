@@ -30,8 +30,8 @@
           req2 = ocpu.call("dataQC", {
           data : session1},
           function(session2){
-            session2.getConsole(function(outtxt){
-                $("#output").text(outtxt);
+            session2.getObject(function(data){
+            alert("Variance equals: " + data);
            });
           });
         });
