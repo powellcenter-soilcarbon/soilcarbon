@@ -35,7 +35,7 @@
             mysession=session2;
             $("#key").text(mysession.getKey());
          $("#location").text(myfile.getLoc());
-            mysession.getConsole(function(outtxt){
+            session2.getConsole(function(outtxt){
                 $("#output").text(outtxt);
            });
           });
