@@ -13,8 +13,7 @@
       $("#submitbutton").on("click", function(){
 
         //arguments
-        var myheader = $("#header").val() == "true";
-        var myfile = $("#csvfile")[0].files[0];
+        var myfile = $("#datafile")[0].files[0];
 
         if(!myfile){
           alert("No file selected.");
