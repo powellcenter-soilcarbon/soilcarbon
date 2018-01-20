@@ -24,17 +24,15 @@
         $("#submitbutton").attr("disabled", "disabled");
 
         //perform the request
-        var req = ocpu.call("read.soilcarbon", {
+        var req1 = ocpu.call("read.soilcarbon", {
           file : myfile
         }, function(session1){
           req2 = ocpu.call("dataQC", {
-          data : session1,
-          writeQCreport: T
-          },
+          data : session1},
           function(session2){
             mysession=session2;
             $("#key").text(mysession.getKey());
-         $("#location").text(myfile.getLoc());
+         $("#location").text(mysession.getLoc());
             session2.getConsole(function(outtxt){
                 $("#output").text(outtxt);
            });
