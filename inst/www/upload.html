@@ -28,7 +28,9 @@
           file : myfile
         }, function(session1){
           req2 = ocpu.call("dataQC", {
-          data : session1},
+          data : session1,
+          writeQCreport: "T"
+          },
           function(session2){
             mysession=session2;
             $("#key").text(mysession.getKey());
