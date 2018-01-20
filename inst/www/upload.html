@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Uploading a file</title>
+
+    <!-- Include order: first jquery, then opencpu.js, and then your code -->
+    <script src="opencpu/jquery-1.10.2.min.js"></script>
+    <script src="opencpu/opencpu-0.4.js"></script>
+
+    <script>
+    //init this script when the page has loaded
+    $(document).ready(function(){
+      $("#submitbutton").on("click", function(){
+
+        //arguments
+        var myheader = $("#header").val() == "true";
+        var myfile = $("#csvfile")[0].files[0];
+
+        if(!myfile){
+          alert("No file selected.");
+          return;
+        }
+
+        //disable the button during upload
+        $("#submitbutton").attr("disabled", "disabled");
+
+        //perform the request
+        var req = ocpu.call("read.soilcarbon", {
+          file : myfile
+        }, function(session){
+          $("#key").text(session.getKey());
+          $("#location").text(session.getLoc());
+        });
+
+        //if R returns an error, alert the error message
+        req.fail(function(){
+          alert("Server error: " + req.responseText);
+        });
+
+        //after request complete, re-enable the button
+        req.always(function(){
+          $("#submitbutton").removeAttr("disabled")
+        });
+      });
+    });
+    </script>
+
+    <style>
+
+    </style>
+
+  </head>
+
+  <body>
+    <h1>Uploading a File</h1>
+
+    <b>File</b> <input type="file" id="datafile">
+    <br />
+
+    <br />
+    <button id="submitbutton" type="button">Upload data file!</button>
+    <br>
+
+    <a target="_blank" id="rdalink">Download the data frame</a>
+
+    <p>
+      <b>Note that HTML5 is required to upload files!</b> <br />
+      This means that this won't work in internet explorer version 9 or lower.
+      You need Firefox, Chrome, Safari or Internet Explorer 10+
+    </p>
+
+Session ID: <tt id="key"></tt> <br >
+Session Location: <tt id="location"></tt>
+
+  </body>
+</html>
