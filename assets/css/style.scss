@@ -6,5 +6,9 @@
 #banner_pic {
   background-image: url('../images/soil.jpg');
   width: 100%;
+  position: relative;
+  max-width: 640px;
+  padding: 50px 10px 30px 10px;
+  margin: 0 auto;
 }
 
