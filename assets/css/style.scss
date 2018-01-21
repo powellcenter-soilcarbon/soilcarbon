@@ -4,6 +4,7 @@
 @import "{{ site.theme }}";
 
 #header_pic {
-  background: url('../images/soil.jpg')
+  background: color url('../images/soil.jpg');
+  width: 100%;
 }
 
