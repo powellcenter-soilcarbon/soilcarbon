@@ -74,9 +74,9 @@ cat("LEVEL NAMES\n")
 
 
   if (writeQCreport==T){
+    sink(type="message")
     sink()
     cat("QC report saved to", outfile,"\n")
-    closeAllConnections()
   }
 
 return(errors)
