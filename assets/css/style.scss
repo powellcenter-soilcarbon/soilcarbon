@@ -4,11 +4,9 @@
 @import "{{ site.theme }}";
 
 #banner_pic {
-  background: url('../images/soil.jpg');
-  width: 100%;
-  height: auto;
-  position: relative;
-  padding: 50px 10px 30px 10px;
-  margin: 0 auto;
+  background-image: url('../images/soil.jpg');
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position:center;
 }
 
