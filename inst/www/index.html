@@ -30,12 +30,14 @@
           file : myfile
         }, function(session1){
           req2 = ocpu.call("dataQC", {
-          data : session1
+          data : session1,
+          writeQCreport=T,
+          outfile="temp.txt"
           },
           function(session2){
             mysession=session2;
             $("#key").text(mysession.getKey());
-         $("#location").text(mysession.getLoc());
+         $("#printlink").attr("href", mysession.getLoc() + "files/temp.txt")
             session2.getConsole(function(outtxt){
                 $("#output").text(outtxt);
            });
@@ -71,7 +73,7 @@
     <button id="submitbutton" type="button">Upload data file!</button>
     <br>
 
-    <a target="_blank" id="rdalink"> Download the data frame</a>
+    <a target="_blank" id="printlink" download>print</a>
 
     <p>
       <b>Note that HTML5 is required to upload files!</b> <br />
