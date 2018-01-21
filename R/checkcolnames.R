@@ -16,7 +16,7 @@ checkcolnames<-function(data, tab, soilcarbon_template){
   error=0
   notintemplate<-setdiff(data_colnames, template_colnames)
   if (length(notintemplate>0)) {
-    message("\nWARNING...column names in the '",tab,"' tab do not match template, see below:")
+    cat("\nWARNING...column names in the '",tab,"' tab do not match template, see below:")
     cat("\t\t columns found in '", tab, "' tab of dataset but not in template\n" )
     error<-error+1
     for (i in 1:length(notintemplate)){

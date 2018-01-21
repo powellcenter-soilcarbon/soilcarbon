@@ -44,7 +44,7 @@ checkreqcols<-function(data, tab){
   error=0
 
   if (length(missing>0)) {
-    message("\nWARNING...required column(s) missing from the '",tab,"' tab:")
+    cat("\nWARNING...required column(s) missing from the '",tab,"' tab:")
     error<-error+1
     for (i in 1:length(missing)){
       cat("\t\t", missing[i] ,"\n")
@@ -55,7 +55,7 @@ checkreqcols<-function(data, tab){
     col<-not_missing[i]
     required_column<-data[[tab]][,col]
     if ( length(required_column)==0 | any(c(NA, "", " ") %in% required_column)){
-      message("\nWARNING... missing values in required column '", col, "' from the '",tab,"' tab")
+      cat("\nWARNING... missing values in required column '", col, "' from the '",tab,"' tab")
       error<-error+1
 
     }
@@ -65,11 +65,11 @@ checkreqcols<-function(data, tab){
   if (error==0) cat("OK\n")
   if (tab=="fraction"){
     if (length(data[[tab]][,"f_property"])==0 | any(c(NA, "", " ") %in% data[[tab]][,"f_property"]))
-      message("\nNote... missing values in f_property tab in the '",tab,"' tab")
+      cat("\nNote... missing values in f_property tab in the '",tab,"' tab")
     if (length(data[[tab]][,"f_lower"])==0 | any(c(NA, "", " ") %in% data[[tab]][,"f_lower"]))
-      message("\nNote... missing values in f_lower tab in the '",tab,"' tab")
+      cat("\nNote... missing values in f_lower tab in the '",tab,"' tab")
     if (length(data[[tab]][,"f_upper"])==0 | any(c(NA, "", " ") %in% data[[tab]][,"f_upper"]))
-      message("\nNote... missing values in f_upper tab in the '",tab,"' tab")
+      cat("\nNote... missing values in f_upper tab in the '",tab,"' tab")
   }
 return(error)
 }

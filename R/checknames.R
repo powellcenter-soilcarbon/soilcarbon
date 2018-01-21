@@ -22,7 +22,7 @@ checknames<-function(data, name, tabs){
   }
 
       if(F %in% names_compared$higher){
-        message("\nWARNING... '", name, "' names not found at higher levels, see below:")
+        cat("\nWARNING... '", name, "' names not found at higher levels, see below:")
     error<-error+1
     for (i in 1:length(level_names)){
       cat("\t","\t", name, "names in", names(level_names)[i], " tab... \n")
@@ -38,7 +38,7 @@ checknames<-function(data, name, tabs){
       }
 
         if(F %in% names_compared$lower){
-          message("\nNote... '", name, "' names not found at lower levels, see below:")
+          cat("\nNote... '", name, "' names not found at lower levels, see below:")
           for (i in 1:length(level_names)){
             cat("\t","\t", name, "names in", names(level_names)[i], " tab... \n")
             if (length(level_names[[i]])>0){
