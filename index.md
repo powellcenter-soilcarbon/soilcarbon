@@ -10,6 +10,8 @@ For questions about the soilcarbon package email Grey - greymonroe@gmail.com.
 
 ## Add data!
 
+[Check your data here](http://powellcenter-soilcarbon.ocpu.io/soilcarbon/www/)
+
 1. Install latest version of R [https://www.r-project.org/](https://www.r-project.org/)
 2. Install and load soilcarbon package (run this in R). Installing the package this way may not have have the most updated features of the package.
 ```{r}

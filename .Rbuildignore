@@ -6,3 +6,5 @@
 ^site_files$
 ^index\.md$
 ^pull-requests\.md$
+^_layouts$
+^assets$
