@@ -36,9 +36,6 @@ cat("                Please review the\n")
 cat("          Quality Control check below:\n")
 cat(rep("-", 30),"\n\n\n")
 
-
-  cat("timestamp:", as.character(Sys.time()),"\n")
-  cat(rep("-", 20),"\n")
   # Compare column names in dataset to template file
   cat("COLUMN NAMES\n")
  errors<-sum(sapply(tabs, function(x) checkcolnames(data, x, template)))
