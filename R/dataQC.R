@@ -3,14 +3,19 @@
 #' Check the imported soil carbon dataset for formatting and entry errors
 #'
 #' @param data directory to data file
-#' @param tabs the tabs that will be checked, default is all
+#' @param tabs the tabs that will be checked, default is NULL
 #' @param writeQCreport if TRUE, a text report of the QC output will be written to the outfile. Default is FALSE
 #' @param outfile filename of the output file if writeQCreport=TRUE. Default is NULL, and the outfile will be written to the directory where the dataset is stored, and named by the dataset being checked.
 #' @export
 #'
 #'
 
-dataQC <- function(data, tabs= c("metadata", "site", "profile", "layer", "fraction"), writeQCreport=F, outfile=NULL){
+dataQC <- function(data, tabs= NULL, writeQCreport=F, outfile=NULL){
+
+  # do not run tests on fraction tab  if fraction tab is empty (contains only NAs)
+   if (all(is.na(data)) & "fraction" %in% tabs){
+    tabs<-tabs[-which(tabs=="fraction")]
+  }
 
   if (writeQCreport==T){
     if (is.null(outfile)){
@@ -23,6 +28,7 @@ dataQC <- function(data, tabs= c("metadata", "site", "profile", "layer", "fracti
 
   template_file<-system.file("extdata", "Master_template.xlsx", package = "soilcarbon")
   template<-read.soilcarbon(file=template_file, template=T)
+
 
 cat(rep("-", 30),"\n")
 cat("         Thank you for submitting data to the \n")
