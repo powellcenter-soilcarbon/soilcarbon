@@ -10,12 +10,9 @@
 #'
 #'
 
-dataQC <- function(data, tabs= NULL, writeQCreport=F, outfile=NULL){
+dataQC <- function(data, tabs= c("metadata","site","profile","layer","fraction"), writeQCreport=F, outfile=NULL){
 
-  # do not run tests on fraction tab  if fraction tab is empty (contains only NAs)
-   if (all(is.na(data)) & "fraction" %in% tabs){
-    tabs<-tabs[-which(tabs=="fraction")]
-  }
+
 
   if (writeQCreport==T){
     if (is.null(outfile)){
@@ -47,9 +44,15 @@ cat(rep("-", 30),"\n\n\n")
  errors<-sum(sapply(tabs, function(x) checkcolnames(data, x, template)))
 
 # Check required columns
+
+ # do not check for req columns in fraction tab  if fraction tab is empty (contains only NAs)
+ if (all(is.na(data$fraction)) & "fraction" %in% tabs){
+   reqcoltabs<-tabs[-which(tabs=="fraction")]
+ }
+
   cat(rep("-", 20),"\n")
   cat("REQUIRED COLUMNS\n")
-  errors<-errors+sum(sapply(tabs, function(x) checkreqcols(data, x)))
+  errors<-errors+sum(sapply(reqcoltabs, function(x) checkreqcols(data, x)))
 
 
 # Compare names at different hierarchies
