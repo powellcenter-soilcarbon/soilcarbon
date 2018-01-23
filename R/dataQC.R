@@ -42,10 +42,8 @@ cat(rep("-", 30),"\n\n\n")
 
 # Check required columns
 
- # do not check for req columns in fraction tab  if fraction tab is empty (contains only NAs)
- if (all(is.na(data$fraction)) & "fraction" %in% tabs){
-   reqcoltabs<-tabs[-which(tabs=="fraction")]
- } else reqcoltabs<-tabs
+ # do not check for req columns in tabs that are empty (contains only NAs)
+ reqcoltabs<-names(data)[!unlist(lapply(data, function(x) all(is.na(x))))]
 
   cat(rep("-", 20),"\n")
   cat("REQUIRED COLUMNS\n")
