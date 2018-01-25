@@ -1,3 +1,7 @@
+![](assets/images/USGS.jpg)
+![](assets/images/PowellCenter.jpeg)
+![](assets/images/MPI-BGC_logo_EN.png)
+
 ## Contact
 For questions about the soilcarbon package email Grey - greymonroe@gmail.com. 
 
