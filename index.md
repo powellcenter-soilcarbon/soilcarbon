@@ -55,3 +55,5 @@ A detailed list of the data sources that are included can be found here:
 
 ## Contribute to soilcarbon package
 [Instructions for making pull requests](pull-requests).
+
+The Soil Carbon Database has been developed in collaboration between the U.S. Geological Survey Powell Center and the Max Planck Institute for Biogeochemistry”
