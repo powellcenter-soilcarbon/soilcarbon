@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Check a file</title>
+    <title>Soilcarbon data file QA/QC</title>
 
     <!-- Include order: first jquery, then opencpu.js, and then your code -->
     <script src="opencpu/jquery-1.10.2.min.js"></script>
@@ -25,10 +25,9 @@
 
         //perform the request
 
-
+        $("#loading").text("loading...");
         var req = ocpu.call("read.soilcarbon", {
           file : myfile
-          $("#loading").text("loading...");
         }, function(session1){
           req2 = ocpu.call("dataQC", {
           data : session1,
