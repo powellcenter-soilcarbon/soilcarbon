@@ -32,12 +32,12 @@
           req2 = ocpu.call("dataQC", {
           data : session1,
           writeQCreport:true,
-          outfile:"temp.txt"
+          outfile:"Data_QAQC_report.txt"
           },
           function(session2){
             mysession=session2;
             $("#key").text(mysession.getKey());
-         $("#printlink").attr("href", mysession.getLoc() + "files/temp.txt")
+         $("#printlink").attr("href", mysession.getLoc() + "files/Data_QAQC_report.txt")
             session2.getConsole(function(outtxt){
                 $("#output").text(outtxt);
            });
