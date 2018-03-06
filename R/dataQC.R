@@ -35,7 +35,7 @@ cat("                Please review the\n")
 
 cat("          Quality Control check below:\n")
 cat(rep("-", 30),"\n\n\n")
-cat(gsub("\\.xlsx", "_QCreport.txt", attributes(data)$file_name))
+cat("File:",attributes(data)$file_name), "\n\n")
 
   # Compare column names in dataset to template file
   cat("COLUMN NAMES\n")
