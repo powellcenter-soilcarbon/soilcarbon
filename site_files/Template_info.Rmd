@@ -7,21 +7,15 @@ output: html_document
 
 ![](assets/images/structure.png)
 
-### Data Tabs:
-The template file that is submitted must contain the tabs below, otherwise the data quality control step will fail. Click on one of the tab names to see what columns you expect to find in that tab. 
-
-1. [metadata tab](#metadata) 
-1. [site tab](#site)
-1. [profile tab](#profile) 
-1. [layer tab](#layer)
-1. [fraction tab](#fraction)
-
 ```{r, echo=F}
 
 library(openxlsx)
 Template_info_file=system.file("extdata", "Template_info.xlsx", package = "soilcarbon")
 sheets<-getSheetNames(Template_info_file)
 
+info<-read.xlsx(Template_info_file , sheet="general info")
+    info[is.na(info)]<-""
+  colnames(info)<-c("Topic", "General Database Information")
   metadata<-read.xlsx(Template_info_file , sheet="metadata")
     metadata[is.na(metadata)]<-""
   site<-read.xlsx(Template_info_file , sheet="site")
@@ -34,6 +28,20 @@ sheets<-getSheetNames(Template_info_file)
     fraction[is.na(fraction)]<-""
   
 ```
+### General Information
+```{r, echo=F}
+library(knitr)
+kable(info)
+```
+
+### Data Tabs:
+The template file that is submitted must contain the tabs below, otherwise the data quality control step will fail. Click on one of the tab names to see what columns you expect to find in that tab. 
+
+1. [metadata tab](#metadata) 
+1. [site tab](#site)
+1. [profile tab](#profile) 
+1. [layer tab](#layer)
+1. [fraction tab](#fraction)
 
 # metadata
 #### Columns in this tab describe the source of the dataset. 
