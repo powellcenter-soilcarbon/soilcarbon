@@ -64,27 +64,20 @@
   </head>
 
   <body>
-    <h1>Uploading a File</h1>
+    <h3>Upload and generate QA/QC report for data file</h3>
 
-    <b>File</b> <input type="file" id="datafile">
+    <b>Data File</b> <input type="file" id="datafile">
     <br />
-
-    <br />
-    <button id="submitbutton" type="button">Upload data file!</button>
-    <br>
-
-    <a target="_blank" id="printlink" download>print</a>
-
     <p>
-      <b>Note that HTML5 is required to upload files!</b> <br />
-      This means that this won't work in internet explorer version 9 or lower.
-      You need Firefox, Chrome, Safari or Internet Explorer 10+
+      (Upload requires Firefox, Chrome, Safari or Internet Explorer 10+)
     </p>
 
-Session ID: <p id="key"></p> <br >
-Session Location: <p id="location"></p> <br >
+    <br />
+    <button id="submitbutton" type="button">Generate QA/QC report</button>
+    <br>
 
-<code id="output"></code>
+    <a target="_blank" id="printlink" download>Download report</a>
+
 
   </body>
 </html>

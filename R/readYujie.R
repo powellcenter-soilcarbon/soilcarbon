@@ -24,6 +24,7 @@ readYujie<- function(Yujie_file){
   sites<-unique(Yujie_dataset$Site)
   for (i in 1:length(sites)){
     site<-subset(Yujie_dataset, Yujie_dataset$Site==sites[i])
+    site$Site<-paste(site$pc_dataset_name, site$Site, sep="_")
     if (length(unique(site$Lon))>1 | length(unique(site$Lat))>1){
       site$Site<-as.character(site$Site)
       latlons<-as.list(as.data.frame(t(cbind(site$Lat, site$Lon))))

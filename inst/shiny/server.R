@@ -11,9 +11,9 @@ shinyServer(function(input, output, session) {
       updateSelectInput(session, "y_var", selected = "layer_bot")
       updateSelectInput(session, "x_var", selected = "bd_tot")
       updateSelectInput(session, "size_var", selected = "NULL")
-      updateSelectInput(session, "col_var", selected = "mat")
-      updateSelectInput(session, "col_facet_var", selected = "map")
-      updateSelectInput(session, "row_facet_var", selected = "mat")
+      updateSelectInput(session, "col_var", selected = "p_MAT")
+      updateSelectInput(session, "col_facet_var", selected = "p_MAP")
+      updateSelectInput(session, "row_facet_var", selected = "p_MAT")
     }
     if (x==2) {
       updateSelectInput(session, "y_var", selected = "f_c_tot")
@@ -37,6 +37,13 @@ shinyServer(function(input, output, session) {
     )
     variables[which(variables=="NULL")]<-NULL
 
+    # variables<-list(y_var="layer_bot",
+    #                 x_var="bd_tot",
+    #                 size_var="NULL",
+    #                 col_var="p_MAT",
+    #                 col_facet_var="p_MAP",
+    #                 row_facet_var="p_MAT")
+    #unlist(variables) %in% colnames(soilcarbon_database)
     plot_data<-na.omit(soilcarbon_database[,unlist(variables)])
     plot_data$facet_cut<-""
     plot_data$facet_cut2<-""

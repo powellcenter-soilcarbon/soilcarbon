@@ -33,8 +33,8 @@ shinyUI(fluidPage(
                                                        "Total Carbon (fraction)" = "f_c_tot",
                                                        "Total Nitrogen" = "n_tot",
                                                        "Bulk Density" = "bd_tot",
-                                                       "MAP" = "map",
-                                                       "MAT" = "mat"
+                                                       "MAP" = "p_MAP",
+                                                       "MAT" = "p_MAT"
                                                   ),
                                                   selected = "layer_bot")),
                             column(6, selectInput("x_var", "X Variable:",
@@ -47,8 +47,8 @@ shinyUI(fluidPage(
                                                        "Total Carbon (fraction)" = "f_c_tot",
                                                        "Total Nitrogen" = "n_tot",
                                                        "Bulk Density" = "bd_tot",
-                                                       "MAP" = "map",
-                                                       "MAT" = "mat"
+                                                       "MAP" = "p_MAP",
+                                                       "MAT" = "p_MAT"
                                                   ),
                                                   selected = "bd_tot"))),
 
@@ -62,10 +62,10 @@ shinyUI(fluidPage(
                                                          "Total Carbon (fraction)" = "f_c_tot",
                                                          "Total Nitrogen" = "n_tot",
                                                          "Bulk Density" = "bd_tot",
-                                                         "MAP" = "map",
-                                                         "MAT" = "mat"
+                                                         "MAP" = "p_MAP",
+                                                         "MAT" = "p_MAT"
                                                     ),
-                                                    selected = "map")),
+                                                    selected = "p_MAP")),
                             column(5, textInput("col_facet_thresh", "threshold", value = "500"))),
 
                    fluidRow(column(7,   selectInput("row_facet_var", "Panel Variable 2:",
@@ -78,10 +78,10 @@ shinyUI(fluidPage(
                                                          "Total Carbon (fraction)" = "f_c_tot",
                                                          "Total Nitrogen" = "n_tot",
                                                          "Bulk Density" = "bd_tot",
-                                                         "MAP" = "map",
-                                                         "MAT" = "mat"
+                                                         "MAP" = "p_MAP",
+                                                         "MAT" = "p_MAT"
                                                     ),
-                                                    selected = "mat")),
+                                                    selected = "p_MAT")),
                             column(5, textInput("row_facet_thresh", "threshold", value = "5"))),
 
                    fluidRow(column(7,  selectInput("col_var", "Color Variable:",
@@ -95,10 +95,10 @@ shinyUI(fluidPage(
                                                         "Total Carbon (fraction)" = "f_c_tot",
                                                         "Total Nitrogen" = "n_tot",
                                                         "Bulk Density" = "bd_tot",
-                                                        "MAP" = "map",
-                                                        "MAT" = "mat"
+                                                        "MAP" = "p_MAP",
+                                                        "MAT" = "p_MAT"
                                                    ),
-                                                   selected = "mat")),
+                                                   selected = "p_MAT")),
                             column(5, sliderInput("alpha", "transparency", min = 0,
                                                   max = 1, value = 0.7))),
 
@@ -108,8 +108,8 @@ shinyUI(fluidPage(
                                     "Total Carbon" = "c_tot",
                                     "Total Nitrogen" = "n_tot",
                                     "Bulk Density" = "bd_tot",
-                                    "MAP" = "map",
-                                    "MAT" = "mat"
+                                    "MAP" = "p_MAP",
+                                    "MAT" = "p_MAT"
                                ))
 
 
