@@ -10,7 +10,7 @@
     <script>
     //init this script when the page has loaded
     $(document).ready(function(){
-      $("#submitbutton").attr("hidden", true);
+
       $("#submitbutton").on("click", function(){
 
         //arguments
@@ -26,11 +26,12 @@
 
 
         //perform the request
-        $("#loading").text("loading...");
+        $("#loading").text("reading file...");
 
         var req = ocpu.call("read.soilcarbon", {
           file : myfile
         }, function(session1){
+          $("#checking").text("checking file...");
           req2 = ocpu.call("dataQC", {
           data : session1,
           writeQCreport:true,
@@ -55,9 +56,8 @@
         req.always(function(){
           $("#submitbutton").removeAttr("disabled")
         });
-          req.always(function(){
-          $("#submitbutton").removeAttr("hidden")
-        });
+        $("#download").text("Download QA/QC report");
+
       });
     });
     </script>
@@ -73,17 +73,19 @@
     <h3>Upload and generate QA/QC report for data file</h3>
 
     <b>Data File</b>  <br /> <input type="file" id="datafile">
-    <br />
-
-     <br />
-     <button id="submitbutton" type="button">Generate QA/QC report</button>
-     <br />
-      <b><a target="_blank" id="printlink" download>Download report</a></b>
       <br />
-     (will appear as link after QA/QC report is generated)
+         <br />
+     <button id="submitbutton" type="button">Generate QA/QC report</button>
+    <br />
+       <p id="loading"></p>
+     <br />
+       <p id="checking"></p>
+     <br />
+      <a target="_blank" id="printlink" download><b id="Download"></b></a>
+      <br />
 
      <p id="key"></p>
-       <p id="loading"></p>
+
 <br />
 <br />
 <br />
