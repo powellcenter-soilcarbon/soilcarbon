@@ -39,7 +39,7 @@
           },
           function(session2){
             mysession=session2;
-            $("#key").text(mysession.getKey());
+            $("#download").text("Download QA/QC report");
          $("#printlink").attr("href", mysession.getLoc() + "files/Data_QAQC_report.txt")
             session2.getConsole(function(outtxt){
                 $("#output").text(outtxt);
@@ -56,7 +56,7 @@
         req.always(function(){
           $("#submitbutton").removeAttr("disabled")
         });
-        $("#download").text("Download QA/QC report");
+
 
       });
     });
@@ -83,7 +83,6 @@
      <br />
       <a target="_blank" id="printlink" download><b id="Download"></b></a>
       <br />
-     <p id="key"></p>
 <br />
 <br />
 <br />
