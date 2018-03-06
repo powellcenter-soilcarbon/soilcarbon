@@ -10,6 +10,7 @@
     <script>
     //init this script when the page has loaded
     $(document).ready(function(){
+      $("#submitbutton").attr("hidden", true);
       $("#submitbutton").on("click", function(){
 
         //arguments
@@ -22,7 +23,7 @@
 
         //disable the button during upload
         $("#submitbutton").attr("disabled", "disabled");
-        $("#submitbutton").attr("hidden", true);
+
 
         //perform the request
         $("#loading").text("loading...");
