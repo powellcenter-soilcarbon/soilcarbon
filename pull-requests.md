@@ -45,3 +45,10 @@ Nice job! You have now made a pull request with the changes that you contributed
 ![](site_files/assets/images/pull9.png)
 
 ### All done! The maintainers may accept your pull request or respond with questions. 
+
+If you want to make multiple pull requests, I would recommend spending some time learning about git. Here are some links to help...
+
+[https://www.thinkful.com/learn/github-pull-request-tutorial/](https://www.thinkful.com/learn/github-pull-request-tutorial/)
+
+[https://gist.github.com/Chaser324/ce0505fbed06b947d962](https://gist.github.com/Chaser324/ce0505fbed06b947d962)
+

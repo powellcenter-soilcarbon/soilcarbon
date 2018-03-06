@@ -2,9 +2,6 @@
 ![](assets/images/PowellCenter.jpeg)
 ![](assets/images/MPI-BGC_logo_EN.png)
 
-## Contact
-For questions about the soilcarbon package email Grey - greymonroe@gmail.com. 
-
 ## Database structure
 ![](site_files/assets/images/structure.png)
 
@@ -14,26 +11,9 @@ For questions about the soilcarbon package email Grey - greymonroe@gmail.com.
 
 ## Add data!
 
-[Check your data here](http://powellcenter-soilcarbon.ocpu.io/soilcarbon/www/)
+To contribute data to the soilcabon database, data files must pass a quality control step that ensures the file and it's contents are compatible with the structure and vocabulary of the database (see Template file and instructions above for explanation). 
 
-1. Install latest version of R [https://www.r-project.org/](https://www.r-project.org/)
-2. Install and load soilcarbon package (run this in R). Installing the package this way may not have have the most updated features of the package.
-```{r}
-install.packages("soilcarbon")
-```
-2. (Alternate) To  install the most recent development version of the package run this line instead.
-```{r}
-devtools::install_github("powellcenter-soilcarbon/soilcarbon”)
-```
-3. Run soilcarbon shiny workbench in R
-```{r}
-library(soilcarbon)
-soilcarbon.shiny()
-```
-4. Click 'Browse' and chose the data file (Template file that you have filled with data) 
-5. Click 'download quality control report' 
-6. Look at the text file that is downloaded. Warning messages will describe any problems in the data file.
-7. If your data passes the check, email it to powellcenter.soilcarbon@gmail.com.
+#### [Check your data here](http://powellcenter-soilcarbon.ocpu.io/soilcarbon/www/)
 
 ### Current data
 The current version of the publicly available Soil Radiocarbon Database includes data compiled through the efforts of two previous studies. If you access data from this repository, please cite the following references:
@@ -54,6 +34,13 @@ A detailed list of the data sources that are included can be found here:
 ![](site_files/assets/images/fractionplot.png)
 
 ## Contribute to soilcarbon package
-[Instructions for making pull requests](pull-requests).
+[Instructions for making a pull request](pull-requests).
+
+#### Helpful links:
+[https://www.thinkful.com/learn/github-pull-request-tutorial/](https://www.thinkful.com/learn/github-pull-request-tutorial/)
+
+[https://gist.github.com/Chaser324/ce0505fbed06b947d962](https://gist.github.com/Chaser324/ce0505fbed06b947d962)
 
 The Soil Carbon Database has been developed in collaboration between the U.S. Geological Survey Powell Center and the Max Planck Institute for Biogeochemistry”
+
+Contact: for questions about the soilcarbon package, Grey at greymonroe@gmail.com. 
