@@ -22,10 +22,11 @@
 
         //disable the button during upload
         $("#submitbutton").attr("disabled", "disabled");
+        $("#submitbutton").attr("hidden", true);
 
         //perform the request
-
         $("#loading").text("loading...");
+
         var req = ocpu.call("read.soilcarbon", {
           file : myfile
         }, function(session1){
@@ -52,6 +53,9 @@
         //after request complete, re-enable the button
         req.always(function(){
           $("#submitbutton").removeAttr("disabled")
+        });
+          req.always(function(){
+          $("#submitbutton").removeAttr("hidden")
         });
       });
     });
