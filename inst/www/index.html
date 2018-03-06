@@ -28,6 +28,7 @@
 
         var req = ocpu.call("read.soilcarbon", {
           file : myfile
+          $("#loading").text("loading...");
         }, function(session1){
           req2 = ocpu.call("dataQC", {
           data : session1,
@@ -37,7 +38,6 @@
           function(session2){
             mysession=session2;
             $("#key").text(mysession.getKey());
-            $("#loading").text("loading...");
          $("#printlink").attr("href", mysession.getLoc() + "files/Data_QAQC_report.txt")
             session2.getConsole(function(outtxt){
                 $("#output").text(outtxt);
