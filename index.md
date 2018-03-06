@@ -25,6 +25,8 @@ Mathieu, J. A., Hatté, C., Balesdent, J., & Parent, É. (2015). Deep soil carbo
 A detailed list of the data sources that are included can be found here:
 [Datasets and doi numbers available and in progress](/site_files/make_current_dataset_list.html) 
 
+[Making plots](/site_files/Plots.html)
+
 ![](site_files/assets/images/mat.png)
 ![](site_files/assets/images/map.png)
 

@@ -1,0 +1,44 @@
+---
+title: "Plots"
+author: "Grey Monroe"
+date: "3/6/2018"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+Load compiled database (change path to location on your computer)
+```{r}
+database<-read.csv("~/Dropbox/data_files/database/compiled_database.csv")
+```
+
+Here we will make some simple plots with ggplot. Next time, we will look at why ggplot is so useful: making complex and beautiful plots for publications.
+```{r}
+library(ggplot2)
+```
+
+```{r}
+p<-ggplot(database, aes(x=f_14c,  y=f_c_org, col=f_property))+
+        theme_bw(base_size = 6)+
+         geom_point()
+plot(p)
+```
+
+```{r}
+p<-ggplot(database, aes(x=f_property, col=f_property, y=f_c_tot))+
+        geom_boxplot()
+plot(p)
+```
+
+```{r}
+p<-ggplot(database, aes(x=f_13c))+
+        geom_histogram()
+plot(p)
+```
+
+```{r}
+p<-ggplot(database, aes(x=bd_tot, y=-layer_bot))+
+        geom_point()
+plot(p)
+```
+
