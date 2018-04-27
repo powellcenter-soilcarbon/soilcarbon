@@ -3,7 +3,7 @@
 ![](assets/images/MPI-BGC_logo_EN.png)
 
 ## Database structure
-![](site_files/assets/images/structure.png)
+![](site_files/assets/images/structure_new.png)
 
 ## Database template
 [Template file](https://github.com/powellcenter-soilcarbon/soilcarbon/raw/master/inst/extdata/Master_template.xlsx) (Variables with red column names are required)  
