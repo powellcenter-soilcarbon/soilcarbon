@@ -10,6 +10,7 @@
 
 compileDatabase.MPI <- function(dataset_directory ){
 
+
 requireNamespace("stringi")
 
 data_files<-list.files(dataset_directory, full.names = T)
