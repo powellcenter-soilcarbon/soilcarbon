@@ -28,16 +28,11 @@
         //perform the request
         $("#loading").text("reading file...");
 
-        var req = ocpu.call("file", {
-          description : myfile
-        }, function(session1){
-          $("#checking").text("checking file...");
-          req2 = ocpu.call("dataQC", {
-          data : session1,
+        var req = ocpu.call("QAQC", {
+          file : myfile,
           writeQCreport:true,
           outfile:"Data_QAQC_report.txt"
-          },
-          function(session2){
+        }, function(session2){
             mysession=session2;
             $("#download").text("Download QA/QC report");
          $("#printlink").attr("href", mysession.getLoc() + "files/Data_QAQC_report.txt")
@@ -45,7 +40,7 @@
                 $("#output").text(outtxt);
            });
           });
-        });
+
 
         //if R returns an error, alert the error message
         req.fail(function(){
