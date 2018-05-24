@@ -8,12 +8,11 @@
 ## Database template
 
 Original template:
-[Template file](https://github.com/powellcenter-soilcarbon/soilcarbon/raw/master/inst/extdata/Master_template.xlsx) (Variables with red column names are required)  
+[Template file](https://github.com/powellcenter-soilcarbon/soilcarbon/raw/master/inst/extdata/Master_template_orig.xlsx) (Variables with red column names are required)  
 [Template instructions](/site_files/Template_info.html)
 
 Template with flux, incubation, and interstitial data:
 [Template file](https://github.com/powellcenter-soilcarbon/soilcarbon/raw/master/inst/extdata/Master_template_MPI_v10.xlsx) (Variables with red column names are required)  
-
 [Template information](https://github.com/powellcenter-soilcarbon/soilcarbon/raw/master/inst/extdata/Template_info_MPI_v10.xlsx)
 
 ## Add data!
