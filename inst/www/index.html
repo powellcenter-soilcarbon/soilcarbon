@@ -28,12 +28,8 @@
         //perform the request
         $("#loading").text("reading file...");
 
-        var req = ocpu.call("read.soilcarbon", {
-          file : myfile
-        }, function(session1){
-          $("#checking").text("checking file...");
-          req2 = ocpu.call("dataQC", {
-          data : session1,
+        var req = ocpu.call("QAQC", {
+          file : myfile,
           writeQCreport:true,
           outfile:"Data_QAQC_report.txt"
           },
