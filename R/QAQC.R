@@ -99,6 +99,20 @@ for (t in 1:length(names(data))){
   }
 }
 
+  ##### check for missing values in required columns ####
+cat("\n\nChecking for missing values in required columns...")
+for (t in 1:length(names(data))){
+  tab<-names(data)[t]
+  cat("\n",tab,"tab...")
+  required_colnames<-template_info[[tab]]$Column_Name[template_info[[tab]]$Required=="Yes"]
+  missing_values<-sapply(required_colnames, function(c) NA %in% data[[tab]][[c]])
+  T %in% unlist(missing_values)
+
+  if (T %in% unlist(missing_values)) {
+    cat("\n\tWARNING: missing values where required:", required_colnames[missing_values]);error<-error+1
+  }
+}
+
   ##### check levels #####
   cat("\n\nChecking that level names match between tabs...")
 
