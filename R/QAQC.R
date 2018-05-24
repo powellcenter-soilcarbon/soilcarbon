@@ -45,7 +45,7 @@ QAQC <- function(file, writeQCreport=F, outfile=NULL){
 
   # get tabs for data and current template files from R package on github
   tabs_found<-getSheetNames(file)
-  template_file_mpi<-system.file("extdata", "Master_template_v9_MPI_entry_name_test_all.xlsx", package = "soilcarbon")
+  template_file_mpi<-system.file("extdata", "Master_template_MPI_v10", package = "soilcarbon")
   mpi_tabs<-getSheetNames(template_file_mpi)
   template_file_orig<-system.file("extdata", "Master_template.xlsx", package = "soilcarbon")
   orig_tabs<-getSheetNames(template_file_orig)
@@ -53,7 +53,7 @@ QAQC <- function(file, writeQCreport=F, outfile=NULL){
   if (all(tabs_found %in% mpi_tabs) & length(tabs_found) == length(mpi_tabs)){
     cat("\n Template format detected: ", basename(template_file_mpi))
     template<-read.soilcarbon(file=template_file_mpi, format = "MPI",template=T)
-    template_info_file<-system.file("extdata", "Template_info_new GM.xlsx", package = "soilcarbon")
+    template_info_file<-system.file("extdata", "Template_info_MPI_v10.xlsx", package = "soilcarbon")
     cat("\n Template info file to be used for QAQC: ", basename(template_info_file))
     template_info<-lapply(getSheetNames(template_info_file), function(s) read.xlsx(template_info_file , sheet=s))
     names(template_info)<-mpi_tabs
