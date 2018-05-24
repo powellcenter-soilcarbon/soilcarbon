@@ -4,10 +4,12 @@
 \alias{read.soilcarbon}
 \title{read.soilcarbon}
 \usage{
-read.soilcarbon(file, template = F)
+read.soilcarbon(file, format = "original", template = F)
 }
 \arguments{
 \item{file}{directory to data file}
+
+\item{format}{default is "original." Also accepted, "MPI" which modifies the read function for compatability with the MPI template V9.}
 
 \item{template}{set to TRUE if reading in a template file}
 }

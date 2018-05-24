@@ -28,12 +28,9 @@ dataQC <- function(data, tabs= c("metadata","site","profile","layer","fraction")
 
 
 cat(rep("-", 30),"\n")
-cat("         Thank you for submitting data to the \n")
-cat("          Powell Center soil carbon database!\n")
+cat("         Thank you for contributing to the ISRaD database! \n")
 cat(rep("-", 30),"\n")
-cat("                Please review the\n")
-
-cat("          Quality Control check below:\n")
+cat("                Please review the QAQC report below: \n")
 cat(rep("-", 30),"\n\n\n")
 cat(attributes(data)$file_name, "\n\n")
 
