@@ -6,8 +6,14 @@
 ![](site_files/assets/images/structure_new.png)
 
 ## Database template
+
+Original template:
 [Template file](https://github.com/powellcenter-soilcarbon/soilcarbon/raw/master/inst/extdata/Master_template.xlsx) (Variables with red column names are required)  
 [Template instructions](/site_files/Template_info.html)
+
+Template with flux, incubation, and interstitial data:
+[Template file](https://github.com/powellcentersoilcarbon/soilcarbon/raw/master/inst/extdata/Master_template_v9_MPI_entry_name_test_all.xlsx) (Variables with red column names are required)  
+[Template information](/site_files/Template_info_new GM.xlsx)
 
 ## Add data!
 
