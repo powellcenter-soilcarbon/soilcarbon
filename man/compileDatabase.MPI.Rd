@@ -4,10 +4,12 @@
 \alias{compileDatabase.MPI}
 \title{compileDatabase.MPI}
 \usage{
-compileDatabase.MPI(dataset_directory)
+compileDatabase.MPI(dataset_directory, write = T)
 }
 \arguments{
 \item{dataset_directory}{directory where compeleted and QC passed soilcarbon datasets are stored}
+
+\item{write}{T or F whether or not to write a log file of the compilation}
 }
 \description{
 adds dataset to soilcarbon database

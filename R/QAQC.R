@@ -211,7 +211,7 @@ for (t in 1:length(names(data))){
 if (writeQCreport==T){
   sink(type="message")
   sink()
-  cat("QC report saved to", outfile,"\n")
+  cat("\nQC report saved to", outfile)
 }
 
 return(error)
