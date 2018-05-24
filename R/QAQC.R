@@ -45,7 +45,7 @@ QAQC <- function(file, writeQCreport=F, outfile=NULL){
 
   # get tabs for data and current template files from R package on github
   tabs_found<-getSheetNames(file)
-  template_file_mpi<-system.file("extdata", "Master_template_MPI_v10", package = "soilcarbon")
+  template_file_mpi<-system.file("extdata", "Master_template_MPI_v10.xlsx", package = "soilcarbon")
   mpi_tabs<-getSheetNames(template_file_mpi)
   template_file_orig<-system.file("extdata", "Master_template.xlsx", package = "soilcarbon")
   orig_tabs<-getSheetNames(template_file_orig)
