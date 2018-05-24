@@ -28,7 +28,7 @@
         //perform the request
         $("#loading").text("reading file...");
 
-        var req = ocpu.call("QAQC", {
+        var req =  ocpu.call("QAQC", {
           file : myfile,
           writeQCreport:true,
           outfile:"Data_QAQC_report.txt"
@@ -77,8 +77,6 @@
      <button id="submitbutton" type="button">Generate QA/QC report</button>
     <br />
        <b id="loading"></b>
-     <br />
-       <b id="checking"></b>
      <br />
       <a target="_blank" id="printlink" download><b id="download"></b></a>
       <br />
