@@ -56,7 +56,7 @@ QAQC <- function(file, writeQCreport=F, outfile=NULL){
     template_info_file<-system.file("extdata", "Template_info_MPI_v10.xlsx", package = "soilcarbon")
     cat("\n Template info file to be used for QAQC: ", basename(template_info_file))
     template_info<-lapply(getSheetNames(template_info_file), function(s) read.xlsx(template_info_file , sheet=s))
-    names(template_info)<-mpi_tabs
+    names(template_info)<-getSheetNames(template_info_file)
     data<-read.soilcarbon(file, format = "MPI")
     }
 
@@ -105,6 +105,8 @@ for (t in 1:length(names(data))){
   tab<-names(data)[t]
   cat("\n",tab,"tab...")
   required_colnames<-template_info[[tab]]$Column_Name[template_info[[tab]]$Required=="Yes"]
+  template_info[["flux"]]$Column_Name
+
   missing_values<-sapply(required_colnames, function(c) NA %in% data[[tab]][[c]])
   T %in% unlist(missing_values)
 
