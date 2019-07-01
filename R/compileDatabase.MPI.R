@@ -6,7 +6,6 @@
 #' @param write_report T or F whether or not to write a log file of the compilation
 #' @param write_out T or F whether or not to write the compiled database file as csv in dataset_directory
 #' @export
-#' @import devtools
 #' @import stringi
 #'
 

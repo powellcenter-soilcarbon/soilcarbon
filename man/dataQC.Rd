@@ -4,8 +4,8 @@
 \alias{dataQC}
 \title{dataQC}
 \usage{
-dataQC(data, tabs = c("metadata", "site", "profile", "layer", "fraction"),
-  writeQCreport = F, outfile = NULL)
+dataQC(data, tabs = c("metadata", "site", "profile", "layer",
+  "fraction"), writeQCreport = F, outfile = NULL)
 }
 \arguments{
 \item{data}{directory to data file}

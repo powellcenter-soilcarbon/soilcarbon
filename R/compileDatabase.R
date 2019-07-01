@@ -4,7 +4,6 @@
 #'
 #' @param dataset_directory directory where compeleted and QC passed soilcarbon datasets are stored
 #' @export
-#' @import devtools
 #' @import stringi
 
 compileDatabase <- function(dataset_directory ){
