@@ -27,7 +27,7 @@ data_files<-list.files(dataset_directory, full.names = T)
 data_files<-data_files[grep("xlsx", data_files)]
 
 
-template_file<-system.file("extdata", "Master_template_v9_MPI_entry_name_test_all.xlsx", package = "soilcarbon")
+template_file<-system.file("extdata", "Master_template_MPI_v10.xlsx", package = "soilcarbon")
 template<-read.soilcarbon(file=template_file, format = "MPI",template=T)
 template_flat<-Reduce(function(...) merge(..., all=T), template)
 
